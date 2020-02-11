@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <?php
-//$database_host = "dbhost.cs.man.ac.uk";
-//$database_user = "d42339bs";
-//$database_pass = "DB123456";
-//$group_dbnames = array("2019_comp10120_y9");
 // Load the configuration file containing your database credentials
 require_once('config.inc.php');
 
@@ -90,8 +86,7 @@ td{
     <a href="index.php">About</a><br>
 	<a href="alarm.php">Alarm</a><br>
 	<a href="chat.php">Chat</a><br>
-	<a href="shopping.php" class="selected">Shopping List</a><br>
-	<a href="finance.php">Finance</a><br>
+	<a href="finance.php">Finance and Shopping</a><br>
 	<a href="trash.php">Trash</a><br>
 	<a href="complaints.php">Complaints</a><br>
 	<a href="members.php">Members</a><br>
