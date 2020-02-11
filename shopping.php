@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-$database_host = "dbhost.cs.man.ac.uk";
-$database_user = "d42339bs";
-$database_pass = "DB123456";
-$group_dbnames = array("2019_comp10120_y9");
+//$database_host = "dbhost.cs.man.ac.uk";
+//$database_user = "d42339bs";
+//$database_pass = "DB123456";
+//$group_dbnames = array("2019_comp10120_y9");
 // Load the configuration file containing your database credentials
 require_once('config.inc.php');
 
