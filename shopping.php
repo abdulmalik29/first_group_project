@@ -14,6 +14,9 @@ $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbna
 if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 }
+else { 
+    echo "rahul is not funny";
+}
 
 // Always close your connection to the database cleanly!
 $mysqli -> close();
