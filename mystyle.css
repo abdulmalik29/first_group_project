@@ -1,0 +1,208 @@
+* 
+{
+  box-sizing: border-box;
+}
+
+body{
+	background-color:#33B0CC;
+}
+
+/*next three is for formatting the menu*/
+.leftcol {
+  border: 1px solid black;
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: #33B0CC;
+}
+
+#menulinks{
+  border: 1px solid black;
+  padding: 15px 25px;
+  background-color: grey;
+  color: white;
+  width: 100px;
+  text-align: center;
+  text-decoration: none; 
+  display: inline-block;
+  width: 100%;
+}
+
+#menulinks:hover{
+	background-color: #addfeb;
+}
+
+/*formatting for site contents*/
+.rightcol {
+  border: 1px solid black;
+  float: left;
+  width: 70%;
+  height: 100%;
+  background-color: #33B0CC;
+}
+
+/*formatting for selected link in menu - currently not used*/
+.selected{
+  width: 100%;
+  background-color: blue;
+}
+
+/*formatting for input fields*/
+input{
+  display: inline-block;
+  width = 33%;
+}
+
+td{
+  width: 50%;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+h1{
+	text-align: center;
+}
+
+input[type=text], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 18px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #FF0000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div{
+	text-align: center;
+}
+
+div.form {
+  border-radius: 5px;
+  background-color: ##ffffff;
+  padding: 20px;
+  
+}
+
+
+
+/* 
+
+--------formatting from chat.php--------
+
+<style>
+.side a {
+padding: 6px 8px 6px 16px;
+text-decoration: none;
+font-size: 25px;
+color: #ffffff;
+display: block; 
+}
+
+.side {
+height: 100%;
+width: 170px;
+position: fixed;
+top: 100;
+left: 0;
+background-color: #111;
+overflow-x: hidden;
+padding-top: 20px;
+}
+
+text.fixed {
+position: fixed;
+bottom: 400;
+right: 400;
+width: 300px;
+border: 3px solid #73AD21
+</style>
+
+
+--------formtting from members.php--------
+<style>
+	body {
+	  background-color: grey;
+	  text-align: center;
+	  color: white;
+	  font-family: Arial, Helvetica, sans-serif;
+
+	}
+	div.alarm {
+	  position: absolute;
+	  top: 100px;
+	  left: 20px;
+	}
+	div.chat {
+	  position: absolute;
+	  top: 130px;
+	  left: 20px;
+
+	}
+	div.shopping {
+	  position: absolute;
+	  top: 160px;
+	  left: 20px;
+	 
+	}
+	div.finance {
+	  position: absolute;
+	  top: 190px;
+	  left: 20px;
+	}
+	div.trash {
+	  position: absolute;
+	  top: 220px;
+	  left: 20px;
+	}
+	div.com {
+	  position: absolute;
+	  top: 250px;
+	  left: 20px;
+	}
+	div.mem {
+	  position: absolute;
+	  top: 280px;
+	  left: 20px;
+	 
+	}
+	div.info {
+	  position: absolute;
+	  top: 310px;
+	  left: 20px;
+	}
+	table {
+	  table-layout: fixed;
+	  width: 70%;
+	  height: 60%;
+	  border: 1px solid black;
+	  border-collapse: collapse;  
+	}
+	th, td {
+	  padding: 8px;
+	  text-align: left;
+	  border-bottom: 1px solid #ddd;
+	}
+	tr:hover {background-color:#8eb5f5;}
+	table.center {
+	  margin-left:25%; 
+	  margin-right:50%;
+	}
+</style>
+*/
