@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php
+$database_host = "dbhost.cs.man.ac.uk";
+$database_user = "d42339bs";
+$database_pass = "DB123456";
+$group_dbnames = "2019_comp10120_y9";
+// Load the configuration file containing your database credentials
+require_once('config.inc.php');
+
+// Connect to the database
+$mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames);
+
+// Check for errors before doing anything else
+if($mysqli -> connect_error) {
+    die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+}
+
+// Always close your connection to the database cleanly!
+$mysqli -> close();
+?>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
