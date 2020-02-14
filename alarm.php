@@ -33,12 +33,12 @@
 </html>
 
 <?php
-// Load the configuration file containing your database credentials
-require_once('config.inc.php');
 
 // Connect to the database
 function testSQL()
 {
+    // Load the configuration file containing your database credentials
+    require_once('config.inc.php');
     $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
     // Check for errors before doing anything else
