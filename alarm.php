@@ -89,7 +89,7 @@ function getOutsidePeople() {
     $currentUsername = "testman";
     $currentUserQuery = "SELECT username, houseID FROM User WHERE username = \"" . $currentUsername . "\"";
     $currentUserRecords = $mysqli->query($currentUserQuery);
-    if ($currentUserRecords.is_null()) {
+    if (is_null($currentUserRecords)) {
         die("Current user not found!");
     }
     $currentUserRow = $currentUserRecords->fetch_assoc();
