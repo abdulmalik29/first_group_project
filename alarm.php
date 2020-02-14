@@ -26,7 +26,7 @@
             <a>Yes </a></br>
             <a>No </a>
             <?php
-            testSQL()
+            getOutsidePeople()
             ?>
 		</div>
 	</body>
@@ -75,5 +75,30 @@ function testSQL()
 
     // Always close your connection to the database cleanly!
     $mysqli -> close();
+}
+function getOutsidePeople() {
+    require_once('config.inc.php');
+    $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+
+    // Check for errors before doing anything else
+    if($mysqli -> connect_error) {
+        die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+    }
+
+    // Issue to be addressed - how do we know who is logged in?
+    $currentUsername = "testman";
+    $currentUserQuery = "SELECT username, houseID FROM User WHERE username = " . $currentUsername;
+    $currentUserRecords = $mysqli->query($currentUserQuery);
+    $currentUserRow = $currentUserRecords->fetch_assoc();
+    if ($currentUserRow.is_null()) {
+        die("Current user not found!");
+    }
+
+    $outsideSql="SELECT username, name, houseID, outside FROM User WHERE houseID = " . $currentUserRow[houseID];
+    $outsideRecords = $mysqli->query($outsideSql);
+    while($row = $records->fetch_assoc())
+    {
+        echo "<p>$row[name]: outside is $row[outside]</p>"
+    }
 }
 ?>
