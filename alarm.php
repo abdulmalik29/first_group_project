@@ -87,12 +87,12 @@ function getOutsidePeople() {
 
     // Issue to be addressed - how do we know who is logged in?
     $currentUsername = "testman";
-    $currentUserQuery = "SELECT username, houseID FROM User WHERE username = " . $currentUsername;
+    $currentUserQuery = "SELECT username, houseID FROM User WHERE username = \"" . $currentUsername . "\"";
     $currentUserRecords = $mysqli->query($currentUserQuery);
-    $currentUserRow = $currentUserRecords->fetch_assoc();
-    if ($currentUserRow.is_null()) {
+    if ($currentUserRecords.is_null()) {
         die("Current user not found!");
     }
+    $currentUserRow = $currentUserRecords->fetch_assoc();
 
     $outsideSql="SELECT username, name, houseID, outside FROM User WHERE houseID = " . $currentUserRow[houseID];
     $outsideRecords = $mysqli->query($outsideSql);
