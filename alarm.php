@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
@@ -24,6 +25,55 @@
             <h3>Are you in?</h3>
             <a>Yes </a></br>
             <a>No </a>
+            <?php
+            testSQL()
+            ?>
 		</div>
 	</body>
 </html>
+
+<?php
+// Load the configuration file containing your database credentials
+require_once('config.inc.php');
+
+// Connect to the database
+$mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+
+// Check for errors before doing anything else
+if($mysqli -> connect_error) {
+    die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+}
+function testSQL()
+{
+    $sql = "SELECT * FROM User";
+    $result = $mysqli->query($sql);
+    $output = "
+		<table border='2'>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+            <th>Name</th>
+            <th>HouseID</th>
+            <th>Outside?</th>
+		";
+    while ($row = $records->fetch_assoc())
+    {
+        $output .= "
+            <tr>
+                <td>$row[username]</td>
+                <td>$row[email]</td>
+                <td>$row[phonenumber]</td>
+                <td>$row[name]</td>
+                <td>$row[houseID]</td>
+                <td>$row[outside]</td>
+            </tr>
+        ";
+    }
+	$output .="</table>";
+	echo ($output);
+
+
+    // Always close your connection to the database cleanly!
+    $mysqli -> close();
+}
+?>
