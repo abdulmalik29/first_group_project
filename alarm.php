@@ -98,7 +98,7 @@ function getOutsidePeople() {
     $outsideRecords = $mysqli->query($outsideSql);
     while($row = $records->fetch_assoc())
     {
-        echo "<p>$row[name]: outside is $row[outside]</p>"
+        echo "<p>$row[name]: outside is $row[outside]</p>";
     }
 }
 ?>
