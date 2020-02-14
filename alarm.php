@@ -46,7 +46,7 @@ function testSQL()
         die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
     }
     $sql = "SELECT * FROM User";
-    $result = $mysqli->query($sql);
+    $records = $mysqli->query($sql);
     $output = "
 		<table border='2'>
 			<th>Username</th>
