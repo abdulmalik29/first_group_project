@@ -96,7 +96,7 @@ function getOutsidePeople() {
 
     $outsideSql="SELECT username, name, houseID, outside FROM User WHERE houseID = " . $currentUserRow[houseID];
     $outsideRecords = $mysqli->query($outsideSql);
-    while($row = $records->fetch_assoc())
+    while($row = $outsideRecords->fetch_assoc())
     {
         echo "<p>$row[name]: outside is $row[outside]</p>";
     }
