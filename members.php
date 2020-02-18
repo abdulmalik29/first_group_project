@@ -26,7 +26,7 @@
             die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
             }
             $CurrentHouseID = "0";
-            $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $currentHouseID . "\"");
+            $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
 
             echo "<table border='1'>
             <tr>
