@@ -16,6 +16,7 @@
 		<a href="members.php" id="menulinks">Members</a><br>
 	</div>
 	<div class="rightcol">
+	    <h1>Members</h1>
 	    <?php
             $con=mysqli_connect("example.com","peter","abc123","my_db");
             // Check connection
@@ -45,27 +46,7 @@
 
             mysqli_close($con);
             ?>
-		<h1>Members</h1>
-		<table class="center">
-			<tr>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Phone Number</th>
-				<th>Email</th>
-			</tr>
-			<tr>
-				<td>Vandelieu</td>
-				<td>Fanny</td>
-				<td>555444333</td>
-				<td>v@outmail.com</td>
-			</tr>
-			<tr>
-				<td>Faulke</td>
-				<td>Stryder</td>
-				<td>55633212</td>
-				<td>fs@ploit.com</td>
-			</tr>
-		</table>
+		
 	</div>
 </body>
 </html>
