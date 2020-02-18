@@ -19,11 +19,11 @@
 		<h1>Complaints</h1>	
 		<form action="/action_page.php"><br>
 			<label for="date">Date</label><br>
-			<input type="text" id="date" name="date" placeholder="Date(dd/mm/yyyy)"><br>
+			<input type="text" id="dateReported" name="dateReported" placeholder="Date(dd/mm/yyyy)"><br>
 			<label for="location">Location</label><br>
-			<input type="text" id="location" name="location" placeholder="Location"><br>
+			<input type="text" id="Location" name="Location" placeholder="Location"><br>
 			<label for="issue">Issue</label><br>
-			<select id="issue" name="issue">	
+			<select id="complaint" name="complaint">	
 				<option value="waterleak">Water Leak</option>
 				<option value="notworking">Device not Working</option>
 				<option value="break">Breakage</option>
@@ -41,20 +41,20 @@
     if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
     }
-    $CurrentHouseID = "0";
-    $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
-    $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
-    $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
-    $email = mysqli_real_escape_string($link, $_REQUEST['email']);
+   
+    
+    $Date = mysqli_real_escape_string($mysqli, $_REQUEST['dateReported']);
+    $Location = mysqli_real_escape_string($mysqli, $_REQUEST['Location']);
+    $Issue = mysqli_real_escape_string($mysqli, $_REQUEST['complaint']);
     
      // Attempt insert query execution
-    $sql = "INSERT INTO persons (first_name, last_name, email) VALUES ('$first_name', '$last_name', '$email')";
-    if(mysqli_query($link, $sql)){
+    $sql = "INSERT INTO Complaints (dateReported, Location, complaint) VALUES ('$Date', '$Location', '$Issue')";
+    if(mysqli_query($mysqli, $sql)){
         echo "Records added successfully.";
     } else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
     }
     // Close connection
-    mysqli_close($link);
+    mysqli_close($mysqli);
 ?>
 ?>
