@@ -25,7 +25,7 @@
             if($mysqli -> connect_error) {
             die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
             }
-            $result = mysqli_query($connection, "SELECT * FROM User");
+            $result = mysqli_query($mysqli, "SELECT * FROM User");
 
             echo "<table border='1'>
             <tr>
