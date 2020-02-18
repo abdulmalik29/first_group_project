@@ -19,7 +19,7 @@
 		<h1>Complaints</h1>	
 		<form action="/action_page.php"><br>
 			<label for="date">Date</label><br>
-			<input type="text" id="dateReported" name="dateReported" placeholder="Date(dd/mm/yyyy)"><br>
+			<input type="date" id="dateReported" name="dateReported" placeholder="Date(dd/mm/yyyy)"><br>
 			<label for="location">Location</label><br>
 			<input type="text" id="Location" name="Location" placeholder="Location"><br>
 			<label for="issue">Issue</label><br>
