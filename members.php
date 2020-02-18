@@ -18,15 +18,13 @@
 	<div class="rightcol">
 	    <h1>Members</h1>
 	    <?php
-           
-            $connection = mysqli_connect($host, $user, $pass, $db_name);
-            if(mysqli_connect_errno()){
-                die("connection failed: "
-                . mysqli_connect_error()
-                . " (" . mysqli_connect_errno()
-                . ")");
-            }
+            require_once('config.inc.php');
+            $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
+            // Check for errors before doing anything else
+            if($mysqli -> connect_error) {
+            die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+            }
             $result = mysqli_query($connection, "SELECT * FROM User");
 
             echo "<table border='1'>
