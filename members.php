@@ -18,12 +18,8 @@
 	<div class="rightcol">
 	    <h1>Members</h1>
 	    <?php
-            $con=mysqli_connect("example.com","peter","abc123","my_db");
-            // Check connection
-            if (mysqli_connect_errno())
-            {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            }
+           
+
 
             $result = mysqli_query($con,"SELECT * FROM User");
 
