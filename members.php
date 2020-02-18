@@ -19,9 +19,15 @@
 	    <h1>Members</h1>
 	    <?php
            
+            $connection = mysqli_connect($host, $user, $pass, $db_name);
+            if(mysqli_connect_errno()){
+                die("connection failed: "
+                . mysqli_connect_error()
+                . " (" . mysqli_connect_errno()
+                . ")");
+            }
 
-
-            $result = mysqli_query("SELECT * FROM User");
+            $result = mysqli_query($connection, "SELECT * FROM User");
 
             echo "<table border='1'>
             <tr>
