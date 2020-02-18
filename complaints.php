@@ -43,7 +43,7 @@
     }
    
     
-    $Date = mysqli_real_escape_string($mysqli, $_REQUEST['dateReported']);
+    $Date = mysqli_real_escape_string($mysqli, date('d-m-Y', strtotime(str_replace('-','/',$_POST['dateReported']))));
     $Location = mysqli_real_escape_string($mysqli, $_REQUEST['Location']);
     $Issue = mysqli_real_escape_string($mysqli, $_REQUEST['complaint']);
     
