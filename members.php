@@ -21,7 +21,7 @@
            
 
 
-            $result = mysqli_query($con,"SELECT * FROM User");
+            $result = mysqli_query("SELECT * FROM User");
 
             echo "<table border='1'>
             <tr>
@@ -40,7 +40,7 @@
             }
             echo "</table>";
 
-            mysqli_close($con);
+            
             ?>
 		
 	</div>
