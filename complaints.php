@@ -33,3 +33,28 @@
 	</div>
 </body>
 </html>
+<?php
+    require_once('config.inc.php');
+    $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+
+    // Check for errors before doing anything else
+    if($mysqli -> connect_error) {
+    die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+    }
+    $CurrentHouseID = "0";
+    $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
+    $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
+    $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
+    $email = mysqli_real_escape_string($link, $_REQUEST['email']);
+    
+     // Attempt insert query execution
+    $sql = "INSERT INTO persons (first_name, last_name, email) VALUES ('$first_name', '$last_name', '$email')";
+    if(mysqli_query($link, $sql)){
+        echo "Records added successfully.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+    // Close connection
+    mysqli_close($link);
+?>
+?>
