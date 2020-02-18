@@ -17,34 +17,34 @@
 	</div>
 	<div class="rightcol">
 	    <?php
-        $con=mysqli_connect("example.com","peter","abc123","my_db");
-        // Check connection
-        if (mysqli_connect_errno())
-        {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        }
+            $con=mysqli_connect("example.com","peter","abc123","my_db");
+            // Check connection
+            if (mysqli_connect_errno())
+            {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            }
 
-        $result = mysqli_query($con,"SELECT * FROM User");
+            $result = mysqli_query($con,"SELECT * FROM User");
 
-        echo "<table border='1'>
-        <tr>
-        <th>Name</th>
-        <th>E-Mail</th>
-        <th>Phone Number</th>
-        </tr>";
+            echo "<table border='1'>
+            <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Phone Number</th>
+            </tr>";
 
-        while($row = mysqli_fetch_array($result))
-        {
-        echo "<tr>";
-        echo "<td>" . $row['name'] . "</td>";
-        echo "<td>" . $row['email'] . "</td>";
-        echo "<td>" . $row['phonenumber'] . "</td>";
-        echo "</tr>";
-        }
-        echo "</table>";
+            while($row = mysqli_fetch_array($result))
+            {
+            echo "<tr>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "<td>" . $row['phonenumber'] . "</td>";
+            echo "</tr>";
+            }
+            echo "</table>";
 
-        mysqli_close($con);
-        ?>
+            mysqli_close($con);
+            ?>
 		<h1>Members</h1>
 		<table class="center">
 			<tr>
