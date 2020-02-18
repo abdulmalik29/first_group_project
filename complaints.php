@@ -44,8 +44,8 @@
    
     
     $Date = mysqli_real_escape_string($mysqli, date('d-m-Y', strtotime(str_replace('-','/',$_POST['dateReported']))));
-    $Location = mysqli_real_escape_string($mysqli, $_REQUEST['Location']);
-    $Issue = mysqli_real_escape_string($mysqli, $_REQUEST['complaint']);
+    $Location = mysqli_real_escape_string($mysqli, $_POST['Location']);
+    $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
     
      // Attempt insert query execution
     $sql = "INSERT INTO Complaints (dateReported, Location, complaint) VALUES ('$Date', '$Location', '$Issue')";
