@@ -13,9 +13,8 @@ if($mysqli -> connect_error) {
 $uname = ($_POST["uname"]);
 $psw = ($_POST["psw"]);
 
-$query = "SELECT username FROM Users WHERE username = $uname";
-$query_run = query($query);
-if (mysql_num_rows($query_run)==1) 
+$query = my_sql_query("SELECT username FROM Users WHERE username = $uname");
+if (mysql_num_rows($query)==1) 
 {
     echo "Username in database.";
 }
