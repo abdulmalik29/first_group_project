@@ -21,7 +21,7 @@ if($result){
         if($row["username"] == $uname){
             if($row["password"] == $psw){
                 header("location = https://web.cs.manchester.ac.uk/s99954fh/first_group_project/index.php");
-                exit;
+                //exit;
             }
         }
     }
