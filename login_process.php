@@ -14,8 +14,9 @@ $uname = ($_POST["uname"]);
 $psw = ($_POST["psw"]);
 
 $sql = "SELECT * FROM User";
-if($mysqli->query($sql)){
-    echo("You're in");
+$result = $mysqli->query($sql);
+if($result){
+    echo($result);
 }
 else{
     echo("error");
