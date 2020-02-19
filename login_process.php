@@ -24,11 +24,11 @@ if($result){
                 //exit;
             }
             else {
-                echo("wrong password")
+                echo("wrong password");
             }
         }
         else {
-            echo("wrong username")
+            echo("wrong username");
         }
     }
 }
