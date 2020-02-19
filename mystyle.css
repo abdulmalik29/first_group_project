@@ -103,7 +103,20 @@ div.form {
 }
 
 
+.rightcol .alarm {
+  float: left; width: 50%;
+}
 
+
+#yes {
+  background-color: #00FF00;
+  text-decoration: none;
+}
+
+#no {
+  background-color: #FF0000;
+  text-decoration: none;
+}
 /* 
 
 --------formatting from chat.php--------

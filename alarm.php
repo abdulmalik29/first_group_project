@@ -1,18 +1,20 @@
-<!DOCTYPE html>
 <?php
-// You'd put this code at the top of any "protected" page you create
 
 // Always start this first
 session_start();
 
-if ( isset( $_SESSION['user_id'] ) ) {
+// Session is yet to be implemented
+// Once it is, uncomment this and it should work.
+
+//if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
     // Grab user data from the database using the user_id
     // Let them access the "logged in only" pages
-} else {
+//} else {
     // Redirect them to the login page
-    header("Location: login.php");
-}
+//    header("Location: login.php");
+//}
 ?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
@@ -30,27 +32,30 @@ if ( isset( $_SESSION['user_id'] ) ) {
 			<a href="members.php" id="menulinks">Members</a><br>
 		</div>
 		<div class="rightcol">
-			<h1>Alarm</h1>
+		    <h1>Alarm</h1>
+		    <div class="alarm">
 			<h2>Who is in:</h2>
 			<a>Ben</a>
+		    </div>
+		    <div class="alarm">
 			<h2>Who is out:</h2>
 			<a>Rahul</a>
-            <h3>Are you in?</h3>
-            <a>Yes </a></br>
-            <a>No </a>
-            <?php
-            getOutsidePeople()
-            ?>
+		    </div>
+		    <h3>Are you in?</h3>
+		    <a href="alarm.php" class="alarm" id="yes">Yes </a>
+		    <a href="alarm.php" class="alarm" id="no">No </a>
+		    <?php
+		    $mysqli = setupConnection();
+		    getOutsidePeople($mysqli);
+		    closeConnection($mysqli);
+		    ?>
 		</div>
 	</body>
 </html>
 
 <?php
 
-// Connect to the database
-function testSQL()
-{
-    // Load the configuration file containing your database credentials
+function setupConnection() {
     require_once('config.inc.php');
     $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
@@ -58,60 +63,33 @@ function testSQL()
     if($mysqli -> connect_error) {
         die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
     }
-    $sql = "SELECT * FROM User";
-    $records = $mysqli->query($sql);
-    $output = "
-		<table border='2'>
-			<th>Username</th>
-			<th>Email</th>
-			<th>Phone Number</th>
-            <th>Name</th>
-            <th>HouseID</th>
-            <th>Outside?</th>
-		";
-    while ($row = $records->fetch_assoc())
-    {
-        $output .= "
-            <tr>
-                <td>$row[username]</td>
-                <td>$row[email]</td>
-                <td>$row[phonenumber]</td>
-                <td>$row[name]</td>
-                <td>$row[houseID]</td>
-                <td>$row[outside]</td>
-            </tr>
-        ";
-    }
-	$output .="</table>";
-	echo ($output);
-
-
-    // Always close your connection to the database cleanly!
-    $mysqli -> close();
+    return $mysqli;
 }
-function getOutsidePeople() {
-    require_once('config.inc.php');
-    $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+function getOutsidePeople($mysqli) {
+    $currentUsername = "peter2123";
+    //$currentUsername = $_SESSION['username'];
+    
+    //$currentUserQuery = "SELECT username, houseID FROM User WHERE username = \"" . $currentUsername . "\"";
+    //$currentUserRecords = $mysqli->query($currentUserQuery);
+    //if (is_null($currentUserRecords)) {
+    //    die("Current user not found!");
+    //}
+    //$currentUserRow = $currentUserRecords->fetch_assoc();
+    //$outsideSql="SELECT username, name, houseID, outside FROM User WHERE houseID = " . $currentUserRow["houseID"];
+    
+    
+    //$currentHouseID = $_SESSION['houseID'];
+    $currentHouseID = 0;
 
-    // Check for errors before doing anything else
-    if($mysqli -> connect_error) {
-        die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
-    }
-
-    // Issue to be addressed - how do we know who is logged in?
-    $currentUsername = "testman";
-    $currentUserQuery = "SELECT username, houseID FROM User WHERE username = \"" . $currentUsername . "\"";
-    $currentUserRecords = $mysqli->query($currentUserQuery);
-    if (is_null($currentUserRecords)) {
-        die("Current user not found!");
-    }
-    $currentUserRow = $currentUserRecords->fetch_assoc();
-
-    $outsideSql="SELECT username, name, houseID, outside FROM User WHERE houseID = " . $currentUserRow[houseID];
+    $outsideSql="SELECT username, name, houseID, outside FROM User WHERE houseID = " . $currentHouseID;
     $outsideRecords = $mysqli->query($outsideSql);
     while($row = $outsideRecords->fetch_assoc())
     {
         echo "<p>$row[name]: outside is $row[outside]</p>";
     }
+}
+function closeConnection($mysqli) {
+    // Always close your connection to the database cleanly!
+    $mysqli -> close();
 }
 ?>
