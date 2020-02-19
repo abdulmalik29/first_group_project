@@ -14,7 +14,7 @@ $uname = ($_POST["uname"]);
 $psw = ($_POST["psw"]);
 
 $query = "SELECT username FROM Users WHERE username = $uname";
-$query_run = my_sql_query($query);
+$query_run = query($query);
 if (mysql_num_rows($query_run)==1) 
 {
     echo "Username in database.";
