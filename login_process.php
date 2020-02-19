@@ -16,7 +16,7 @@ $psw = ($_POST["psw"]);
 $sql = "SELECT username FROM User";
 $result = $mysqli->query($sql);
 if($result){
-    echo($result);
+    echo("username: " . $row["username"]);
 }
 else{
     echo("error");
