@@ -20,7 +20,7 @@ if($result){
         //echo("username: " . $row["username"] . "<br>");
         if($row["username"] == $uname){
             if($row["password"] == $psw){
-                header("Location = https://web.cs.manchester.ac.uk/s99954fh/first_group_project/members.php");
+                header("location = members.php");
             }
         }
     }
