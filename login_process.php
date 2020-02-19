@@ -14,7 +14,12 @@ $uname = ($_POST["uname"]);
 $psw = ($_POST["psw"]);
 
 $sql = "SELECT username FROM Users";
-$result = $mysqli->query($sql);
+if($mysqli->query($sql)){
+    echo("You're in");
+}
+else{
+    echo("error");
+}
 
 echo($result);
 
