@@ -10,7 +10,8 @@ if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 }
 else{
-   session_start();
+    echo("user in database");
+    session_start();
     if ( ! empty( $_POST ) ) {
         if ( isset( $_POST['uname'] ) && isset( $_POST['psw'] ) ) {
             // Getting submitted user data from database
@@ -24,7 +25,6 @@ else{
         	// Verify user password and set $_SESSION
         	if ( password_verify( $_POST['psw'], $user->password ) ) {
         		$_SESSION['username'] = $user->ID;
-        		echo("user in database");
         	}
         }
     }
