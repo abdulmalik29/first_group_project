@@ -13,11 +13,10 @@ if($mysqli -> connect_error) {
 $uname = ($_POST["uname"]);
 $psw = ($_POST["psw"]);
 
-$query = mysql_query("SELECT username FROM Users WHERE username = $uname");
-if (mysql_num_rows($query)==1) 
-{
-    echo "Username in database.";
-}
+$sql = "SELECT * FROM Users";
+$result = $mysqli->query($sql);
+
+echo($result);
 
 $mysqli -> close();
 ?>
