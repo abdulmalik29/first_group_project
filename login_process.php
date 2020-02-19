@@ -9,23 +9,25 @@ $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbna
 if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 }
-
-if ( ! empty( $_POST ) ) {
-    if ( isset( $_POST['uname'] ) && isset( $_POST['psw'] ) ) {
-        // Getting submitted user data from database
-        $con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
-        $stmt = $con->prepare("SELECT * FROM User WHERE username = ?");
-        $stmt->bind_param('s', $_POST['uname']);
-        $stmt->execute();
-        $result = $stmt->get_result();
-    	$user = $result->fetch_object();
-    		
-    	// Verify user password and set $_SESSION
-    	if ( password_verify( $_POST['psw'], $user->password ) ) {
-    		$_SESSION['username'] = $user->ID;
-    	}
+else{
+   session_start();
+    if ( ! empty( $_POST ) ) {
+        if ( isset( $_POST['uname'] ) && isset( $_POST['psw'] ) ) {
+            // Getting submitted user data from database
+            $con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+            $stmt = $con->prepare("SELECT * FROM User WHERE username = ?");
+            $stmt->bind_param('s', $_POST['uname']);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        	$user = $result->fetch_object();
+        		
+        	// Verify user password and set $_SESSION
+        	if ( password_verify( $_POST['psw'], $user->password ) ) {
+        		$_SESSION['username'] = $user->ID;
+        		echo("user in database");
+        	}
+        }
     }
 }
-
 $mysqli -> close();
 ?>
