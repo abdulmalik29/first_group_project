@@ -17,7 +17,10 @@ $sql = "SELECT username FROM User";
 $result = $mysqli->query($sql);
 if($result){
     while($row = $result->fetch_assoc()) {
-        echo("username: " . $row["username"] . "<br>");
+        //echo("username: " . $row["username"] . "<br>");
+        if($row["username"] == $uname){
+            echo("Match found");
+        }
     }
 }
 else{
