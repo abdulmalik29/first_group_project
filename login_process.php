@@ -13,7 +13,7 @@ if($mysqli -> connect_error) {
 $uname = ($_POST["uname"]);
 $psw = ($_POST["psw"]);
 
-$sql = "SELECT username FROM Users";
+$sql = "SELECT * FROM User";
 if($mysqli->query($sql)){
     echo("You're in");
 }
@@ -21,7 +21,6 @@ else{
     echo("error");
 }
 
-echo($result);
 
 $mysqli -> close();
 ?>
