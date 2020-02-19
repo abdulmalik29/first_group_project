@@ -20,7 +20,8 @@ if($result){
         //echo("username: " . $row["username"] . "<br>");
         if($row["username"] == $uname){
             if($row["password"] == $psw){
-                header("location = https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php");
+                header("location = members.php");
+                exit;
             }
         }
     }
