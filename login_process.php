@@ -10,7 +10,8 @@ if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 }
 
-echo 'Hello ' . htmlspecialchars($_POST["uname"]) . '!';
+$uname = ($_POST["uname"]);
+echo($uname);
 
 $mysqli -> close();
 ?>
