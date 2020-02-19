@@ -20,10 +20,8 @@ if($result){
         //echo("username: " . $row["username"] . "<br>");
         if($row["username"] == $uname){
             if($row["password"] == $psw){
-                if($done){
-                    header("Location = members.php");
-                    exit;
-                }
+                header("location = members.php");
+                exit;
             }
         }
     }
