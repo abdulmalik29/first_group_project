@@ -13,13 +13,15 @@ if($mysqli -> connect_error) {
 $uname = ($_POST["uname"]);
 $psw = ($_POST["psw"]);
 
-$sql = "SELECT username FROM User";
+$sql = "SELECT username, password FROM User";
 $result = $mysqli->query($sql);
 if($result){
     while($row = $result->fetch_assoc()) {
         //echo("username: " . $row["username"] . "<br>");
         if($row["username"] == $uname){
-            echo("Match found");
+            if($row["password"] == $psw){
+                echo("Match found");
+            }
         }
     }
 }
