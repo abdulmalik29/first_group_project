@@ -11,7 +11,8 @@ if($mysqli -> connect_error) {
 }
 
 $uname = ($_POST["uname"]);
-echo($uname);
+$psw = ($_POST["psw"]);
+echo($uname . $psw);
 
 $mysqli -> close();
 ?>
