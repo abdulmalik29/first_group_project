@@ -10,12 +10,12 @@
 	<form action="login_process.php" method="post">
 		
   		<div class="container">
-    		<label for="uname"><b>Username</b></label>
-    		<input type="text" placeholder="Enter Username" name="uname" required>
+    		<label for="username"><b>Username</b></label>
+    		<input type="text" placeholder="Enter Username" name="username" required>
    			<br>
 
-   			<label for="psw"><b>Password</b></label>
-    		<input type="password" placeholder="Enter Password" name="psw" required>
+   			<label for="password"><b>Password</b></label>
+    		<input type="password" placeholder="Enter Password" name="password" required>
 
     		<br><br>
     		<button type="submit">Login</button>
@@ -28,7 +28,7 @@
 
   		
   		<div class="container" style="background-color:#f1f1f1">
-    		<span class="psw"><a href="#">Forgot password?</a></span>
+    		<span class="password"><a href="#">Forgot password?</a></span>
   		</div>
 	</form>
 </body>
