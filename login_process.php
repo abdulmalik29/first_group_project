@@ -13,8 +13,8 @@ else {
     if($_SERVER["REQUEST_METHOD"] == "POST")
       {
        // username and password sent from form 
-         $myusername=mysqli_real_escape_string($db,$_POST['uname']); 
-         $mypassword=mysqli_real_escape_string($db,$_POST['pword']); 
+         $myusername=mysqli_real_escape_string($group_dbnames[0],$_POST['uname']); 
+         $mypassword=mysqli_real_escape_string($group_dbnames[0],$_POST['psw']); 
          echo($myusername + $mypassword);
      
          $sql="SELECT username FROM User WHERE username='$myusername' and password='$mypassword'";
