@@ -10,8 +10,8 @@ if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 }
 else{
-    echo("user in database");
     session_start();
+    echo("user in database");
     if ( ! empty( $_POST ) ) {
         if ( isset( $_POST['uname'] ) && isset( $_POST['psw'] ) ) {
             // Getting submitted user data from database
