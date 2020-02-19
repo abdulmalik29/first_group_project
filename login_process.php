@@ -11,20 +11,19 @@ if($mysqli -> connect_error) {
 }
 else{
     session_start();
-    echo("user in database");
     if ( ! empty( $_POST ) ) {
-        if ( isset( $_POST['uname'] ) && isset( $_POST['psw'] ) ) {
+        if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
             // Getting submitted user data from database
-            $con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
-            $stmt = $con->prepare("SELECT * FROM User WHERE username = ?");
-            $stmt->bind_param('s', $_POST['uname']);
+            $con = new mysqli($db_host, $db_user, $db_pass, $db_name);
+            $stmt = $con->prepare("SELECT * FROM users WHERE username = ?");
+            $stmt->bind_param('s', $_POST['username']);
             $stmt->execute();
             $result = $stmt->get_result();
         	$user = $result->fetch_object();
         		
         	// Verify user password and set $_SESSION
-        	if ( password_verify( $_POST['psw'], $user->password ) ) {
-        		$_SESSION['username'] = $user->ID;
+        	if ( password_verify( $_POST['password'], $user->password ) ) {
+        		$_SESSION['user_id'] = $user->ID;
         	}
         }
     }
