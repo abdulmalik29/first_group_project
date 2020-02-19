@@ -14,7 +14,7 @@ else{
     if ( ! empty( $_POST ) ) {
         if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
             // Getting submitted user data from database
-            $con = new mysqli($db_host, $db_user, $db_pass, $db_name);
+            $con = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
             $stmt = $con->prepare("SELECT * FROM users WHERE username = ?");
             $stmt->bind_param('s', $_POST['username']);
             $stmt->execute();
