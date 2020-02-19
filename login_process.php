@@ -17,12 +17,18 @@ $sql = "SELECT username, password FROM User";
 $result = $mysqli->query($sql);
 if($result){
     while($row = $result->fetch_assoc()) {
-        //echo("username: " . $row["username"] . "<br>");
+        // echo("username: " . $row["username"] . "<br>");
         if($row["username"] == $uname){
             if($row["password"] == $psw){
-                header("location = index.php");
+                header("Location: index.php");
                 //exit;
             }
+            else {
+                echo("wrong password")
+            }
+        }
+        else {
+            echo("wrong username")
         }
     }
 }
