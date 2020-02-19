@@ -15,6 +15,7 @@ else {
        // username and password sent from form 
          $myusername=mysqli_real_escape_string($db,$_POST['uname']); 
          $mypassword=mysqli_real_escape_string($db,$_POST['pword']); 
+         echo($myusername + $mypassword);
      
          $sql="SELECT username FROM User WHERE username='$myusername' and password='$mypassword'";
          $result=mysqli_query($db,$sql);
