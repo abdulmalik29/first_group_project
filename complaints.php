@@ -18,11 +18,11 @@
 	<div class="rightcol">
 		<h1>Complaints</h1>	
 		<form action="/action_page.php"><br>
-			<label for="date">Date</label><br>
+			<label for="dateReported">Date</label><br>
 			<input type="date" id="dateReported" name="dateReported" placeholder="Date(dd/mm/yyyy)"><br>
-			<label for="location">Location</label><br>
+			<label for="Location">Location</label><br>
 			<input type="text" id="Location" name="Location" placeholder="Location"><br>
-			<label for="issue">Issue</label><br>
+			<label for="complaint">Issue</label><br>
 			<select id="complaint" name="complaint">	
 				<option value="waterleak">Water Leak</option>
 				<option value="notworking">Device not Working</option>
@@ -43,7 +43,7 @@
     }
    
     
-    $Date = mysqli_real_escape_string($mysqli, date('d-m-Y', strtotime(str_replace('-','/',$_POST['dateReported']))));
+    $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
     $Location = mysqli_real_escape_string($mysqli, $_POST['Location']);
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
     
