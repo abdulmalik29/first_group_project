@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+<?php
+
+// Always start this first
+session_start();
+
+if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
+    // Grab user data from the database using the user_id
+    // Let them access the "logged in only" pages
+    //$mysqli = setupConnection();
+}
+else {
+    // Redirect them to the login page
+    header("Location: login.php");
+    $_SESSION['access_attempted'] = true;
+    exit;
+}
+?>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">

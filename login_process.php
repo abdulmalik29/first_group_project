@@ -1,6 +1,9 @@
 <?php
+session_start();
+
 // Load the configuration file containing your database credentials
 require_once('config.inc.php');
+
 
 // Connect to the database
 $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
@@ -9,33 +12,31 @@ $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbna
 if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 }
+    $uname = ($_POST["uname"]);
+    $psw = ($_POST["psw"]);
 
-$uname = ($_POST["uname"]);
-$psw = ($_POST["psw"]);
-
-$sql = "SELECT username, password FROM User";
-$result = $mysqli->query($sql);
-if($result){
-    while($row = $result->fetch_assoc()) {
-        // echo("username: " . $row["username"] . "<br>");
-        if($row["username"] == $uname){
-            if($row["password"] == $psw){
-                header("Location: members.php");
-                //exit;
-            }
-            else {
-                echo("wrong password");
+    $sql = "SELECT username, password, houseID FROM User";
+    $result = $mysqli->query($sql);
+    if($result){
+        while($row = $result->fetch_assoc()) {
+            // echo("username: " . $row["username"] . "<br>");
+            if($row["username"] == $uname){
+                if($row["password"] == $psw){
+                    $_SESSION['username'] = $uname;
+                    $_SESSION['houseID'] = $row["houseID"];
+                    // End here and redirect to alarm page
+                    $mysqli -> close();
+                    header("Location: alarm.php");
+                    exit;
+                }
             }
         }
-        else {
-            echo("wrong username");
-        }
+        
     }
-}
-else{
-    echo("error");
-}
+
+    $mysqli -> close();
+    // Must have failed to find correct user
+    header("Location: login.php");
 
 
-$mysqli -> close();
 ?>
