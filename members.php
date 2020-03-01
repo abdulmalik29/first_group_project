@@ -41,7 +41,7 @@ else {
 	<div class="rightcol">
 	    <h1>Members</h1>
 	    <?php
-            $CurrentHouseID = "0";
+            $CurrentHouseID = $_SESSION['houseID'];;
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
 
             echo "<table border='1'>
@@ -67,3 +67,15 @@ else {
 	</div>
 </body>
 </html>
+<?php
+
+function setupConnection() {
+    require_once('config.inc.php');
+    $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+
+    // Check for errors before doing anything else
+    if($mysqli -> connect_error) {
+        die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+    }
+    return $mysqli;
+}
