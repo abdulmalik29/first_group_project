@@ -57,7 +57,17 @@ else {
 </body>
 </html>
 <?php
-    
+    function setupConnection() {
+        require_once('config.inc.php');
+        $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+
+         // Check for errors before doing anything else
+        if($mysqli -> connect_error) {
+            die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+        }
+        return $mysqli;
+    }
+
    
     
     $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
@@ -65,7 +75,7 @@ else {
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
     
      // Attempt insert query execution
-    $sql = "INSERT INTO Complaints (dateReported, Location, complaint) VALUES ('$Date', '$Location', '$Issue')";
+    $sql = "INSERT INTO Complaints (Location, complaint) VALUES ('$Location', '$Issue')";
     if(mysqli_query($mysqli, $sql)){
         echo "Records added successfully.";
     } else{
@@ -73,4 +83,10 @@ else {
     }
     // Close connection
     mysqli_close($mysqli);
+    
+    function closeConnection($mysqli) {
+    // Always close your connection to the database cleanly!
+    $mysqli -> close();
+    }
+
 ?>
