@@ -68,14 +68,20 @@ else {
         return $mysqli;
     }
 
-   
+    $currentUsername = $_SESSION['username'];
+    
+    
+    $currentHouseID = $_SESSION['houseID'];
+
     
     $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
     $Location = mysqli_real_escape_string($mysqli, $_POST['Location']);
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
+    $ComplaintID = "SELECT MAX(complaintID) FROM Complaints";
+    $ComplaintID = $ComplaintID + 1;
     
      // Attempt insert query execution
-    $sql = "INSERT INTO Complaints (Location, complaint) VALUES ('$Location', '$Issue')";
+    $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `dateReported`, `Location`, `sorted`) VALUES ('$ComplaintID', '$currentUsername', '$Issue', '$Date', '$Location', '0')";
     if(mysqli_query($mysqli, $sql)){
         echo "Records added successfully.";
     } else{
