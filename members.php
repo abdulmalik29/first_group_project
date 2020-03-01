@@ -41,7 +41,7 @@ else {
 	<div class="rightcol">
 	    <h1>Members</h1>
 	    <?php
-            $CurrentHouseID = $_SESSION['houseID'];;
+            $CurrentHouseID = $_SESSION['houseID'];
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
 
             echo "<table border='1'>
@@ -79,3 +79,8 @@ function setupConnection() {
     }
     return $mysqli;
 }
+function closeConnection($mysqli) {
+    // Always close your connection to the database cleanly!
+    $mysqli -> close();
+}
+?>
