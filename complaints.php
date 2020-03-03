@@ -40,7 +40,7 @@ else {
 	</div>
 	<div class="rightcol">
 		<h1>Complaints</h1>	
-		<form action="/action_page.php"><br>
+		<form /*action="/action_page.php"*/><br>
 			<label for="dateReported">Date</label><br>
 			<input type="date" id="dateReported" name="dateReported" placeholder="Date(dd/mm/yyyy)"><br>
 			<label for="Location">Location</label><br>
@@ -77,7 +77,8 @@ else {
     $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
     $Location = mysqli_real_escape_string($mysqli, $_POST['Location']);
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
-    $ComplaintID = "SELECT MAX(complaintID) FROM Complaints";
+    $sql = "SELECT MAX(complaintID) FROM Complaints";
+    $ComplaintID = mysqli_query($mysqli, $sql);
     $ComplaintID = $ComplaintID + 1;
     
      // Attempt insert query execution
