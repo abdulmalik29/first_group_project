@@ -14,6 +14,8 @@ if($mysqli -> connect_error) {
 }
     $uname = ($_POST["uname"]);
     $psw = ($_POST["psw"]);
+    
+    $password =  password_hash($psw, PASSWORD_DEFAULT);
 
     $sql = "SELECT username, password, houseID FROM User";
     $result = $mysqli->query($sql);
@@ -21,7 +23,7 @@ if($mysqli -> connect_error) {
         while($row = $result->fetch_assoc()) {
             // echo("username: " . $row["username"] . "<br>");
             if($row["username"] == $uname){
-                if($row["password"] == $psw){
+                if($row["password"] == $password){
                     $_SESSION['username'] = $uname;
                     $_SESSION['houseID'] = $row["houseID"];
                     // End here and redirect to alarm page
