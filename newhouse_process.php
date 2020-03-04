@@ -31,13 +31,11 @@ if($mysqli -> connect_error) {
         }
         else{
             echo($mysqli->error);
-            echo("error at the user level");
-            //header("Location: alarm.php"); 
+            //header("Location: new_house.php"); 
         }
     }
     else{
         echo($mysqli->error);
-        echo("error at the house level");
         //header("Location: new_house.php"); 
         // must have failed to create house
     }
