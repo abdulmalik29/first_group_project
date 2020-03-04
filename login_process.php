@@ -17,9 +17,6 @@ if($mysqli -> connect_error) {
     
     $password =  password_hash($psw, PASSWORD_DEFAULT);
     
-    echo($password);
-    sleep(10);
-    
     $sql = "SELECT username, password, houseID FROM User";
     $result = $mysqli->query($sql);
     if($result){
