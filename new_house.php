@@ -8,7 +8,7 @@
 
 	<img src="homies.png" alt="Homies logo"><br>
 	<h1>NEW HOUSE REGISTER</h1>
-	<form action="" method="post">
+	<form action="newhouse_process.php" method="post">
 		
   		<div class="container">
     		<label for="housename"><b>House Name</b></label>
