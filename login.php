@@ -19,7 +19,7 @@ session_start();
 <body>
 	<img src="homies.png" alt="Homies logo"><br>
 	<h1>MEMBER LOGIN</h1>
-	<form action="login_hash.php" method="post">
+	<form action="login_process.php" method="post">
 		
   		<div class="container">
 		<?php			
