@@ -4,12 +4,13 @@
 session_start();
 
 if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
-    // Grab user data from the database using the user_id
+    // Grab user data from the database using the username
     // Let them access the "logged in only" pages
     $mysqli = setupConnection();
 }
 else {
     // Redirect them to the login page
+    echo "aaaaah";
     header("Location: login.php");
     $_SESSION['access_attempted'] = true;
     exit;
@@ -34,20 +35,9 @@ else {
 		</div>
 		<div class="rightcol">
 		    <h1>Alarm</h1>
-		    <div class="alarm">
-			<h2>Who is in:</h2>
-		    <?php
-		    //getInsidePeople($mysqli);
+		    <?php 
+		    getPeople($mysqli); 
 		    ?>
-			<!--<a>Ben</a>-->
-		    </div>
-		    <div class="alarm">
-			<h2>Who is out:</h2>
-		    <?php
-		    getOutsidePeople($mysqli);
-		    ?>
-			<!--<a>Rahul</a>-->
-		    </div>
 		    <h3>Are you in?</h3>
 		    <?php
 		    showAlarmForm($mysqli);
@@ -69,28 +59,66 @@ function setupConnection() {
     }
     return $mysqli;
 }
-function getOutsidePeople($mysqli) {
-    //$currentUsername = "peter2123";
-    $currentUsername = $_SESSION['username'];
-    
-    
-    $currentHouseID = $_SESSION['houseID'];
-    //$currentHouseID = 0;
 
-    $outsideSql="SELECT username, name, houseID, outside FROM User WHERE houseID = " . $currentHouseID;
+function getPeople($mysqli) {
+    $currentHouseID = $_SESSION['houseID'];
+
+    $outsideSql="SELECT username, name FROM User WHERE outside = 0 AND houseID = " . $currentHouseID;
     $outsideRecords = $mysqli->query($outsideSql);
+    $outsideCount = 0;
+    $outsideString = "";
     while($row = $outsideRecords->fetch_assoc())
     {
-        echo "<p>$row[name]: outside is $row[outside]</p>";
+        $outsideString = $outsideString . '<p>' . $row['name'] . '</p>';
+	$outsideCount = $outsideCount + 1;
+    }
+    
+    $insideSql= "SELECT username, name FROM User WHERE outside = 1 AND houseID = " . $currentHouseID;
+    $insideRecords = $mysqli->query($insideSql);
+    $insideCount = 0;
+    
+    echo '<div class="alarm">
+	<h2>Who is in:</h2>';
+    echo $outsideString;
+    echo '</div>';
+    
+    echo '<div class="alarm">
+	<h2>Who is out:</h2>';
+    while($row = $insideRecords->fetch_assoc())
+    {
+	echo '<p>' . $row['name'] . '</p>';
+	$insideCount = $insideCount + 1;
+    }
+    while ($outsideCount > $insideCount) {
+	echo '<p>.</p>';
+	$insideCount = $insideCount + 1;
+    }
+    echo '</div>';
+}
+
+function showAlarmForm($mysqli) {
+    $currentUsername = $_SESSION['username'];
+
+    $outsideSql="SELECT outside FROM User WHERE username = '" . $currentUsername ."'";
+    $outsideRecords = $mysqli->query($outsideSql);
+    
+    $row = $outsideRecords->fetch_assoc();
+    if ($row) {
+	echo '<form action="set_alarm.php" method="post">';
+	
+	if ($row['outside'] === "0") {
+	    echo '<button type="submit" class="alarm" id="no" name="go-outside">Leave house</button>';
+	    echo '<p class="alarm" id="yes" >You are inside</p>';
+	    
+	}
+	else {
+	    echo '<p class="alarm" id="no">You are outside</p>';
+	    echo '<button type="submit" class="alarm" id="yes" name="go-inside">Enter house</button>';
+	}
+	echo '</form>';
     }
 }
-function showAlarmForm($mysqli) {
-    // Some temp stuff until I figure it out
-    //<form action="set_alarm.php" method="post">
-    echo '<a href="alarm.php" class="alarm" id="yes">Yes </a>';
-    echo '<a href="alarm.php" class="alarm" id="no">No </a>';
-    //</form>
-}
+
 function closeConnection($mysqli) {
     // Always close your connection to the database cleanly!
     $mysqli -> close();

@@ -111,11 +111,15 @@ div.form {
 #yes {
   background-color: #00FF00;
   text-decoration: none;
+  height: 50px;
+  text-align: center;
 }
 
 #no {
   background-color: #FF0000;
   text-decoration: none;
+  height: 50px;
+  text-align: center;
 }
 /* 
 
