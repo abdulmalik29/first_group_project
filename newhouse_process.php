@@ -22,12 +22,12 @@ if($mysqli -> connect_error) {
     echo($hname);
     echo($names);
     echo($uname);
-    echo($psw);
     echo($email);
     echo($phone_number);
     
     
     $password = password_hash($psw, PASSWORD_DEFAULT);
+    echo($password);
     
     $sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
     if($mysqli->query($sql1)){
