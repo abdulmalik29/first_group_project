@@ -9,8 +9,7 @@ session_start();
 //    header("Location: alarm.php");
 //}
 
-$password =  password_hash('1234test', PASSWORD_DEFAULT);
-echo($password);
+
 ?>
 <html>
 <head>
