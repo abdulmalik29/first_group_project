@@ -8,6 +8,9 @@ session_start();
 //if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) {
 //    header("Location: alarm.php");
 //}
+
+$password =  password_hash('1234test', PASSWORD_DEFAULT);
+echo($password);
 ?>
 <html>
 <head>
