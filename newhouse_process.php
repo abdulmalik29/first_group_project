@@ -19,7 +19,13 @@ if($mysqli -> connect_error) {
     $email = ($_POST["eml"]);
     $phone_number = ($_POST["pnumber"]);
     
-    echo($hname, $names, $uname, $psw, $email, $phone_number);
+    echo($hname);
+    echo($names);
+    echo($uname);
+    echo($psw);
+    echo($email);
+    echo($phone_number);
+    
     
     $password = password_hash($psw, PASSWORD_DEFAULT);
     
