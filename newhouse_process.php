@@ -19,6 +19,8 @@ if($mysqli -> connect_error) {
     $email = ($_POST["eml"]);
     $phone_number = ($_POST["pnumber"]);
     
+    echo($hname + $names + $uname + $psw + $email + $phone_number);
+    
     $password = password_hash($psw, PASSWORD_DEFAULT);
     
     $sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
@@ -30,12 +32,12 @@ if($mysqli -> connect_error) {
             header("Location: alarm.php");
         }
         else{
-            //echo("error at the user level");
+            echo("error at the user level");
             //header("Location: alarm.php"); 
         }
     }
     else{
-        //echo("error at the house level");
+        echo("error at the house level");
         //header("Location: new_house.php"); 
         // must have failed to create house
     }
