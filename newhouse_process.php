@@ -27,11 +27,16 @@ if($mysqli -> connect_error) {
         if($mysqli->query($sql2)){
             $_SESSION['username'] = $uname;
             $_SESSION['houseID'] = $row["houseID"];
-            header("Location: login.php");
+            header("Location: alarm.php");
+        }
+        else{
+            echo("error at the user level");
+            //header("Location: alarm.php"); 
         }
     }
     else{
-        header("Location: new_house.php"); 
+        echo("error at the house level");
+        //header("Location: new_house.php"); 
         // must have failed to create house
     }
     
