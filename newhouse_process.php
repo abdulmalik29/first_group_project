@@ -12,32 +12,30 @@ $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbna
 if($mysqli -> connect_error) {
     die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 }
-    $uname = ($_POST["uname"]);
+    $hname = ($_POST["housename"]);
+    $names = ($_POST["fname"]);
+    $uname = ($_POST["username"]);
     $psw = ($_POST["psw"]);
+    $email = ($_POST["eml"]);
+    $phone_number = ($_POST["pnumber"]);
     
-    $sql = "SELECT username, password, houseID FROM User";
-    $result = $mysqli->query($sql);
-    if($result){
-        while($row = $result->fetch_assoc()) {
-            // echo("username: " . $row["username"] . "<br>");
-            if($row["username"] == $uname){
-                if(password_verify($psw, $row["password"])){
-                //if($row["password"] == $password){
-                    $_SESSION['username'] = $uname;
-                    $_SESSION['houseID'] = $row["houseID"];
-                    // End here and redirect to alarm page
-                    $mysqli -> close();
-                    header("Location: alarm.php");
-                    exit;
-                }
-            }
+    $password = password_hash($psw, PASSWORD_DEFAULT);
+    
+    $sql1 = "INSERT INTO House (housename, masterusername) VALUES ($hname, $uname)";
+    if($mysqli->query($sql1)){
+        $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, outside) VALUES ($uname, $password, $email, $phone_number, $names, '0')";
+        if($mysqli->query($sql2)){
+            $_SESSION['username'] = $uname;
+            $_SESSION['houseID'] = $row["houseID"];
+            header("Location: login.php");
         }
-        
     }
+    else{
+        header("Location: new_house.php"); 
+        // must have failed to create house
+    }
+    
 
     $mysqli -> close();
-    // Must have failed to find correct user
-    header("Location: login.php");
-
 
 ?>
