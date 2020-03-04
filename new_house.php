@@ -15,24 +15,28 @@
     		<input type="text" placeholder="Enter House Name" name="housename" required>
    			<br>
 
+        <label for="name"><b>First Name and Surname</b></label>
+    		<input type="text" placeholder="Enter Names" name="fname" required>
+            <br>
+
    			<label for="username"><b>Username</b></label>
     		<input type="text" placeholder="Enter Username" name="username" required>
-        <br>
+            <br>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-        <br>
-
-        <label for="eml"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="eml" required>
-        <br>
-
-        <label for="phone"><b>Phone number</b></label>
-        <input type="text" placeholder="Enter Phone number" name="pnumber" required>
-
-    		<br><br>
-    		<button type="submit">Create</button>
-
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <br>
+    
+            <label for="eml"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="eml" required>
+            <br>
+    
+            <label for="phone"><b>Phone number</b></label>
+            <input type="text" placeholder="Enter Phone number" name="pnumber" required>
+    
+        	<br><br>
+        	<button type="submit">Create</button>
+    
     		<br>
     		<label>
       			<input type="checkbox" checked="checked" name="remember"> Remember me
