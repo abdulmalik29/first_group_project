@@ -21,21 +21,21 @@ if($mysqli -> connect_error) {
     
     $password = password_hash($psw, PASSWORD_DEFAULT);
     
-    $sql1 = "INSERT INTO House (housename, masterusername) VALUES ($hname, $uname)";
+    $sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
     if($mysqli->query($sql1)){
-        $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, outside) VALUES ($uname, $password, $email, $phone_number, $names, '0')";
+        $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$names', '0')";
         if($mysqli->query($sql2)){
             $_SESSION['username'] = $uname;
             $_SESSION['houseID'] = $row["houseID"];
             header("Location: alarm.php");
         }
         else{
-            echo("error at the user level");
+            //echo("error at the user level");
             //header("Location: alarm.php"); 
         }
     }
     else{
-        echo("error at the house level");
+        //echo("error at the house level");
         //header("Location: new_house.php"); 
         // must have failed to create house
     }
