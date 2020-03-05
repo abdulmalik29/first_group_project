@@ -33,14 +33,7 @@ else {
 	</div>
 	<div class="rightcol">
 	    <?php
-	        require_once('config.inc.php');
-            $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
-             // Check for errors before doing anything else
-            if($mysqli -> connect_error) {
-                die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
-            }
-            return $mysqli;
-            
+	        
             #$Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
             #mysqli_real_escape_string($_POST['shoppigID']), 
             $name = mysqli_real_escape_string($mysqli, $_POST['buyerName']);
