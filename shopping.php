@@ -41,7 +41,9 @@ else {
                 die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
             }
             return $mysqli;
-             $sql = "INSERT INTO 'Shopping' (shoppingID, buyerName, item, price, houseID) VALUES ('{mysqli_real_escape_string($_POST['shoppigID'])}', '{mysqli_real_escape_string($_POST['buyerName'])}', '{mysqli_real_escape_string($_POST['item'])}', '{mysqli_real_escape_string($_POST['price'])}', '{mysqli_real_escape_string($_POST['houseID'])}' )";
+            $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (mysqli_real_escape_string($_POST['shoppigID']), mysqli_real_escape_string($_POST['buyerName']), mysqli_real_escape_string($_POST['item']), mysqli_real_escape_string($_POST['price']), mysqli_real_escape_string($_POST['houseID']))";
+            $insert = $mysqli->query[$sql];
+        ?>
 		<table>
 			<h1 align="center" width=100%>Shopping List</h1>
 			<tr>
