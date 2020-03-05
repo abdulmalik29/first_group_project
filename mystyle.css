@@ -4,9 +4,13 @@
 }
 
 body{
+<<<<<<< HEAD
   /* to change the font*/
   font-family: Arial, Helvetica, sans-serif;
 	background-color:white;  /* to change the background colour*/
+=======
+	background-color:#ffffff;
+>>>>>>> 574edfdf9b115fb87d264c3ce17b8203d178acc0
 }
 
 /*next three is for formatting the menu*/
