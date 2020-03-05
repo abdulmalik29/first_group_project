@@ -71,7 +71,7 @@ else {
     $ComplaintID = $ComplaintID + 1;
     
      // Attempt insert query execution
-    $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `Location`, `sorted`) VALUES ('$ComplaintID', '$currentUsername', '$Issue', '$Location', '0')";
+    $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `Location`, `sorted`, 'dateReported') VALUES ('$ComplaintID', '$currentUsername', '$Issue', '$Location', '0', '2020-03-13')";
     if(mysqli_query($mysqli, $sql)){
         echo "Records added successfully.";
     } else{
