@@ -51,9 +51,9 @@ else {
                         $currentHouseID = $_SESSION['houseID'];
                         #$Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
                         #mysqli_real_escape_string($_POST['shoppigID']), 
-                        $name = mysqli_real_escape_string($mysqli, $_POST['buyerName']);
-                        $itemBought = mysqli_real_escape_string($mysqli, $_POST['item']);
-                        $itemPrice = mysqli_real_escape_string($mysqli, $_POST['price']); 
+                        $name = $mysqli->real_escape_string($mysqli, $_POST['buyerName']);
+                        $itemBought = $mysqli->real_escape_string($mysqli, $_POST['item']);
+                        $itemPrice = $mysqli->real_escape_string($mysqli, $_POST['price']); 
                         #mysqli_real_escape_string($_POST['houseID'])
                         
                         $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (1, $name, $itemBought, $itemPrice, $currentHouseID)";
