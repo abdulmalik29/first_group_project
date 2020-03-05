@@ -1,30 +1,36 @@
-* 
+*
 {
   box-sizing: border-box;
 }
 
 body{
-	background-color:#33B0CC;
+  /* to change the font*/
+  font-family: Arial, Helvetica, sans-serif;
+	background-color:white;  /* to change the background colour*/
 }
 
 /*next three is for formatting the menu*/
 .leftcol {
-  border: 1px solid black;
+  border: 0px solid black;
   float: left;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 20%;
-  height: 100%;
-  background-color: #33B0CC;
+  height: 45.15%;
+  background-color: #ffffff;
 }
 
 #menulinks{
-  border-radius: 5px 15px 15px 15px;
-  border: 1px solid black;
+  /* to change the shape of the borders*/
+  border-radius: 15px 15px 15px 15px;
+  border: 1px solid white;
   padding: 15px 25px;
-  background-color: grey;
-  color: white;
+  background-color: #33B0CC;
+  color: black;
   width: 100px;
   text-align: center;
-  text-decoration: none; 
+  text-decoration: none;
   display: inline-block;
   width: 100%;
 }
@@ -36,11 +42,12 @@ body{
 
 /*formatting for site contents*/
 .rightcol {
-  border: 1px solid black;
-  float: left;
-  width: 70%;
+  border: 0px solid black;
+  float: right;
+  top: 0;
+  width: 80%;
   height: 100%;
-  background-color: #33B0CC;
+  background-color: white;
 }
 
 /*formatting for selected link in menu - currently not used*/
@@ -99,7 +106,7 @@ div.form {
   border-radius: 5px;
   background-color: ##ffffff;
   padding: 20px;
-  
+
 }
 
 
@@ -121,7 +128,7 @@ div.form {
   height: 50px;
   text-align: center;
 }
-/* 
+/*
 
 --------formatting from chat.php--------
 
@@ -131,7 +138,7 @@ padding: 6px 8px 6px 16px;
 text-decoration: none;
 font-size: 25px;
 color: #ffffff;
-display: block; 
+display: block;
 }
 
 .side {
@@ -178,7 +185,7 @@ border: 3px solid #73AD21
 	  position: absolute;
 	  top: 160px;
 	  left: 20px;
-	 
+
 	}
 	div.finance {
 	  position: absolute;
@@ -199,7 +206,7 @@ border: 3px solid #73AD21
 	  position: absolute;
 	  top: 280px;
 	  left: 20px;
-	 
+
 	}
 	div.info {
 	  position: absolute;
@@ -211,7 +218,7 @@ border: 3px solid #73AD21
 	  width: 70%;
 	  height: 60%;
 	  border: 1px solid black;
-	  border-collapse: collapse;  
+	  border-collapse: collapse;
 	}
 	th, td {
 	  padding: 8px;
@@ -220,7 +227,7 @@ border: 3px solid #73AD21
 	}
 	tr:hover {background-color:#8eb5f5;}
 	table.center {
-	  margin-left:25%; 
+	  margin-left:25%;
 	  margin-right:50%;
 	}
 </style>
