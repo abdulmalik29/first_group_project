@@ -32,7 +32,6 @@ else {
 	<div class="leftcol">
 		<h1 align=center>HOMIES</h1>
 		<a href="alarm.php" id="menulinks">Alarm</a><br>
-		<a href="chat.php" id="menulinks">Chat</a><br>
 		<a href="shopping.php" id="menulinks">Finance and Shopping</a><br>
 		<a href="trash.php" id="menulinks">Trash</a><br>
 		<a href="complaints.php" id="menulinks">Complaints</a><br>
