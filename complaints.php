@@ -52,16 +52,7 @@ else {
 			</select>  
 			<input type="submit" value="Submit">
 			<?php
-                function setupConnection() {
-                    require_once('config.inc.php');
-                    $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
-            
-                     // Check for errors before doing anything else
-                    if($mysqli -> connect_error) {
-                        die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
-                    }
-                    return $mysqli;
-                }
+               
 
                 $currentUsername = $_SESSION['username'];
                 
@@ -77,7 +68,7 @@ else {
                 $ComplaintID = $ComplaintID + 1;
                 
                  // Attempt insert query execution
-                $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `dateReported`, `Location`, `sorted`) VALUES ('$ComplaintID', '$currentUsername', '$Issue', '0000/00/00', '$Location', '0')";
+                $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `Location`, `sorted`) VALUES ('$ComplaintID', '$currentUsername', '$Issue', '$Location', '0')";
                 if(mysqli_query($mysqli, $sql)){
                     echo "Records added successfully.";
                 } else{
