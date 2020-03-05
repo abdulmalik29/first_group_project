@@ -32,7 +32,32 @@ else {
 		<a href="members.php" id="menulinks">Members</a><br>
 	</div>
 	<div class="rightcol">
-	    
+	    <?php
+	        require_once('config.inc.php');
+            $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
+             // Check for errors before doing anything else
+            if($mysqli -> connect_error) {
+                die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+            }
+            return $mysqli;
+            
+            #$Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
+            #mysqli_real_escape_string($_POST['shoppigID']), 
+            $name = mysqli_real_escape_string($mysqli, $_POST['buyerName']);
+            $itemBought = mysqli_real_escape_string($mysqli, $_POST['item']);
+            $itemPrice = mysqli_real_escape_string($mysqli, $_POST['price']); 
+            #mysqli_real_escape_string($_POST['houseID'])
+            
+            $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (1, $name, $itemBought, $itemPrice, 1)";
+            
+            #$insert = $mysqli->query[$sql];
+            
+            if(mysqli_query($mysqli, $sql)){
+                    echo "Records added successfully.";
+            } else{
+                    echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
+            }
+        ?>
 		<table>
 			<h1 align="center" width=100%>Shopping List</h1>
 			<tr>
@@ -41,11 +66,11 @@ else {
 				<td>
 					<form action="" method="post">
 					    <label>Name</label>
-						<input type="text" name="buyerName">
+						<input type="text" name="buyerName"><br>
 						<label>Item</label>
-						<input type="text" name="item">
+						<input type="text" name="item"><br>
 						<label>Price</label>
-						<input type="text" name="price">
+						<input type="text" name="price"><br>
 						<input type="submit" value="Submit">
 					</form>
 				</td>
