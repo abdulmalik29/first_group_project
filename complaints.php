@@ -38,8 +38,23 @@ else {
 		<a href="members.php" id="menulinks">Members</a><br>
 	</div>
 	<div class="rightcol">
-		<h1>Complaints</h1>	
-		<form /*action="/action_page.php"*/><br>
+	<div class="rightcol">
+		<table>
+			<h1 align="center" width=100%>Complaints</h1>
+			<tr>
+			</tr>
+			<tr>
+				<td>
+					<?php
+					    displayForm($mysqli);
+					    processUserInput($mysqli);
+					?>
+				</td>
+			</tr>
+	  </table>
+	    
+		<h1 align="center" width=100%>Complaints</h1>	
+		<form action="" method="post"><br>
 			<label for="dateReported">Date</label><br>
 			<input type="date" id="dateReported" name="dateReported" placeholder="Date(dd/mm/yyyy)"><br>
 			<label for="Location">Location</label><br>
@@ -57,21 +72,43 @@ else {
 </body>
 </html>
 <?php
-    $currentUsername = $_SESSION['username'];
+    function displayForm($mysqli) {
+        echo    '<form action="" method="post">
+			        <label>Date</label>
+					<input type="date" name="date"><br>
+				    <label>Location</label>
+					<input type="text" name="location"><br>
+					<label>Complaint</label>
+					<input type="text" name="complaint"><br>
+					<input type="submit" value="Submit">
+				</form>';
+    }
+    function processUserInput($mysqli){
+        $currentHouseID = $_SESSION['houseID'];
+        $currentUsername = $_SESSION['username'];
+        $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
+        $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
+        $Location = mysqli_real_escape_string($mysqli, $_POST['Location']);
+        $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
+        $sql = "SELECT MAX(complaintID) FROM Complaints";
+        $ComplaintID = mysqli_query($sql, $mysqli);
+        $ComplaintID = $ComplaintID + 1;
+        $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `Location`, `sorted`, 'dateReported') VALUES ('1121', 'testman', 'lol', 'lol', '0', '2020-03-13')";
+        if(mysqli_query($mysqli, $sql)){
+            echo "Records added successfully.";
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
+        }
+    
     
     
     $currentHouseID = $_SESSION['houseID'];
 
     
-    $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
-    $Location = mysqli_real_escape_string($mysqli, $_POST['Location']);
-    $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
-    $sql = "SELECT MAX(complaintID) FROM Complaints";
-    $ComplaintID = mysqli_query($sql, $mysqli);
-    $ComplaintID = $ComplaintID + 1;
+    
     
      // Attempt insert query execution
-    $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `Location`, `sorted`, 'dateReported') VALUES ('1121', 'testman', 'lol', 'lol', '0', '2020-03-13')";
+    
     if(mysqli_query($mysqli, $sql)){
         echo "Records added successfully.";
     } else{
