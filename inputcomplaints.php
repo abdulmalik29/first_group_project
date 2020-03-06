@@ -25,11 +25,11 @@
     $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
     $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
-    $sql = "SELECT MAX(complaintID) FROM Complaints";
-    $ComplaintID = mysqli_query($sql, $mysqli);
+    $sql1 = "SELECT MAX(complaintID) FROM Complaints";
+    $ComplaintID = mysqli_query($mysqli, $sql1);
     $ComplaintID = $ComplaintID + 1;
     $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `Location`, `sorted`, 'dateReported') VALUES ('1121', 'testman', 'lol', 'lol', '0', '2020-03-13')";
-    if($mysqli->query($sql1)) {       
+    if($mysqli->query($sql)) {       
         echo "Records added successfully.";
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
