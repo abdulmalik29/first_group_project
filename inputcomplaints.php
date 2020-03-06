@@ -29,6 +29,10 @@
     $sql = "INSERT INTO Complaints (username, complaint, Location, sorted, dateReported) VALUES ('$currentUsername', '$Issue', '$Location', '0', '$Date')";
     if($mysqli->query($sql)) {       
         echo "Records added successfully.";
+        echo "<script>
+             alert('redirecting'); 
+             window.history.go(-1);
+     </script>";
     } else{
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
     }
