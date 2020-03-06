@@ -22,14 +22,15 @@
     
     $currentHouseID = $_SESSION['houseID'];
     $currentUsername = $_SESSION['username'];
+    $rawdate = mysqli_real_escape_string($_POST['date']);
+    $date = date('Y-m-d', strtotime($rawdate));
     $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
     $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
     $sql1 = "SELECT MAX(complaintID) FROM Complaints";
     $ComplaintID = mysqli_query($mysqli, $sql1);
-    echo $ComplaintID;
     $ComplaintID = $ComplaintID + 1;
-    $sql = "INSERT INTO Complaints (complaintID, username, complaint, Location, sorted, dateReported) VALUES ('1122', '$currentUsername', '$Issue', '$Location', '0', '2020-03-13')";
+    $sql = "INSERT INTO Complaints (complaintID, username, complaint, Location, sorted, dateReported) VALUES ('12', '$currentUsername', '$Issue', '$Location', '0', '$date')";
     if($mysqli->query($sql)) {       
         echo "Records added successfully.";
     } else{
