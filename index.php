@@ -59,8 +59,8 @@ body {
 	<img src="homies.png" alt="Homies Logo" style="width:100%">
 	<!-- <h1>HOMIES</h1> -->
 	<button class="button" onclick="window.location.href = 'login.php';">Login</button>
-	<button class="button">New House</button>
-	<button class="button">New Member</button>
+	<button class="button" onclick="window.location.href = 'new_house.php';">New House</button>
+	<button class="button" onclick="window.location.href = 'new_member.php';">New Member</button>
 	<!-- <a href="login.php">Login</a>
 	<a href="new_house.php">New House</a>
 	<a href="new_member.php">New Member</a> -->
