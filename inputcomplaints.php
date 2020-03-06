@@ -28,9 +28,8 @@
     $sql1 = "SELECT MAX(complaintID) FROM Complaints";
     $sql = "INSERT INTO Complaints (username, complaint, Location, sorted, dateReported) VALUES ('$currentUsername', '$Issue', '$Location', '0', '$Date')";
     if($mysqli->query($sql)) {       
-        echo "Records added successfully.";
         echo "<script>
-             alert('redirecting'); 
+             alert('Records added successfully'); 
              window.history.go(-1);
      </script>";
     } else{
