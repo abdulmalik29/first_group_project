@@ -22,9 +22,8 @@
     
     $currentHouseID = $_SESSION['houseID'];
     $currentUsername = $_SESSION['username'];
-    $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
-    $Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
-    $Location = mysqli_real_escape_string($mysqli, $_POST['Location']);
+    $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
+    $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
     $sql = "SELECT MAX(complaintID) FROM Complaints";
     $ComplaintID = mysqli_query($sql, $mysqli);
