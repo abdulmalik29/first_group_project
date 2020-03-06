@@ -38,7 +38,6 @@ else {
 		<a href="members.php" id="menulinks">Members</a><br>
 	</div>
 	<div class="rightcol">
-	<div class="rightcol">
 		<table>
 			<h1 align="center" width=100%>Complaints</h1>
 			<tr>
@@ -47,7 +46,6 @@ else {
 				<td>
 					<?php
 					    displayForm($mysqli);
-					    processUserInput($mysqli);
 					?>
 				</td>
 			</tr>
@@ -59,7 +57,7 @@ else {
 </html>
 <?php
     function displayForm($mysqli) {
-        echo    '<form action="" method="post">
+        echo    '<form action="inputcomplaints.php" method="post">
 			        <label>Date</label>
 					<input type="date" name="date"><br>
 				    <label>Location</label>
