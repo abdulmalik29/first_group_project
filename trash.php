@@ -43,21 +43,36 @@ else {
         <p>
             <h1 align="center">Recycling Bins You Should Use</h1>
 
+            <figure>
             <h2 align="center">Brown bin or container</h2>
                 <img  src="https://www.manchester.gov.uk/images/brown_bin_image.jpg" style="width:500px;height:250px;">
+                <figcaption align ="center">© 2020 Manchester City Council</figcaption>
+            </figure>
+
+            <figure>
                 <img  src="https://www.manchester.gov.uk/images/brown_bin_not_allowed_image.jpg" style="width:500px;height:125px;">
+                <figcaption align ="center">© 2020 Manchester City Council</figcaption>
+            </figure>
 
-            <h2 align="center">Blue bin, container or bag</h2>
-
+            <figure>
                 <img  src="https://www.manchester.gov.uk/images/blue_bin_image.jpg" style="width:500px;height:250px;">
+                <figcaption align ="center">© 2020 Manchester City Council</figcaption>
+            </figure>
 
+            <figure>
                 <img  src="https://www.manchester.gov.uk/images/blue_bin_not_allowed_image.jpg" style="width:500px;height:125px;">
+                <figcaption align ="center">© 2020 Manchester City Council</figcaption>
+            </figure>
 
-            <h2 align="center">Green bin, container or box</h2>
-
+            <figure>
                 <img  src="https://www.manchester.gov.uk/images/green_bin_image.jpg" style="width:500px;height:250px;">
-                <img  src="https://www.manchester.gov.uk/images/green_bin_not_allowed_image.jpg" style="width:500px;height:125px;">
+                <figcaption align ="center">© 2020 Manchester City Council</figcaption>
+            </figure>
 
+            <figure>
+                <img  src="https://www.manchester.gov.uk/images/green_bin_not_allowed_image.jpg" style="width:500px;height:125px;">
+                <figcaption align ="center">© 2020 Manchester City Council</figcaption>
+            </figure>
 
             <h2 align="center">Enter Your Postcode To Check Bin Collection Schedule</h2>
 
