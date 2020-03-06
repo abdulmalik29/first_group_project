@@ -53,21 +53,7 @@ else {
 			</tr>
 	  </table>
 	    
-		<h1 align="center" width=100%>Complaints</h1>	
-		<form action="" method="post"><br>
-			<label for="dateReported">Date</label><br>
-			<input type="date" id="dateReported" name="dateReported" placeholder="Date(dd/mm/yyyy)"><br>
-			<label for="Location">Location</label><br>
-			<input type="text" id="Location" name="Location" placeholder="Location"><br>
-			<label for="complaint">Issue</label><br>
-			<select id="complaint" name="complaint">	
-				<option value="waterleak">Water Leak</option>
-				<option value="notworking">Device not Working</option>
-				<option value="break">Breakage</option>
-			</select>  
-			<input type="submit" value="Submit">
 
-		</form>
 	</div>
 </body>
 </html>
