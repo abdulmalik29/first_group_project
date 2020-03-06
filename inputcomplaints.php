@@ -28,7 +28,7 @@
     $sql1 = "SELECT MAX(complaintID) FROM Complaints";
     $ComplaintID = mysqli_query($mysqli, $sql1);
     $ComplaintID = $ComplaintID + 1;
-    $sql = "INSERT INTO `Complaints` (`complaintID`, `username`, `complaint`, `Location`, `sorted`, 'dateReported') VALUES ('1121', 'testman', 'lol', 'lol', '0', '2020-03-13')";
+    $sql = "INSERT INTO Complaints (complaintID, username, complaint, Location, sorted, dateReported) VALUES ('1121', 'testman', 'lol', 'lol', '0', '2020-03-13')";
     if($mysqli->query($sql)) {       
         echo "Records added successfully.";
     } else{
