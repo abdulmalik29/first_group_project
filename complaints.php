@@ -85,24 +85,6 @@ else {
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
         }
-    
-    
-    
-    $currentHouseID = $_SESSION['houseID'];
-
-    
-    
-    
-     // Attempt insert query execution
-    
-    if(mysqli_query($mysqli, $sql)){
-        echo "Records added successfully.";
-    } else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
     }
-    // Close connection
-    mysqli_close($mysqli);
-    
-    
 
 ?>
