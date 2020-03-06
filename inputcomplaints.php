@@ -27,6 +27,7 @@
     $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
     $sql1 = "SELECT MAX(complaintID) FROM Complaints";
     $ComplaintID = mysqli_query($mysqli, $sql1);
+    echo $ComplaintID;
     $ComplaintID = $ComplaintID + 1;
     $sql = "INSERT INTO Complaints (complaintID, username, complaint, Location, sorted, dateReported) VALUES ('1122', '$currentUsername', '$Issue', '$Location', '0', '2020-03-13')";
     if($mysqli->query($sql)) {       
