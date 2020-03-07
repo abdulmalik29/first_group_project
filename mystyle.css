@@ -132,6 +132,10 @@ div.form {
   height: 50px;
   text-align: center;
 }
+.scrollit {
+    overflow:scroll;
+    height:100px;
+}
 /*
 
 --------formatting from chat.php--------
