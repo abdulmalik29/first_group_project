@@ -50,11 +50,12 @@ else {
 				</td>
 			</tr>
 	  </table>
-	  <div style="overflow-x:auto">
 	  <?php 
 	        $currentUsername = $_SESSION['username'];
 	        $sql = "SELECT complaint, dateReported, Location FROM Complaints where username = $currentUsername";
             $result = $mysqli->query($sql);
+            echo '<td colspan="2">
+                    <div class="scrollit">';
             echo '<table border="0" cellspacing="2" cellpadding="2">
                     <tr>
                         <th>Date</th>
@@ -71,8 +72,8 @@ else {
                  echo "0 complaints reported so far";
             }
             echo "</table>";
+            echo "</div>";
        ?>
-       </div>
 	    
 
 	</div>
