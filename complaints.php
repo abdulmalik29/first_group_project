@@ -50,6 +50,19 @@ else {
 				</td>
 			</tr>
 	  </table>
+	  <?php 
+	        $currentUsername = $_SESSION['username'];
+	        $sql = "SELECT complaint, dateReported FROM Complaints where username = $currentUsername";
+            $result = $mysqli->query($sql);
+            if ($result->num_rows > 0) {
+             // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "Date: " . $row["dateReported"]. " - Complaint: " . $row["complaint"]. "<br>";
+                }
+            } else {
+                 echo "0 complaints reported so far";
+            }
+       ?>
 	    
 
 	</div>
