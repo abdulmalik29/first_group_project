@@ -54,14 +54,22 @@ else {
 	        $currentUsername = $_SESSION['username'];
 	        $sql = "SELECT complaint, dateReported FROM Complaints where username = $currentUsername";
             $result = $mysqli->query($sql);
+            echo '<table border="0" cellspacing="2" cellpadding="2">
+                    <tr>
+                        <th>Date</th>
+                        <th>Complaint</th>
+                        <th>Location</th>
+                    </tr>';
+            
             if ($result->num_rows > 0) {
              // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo "Date: " . $row["dateReported"]. " - Complaint: " . $row["complaint"]. "<br>";
+                    echo "<tr><td>" . $row["dateReported"]. "</td><td> " . $row["complaint"]. "</td><td>". $row["Location"]. "</td></tr>";
                 }
             } else {
                  echo "0 complaints reported so far";
             }
+            echo "</table>";
        ?>
 	    
 
