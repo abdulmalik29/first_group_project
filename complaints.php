@@ -50,6 +50,7 @@ else {
 				</td>
 			</tr>
 	  </table>
+	  <div style="overflow-x:auto">
 	  <?php 
 	        $currentUsername = $_SESSION['username'];
 	        $sql = "SELECT complaint, dateReported, Location FROM Complaints where username = $currentUsername";
@@ -71,6 +72,7 @@ else {
             }
             echo "</table>";
        ?>
+       </div>
 	    
 
 	</div>
