@@ -52,7 +52,7 @@ else {
 	  </table>
 	  <?php 
 	        $currentUsername = $_SESSION['username'];
-	        $sql = "SELECT complaint, dateReported FROM Complaints where username = $currentUsername";
+	        $sql = "SELECT complaint, dateReported, Location FROM Complaints where username = $currentUsername";
             $result = $mysqli->query($sql);
             echo '<table border="0" cellspacing="2" cellpadding="2">
                     <tr>
