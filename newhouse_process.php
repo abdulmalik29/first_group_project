@@ -24,7 +24,7 @@ if($mysqli -> connect_error) {
     $sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
     if($mysqli->query($sql1)){
         $sql = "SELECT houseID, housename FROM House";
-        if($$mysqli->query($sql)){
+        if($mysqli->query($sql)){
             while($row = $result->fetch_assoc()) {
                 if($row["housename"] == $hname){
                     $hid = $row["houseID"];
