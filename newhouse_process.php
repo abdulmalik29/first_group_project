@@ -21,11 +21,17 @@ if($mysqli -> connect_error) {
     
     $password = password_hash($psw, PASSWORD_DEFAULT);
     
-    //$sql2 = "INSERT INTO User (username, password, email, phonenumber, name, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$names', '0')";
     $sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
     if($mysqli->query($sql1)){
-        //$sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
-        $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$names', '0')";
+        $sql = "SELECT houseID, housename FROM House";
+        if($$mysqli->query($sql)){
+            while($row = $result->fetch_assoc()) {
+                if($row["housename"] == $hname){
+                    $hid = $row["houseID"];
+                    }
+                }
+            }
+        $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$names', '$hid', '0')";
         if($mysqli->query($sql2)){
             $_SESSION['username'] = $uname;
             $_SESSION['houseID'] = $row["houseID"];
