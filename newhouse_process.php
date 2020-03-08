@@ -36,7 +36,7 @@ if($mysqli -> connect_error) {
         $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$names', '$hid', '0')";
         if($mysqli->query($sql2)){
             $_SESSION['username'] = $uname;
-            $_SESSION['houseID'] = $row["houseID"];
+            $_SESSION['houseID'] = $hid;
             header("Location: alarm.php");
         }
         else{
