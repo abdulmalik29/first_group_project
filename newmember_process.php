@@ -24,7 +24,7 @@ if($mysqli -> connect_error) {
 
     $sql1 = "SELECT houseID, housename FROM House";
     $result = $mysqli->query($sql1);
-    if($mysqli->query($sql1)){
+    if($result){
         while($row = $result->fetch_assoc()) {
             if($row["houseID"] == $hid){
                 if($row["housename"] == $hname){
