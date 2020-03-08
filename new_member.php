@@ -9,15 +9,19 @@
 	<img src="homies.png" alt="Homies logo"><br>
 	<h1>NEW MEMBER REGISTER</h1>
   
-	<form action="" method="post">
+	<form action="newmember_process.php" method="post">
 		
   		<div class="container">
-        <label for="invitecode"><b>Invite Code</b></label>
-        <input type="text" placeholder="Enter invite code" name="invite code" required>
+        <label for="houseid"><b>House ID</b></label>
+        <input type="text" placeholder="Enter house ID" name="houseid" required>
         <br>
 
     		<label for="housename"><b>House Name</b></label>
     		<input type="text" placeholder="Enter House Name" name="housename" required>
+   			<br>
+   			
+   			<label for="fullname"><b>Fullname</b></label>
+    		<input type="text" placeholder="Enter first and surname" name="fullname" required>
    			<br>
 
    			<label for="username"><b>Username</b></label>
