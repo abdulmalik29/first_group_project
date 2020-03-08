@@ -22,7 +22,8 @@ if($mysqli -> connect_error) {
     $password = password_hash($psw, PASSWORD_DEFAULT);
     
     $sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
-    if($mysqli->query($sql1)){
+    $result = $mysqli->query($sql1);
+    if($result){
         $sql = "SELECT houseID, housename FROM House";
         if($mysqli->query($sql)){
             while($row = $result->fetch_assoc()) {
