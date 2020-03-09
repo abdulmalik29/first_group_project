@@ -64,17 +64,6 @@ else {
 </body>
 </html>
 <?php
-    function processUserInput($mysqli){
-        #$uniqueID = uniqid();
-        #$currentHouseID = $_SESSION['houseID'];
-        #$name = $_SESSION['username'];
-        $itemBought = $_POST['item_name'];
-        $itemPrice = $_POST['item_price'];
-            
-        $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($mysqli, $INSERT);
-        mysqli_stmt_bind_param($stmt, "sssdi", $uniqueID, $name, $itemBought, $itemPrice, $currentHouseID);
-    }
     function displayForm($mysqli) {
         echo    '<form action="shpping.php" method="post">
 			        <label>Name</label>
@@ -85,6 +74,17 @@ else {
 					<input type="text" name="item_price"><br>
 					<input type="submit" value="Submit" name="submit_btn">
 				</form>';
+    }
+    function processUserInput($mysqli){
+        #$uniqueID = uniqid();
+        #$currentHouseID = $_SESSION['houseID'];
+        #$name = $_SESSION['username'];
+        $itemBought = $_POST['item_name'];
+        $itemPrice = $_POST['item_price'];
+            
+        $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($mysqli, $INSERT);
+        mysqli_stmt_bind_param($stmt, "sssdi", $uniqueID, $name, $itemBought, $itemPrice, $currentHouseID);
     }
     
     function displayItems(){
