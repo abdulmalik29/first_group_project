@@ -108,6 +108,6 @@ function displayItems(){
 				</td>
 			</tr>
 	  </table>
-	  <p>CHANGED</p>
+	  <p>CHANGED AGAIN</p>
 </body>
 </html>
