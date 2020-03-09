@@ -26,12 +26,9 @@
     $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
     
     $last_id = $mysqli->insert_id;
-    $last_id = (int) $last_id;
-    $last_id = $last_id + 1;
     
     $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$last_id', '$b_name', '$i_name', '$i_price', '$currentHouseID')";
-    $last_id = $last_id + 1;
-    
+
     if($mysqli->query($sql)) {       
         echo "<script>
              alert('Records added successfully'); 
