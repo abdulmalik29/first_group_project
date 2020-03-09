@@ -25,6 +25,16 @@
     $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name']);
     $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
     
+    $next_id = 0;
+    while (true){
+        $result = mysql_query("SELECT * FROM members WHERE id=$next_id") or die (mysql_error());
+        $row = mysql_fetch_array($result);
+        if (empty($row)){
+            break;
+        }
+        $next_id = $next_id + 1;
+    }
+    
     $last_id = $mysqli->insert_id;
     $last_id = (int) $last_id + 1;
     
