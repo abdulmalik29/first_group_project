@@ -27,7 +27,7 @@
     
     $sql1 = "SELECT MAX(shoppingID) FROM Shopping";
 
-    $result = mysql_query( "SELECT * FROM Shopping" ) or die("SELECT Error: ".mysql_error());
+    $result = mysql_query($mysqli, $sql);
     $number_of_rows = mysql_num_rows($result);
     
     echo 'number of rows' . $number_of_rows;
