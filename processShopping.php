@@ -26,7 +26,7 @@
     $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
     
     $sql1 = "SELECT MAX(shoppingID) FROM Shopping";
-    $sql = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ($b_name, $i_name, $i_price, $currentHouseID)";
+    $sql = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$b_name', '$i_name', '$i_price', '$currentHouseID')";
         
     
     if($mysqli->query($sql)) {       
