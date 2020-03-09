@@ -38,8 +38,8 @@ function processUserInput($mysqli){
         #$uniqueID = uniqid();
         $currentHouseID = $_SESSION['houseID'];
         $name = $_SESSION['username'];
-        $itemBought = mysqli_real_escape_string($mysqli, $_POST['item']);
-        $itemPrice = mysqli_real_escape_string($mysqli, $_POST['price']);
+        $itemBought = mysqli_real_escape_string($mysqli, $_POST['item_name']);
+        $itemPrice = mysqli_real_escape_string($mysqli, $_POST['item_price']);
         
         $sql = "SELECT MAX(shoppingID) FROM Shopping";
         $thisShoppingID = mysqli_query($mysqli, $sql);
