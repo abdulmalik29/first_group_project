@@ -28,8 +28,8 @@
     //$sql1 = "SELECT MAX(shoppingID) FROM Shopping";
     $last_id = $mysqli->insert_id;
     
-    echo 'number of rows' . $last_id;
-    if ($number_of_rows == 0){
+    echo 'last id' . $last_id;
+    if ($last_id == 0){
         echo 'first line';
         $last_id = 0;
     } else {
