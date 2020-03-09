@@ -26,31 +26,12 @@ else {
 function displayForm($mysqli) {
         echo    '<form action="processShopping.php" method="post">
 			        <label>Item</label>
-					<input type="text" name="item_name"><br>
+					<input type="text" name="item_name" pattern="[A-Za-z]*" required><br>
 					<label>Price</label>
-					<input type="text" name="item_price"><br>
+					<input type="text" name="item_price" pattern="\d*" required><br>
 					<input type="submit" value="Submit" name="submit_btn">
 				</form>';
     }
-function processUserInput($mysqli){
-        $currentHouseID = $_SESSION['houseID'];
-        $name = $_SESSION['username'];
-        $itemBought = mysqli_real_escape_string($mysqli, $_POST['item']);
-        $itemPrice = mysqli_real_escape_string($mysqli, $_POST['item']);
-        
-        $sql1 = "SELECT MAX(shoppingID) FROM Shopping";
-        $INSERT = "INSERT INTO 'Shopping' (buyerName, item, price, houseID) VALUES ($name, $itemBought, $itemPrice, $currentHouseID)";
-        
-        if($mysqli->query($sql)) {       
-        echo "<script>
-                alert('Records added successfully'); 
-                window.history.go(-1);
-              </script>";
-        } else {
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
-        }
-}
-    
 function displayItems(){
         $query = "SELECT buyerName, item, price FROM Shopping";
         $response = @mysql_query($mysqli, $query);
