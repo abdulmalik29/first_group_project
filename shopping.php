@@ -46,7 +46,7 @@ function processUserInput($mysqli){
         $thisShoppingID = $thisShoppingID + 1;
 
             
-        $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ($thisShoppingID, $name, $itemBought, $itemPrice, $currentHouseID)";
+        $INSERT = "INSERT INTO 'Shopping' (shoppingID, buyerName, item, price, houseID) VALUES ($thisShoppingID, $name, $itemBought, $itemPrice, $currentHouseID)";
         //$stmt = mysqli_prepare($mysqli, $INSERT);
         //mysqli_stmt_bind_param($stmt, "sssdi", $thisShoppingID, $name, $itemBought, $itemPrice, $currentHouseID);
 }
