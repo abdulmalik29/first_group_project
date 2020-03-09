@@ -7,13 +7,12 @@ session_start();
 if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
     // Grab user data from the database using the user_id
     // Let them access the "logged in only" pages
-    //$mysqli = setupConnection();
     require_once('config.inc.php');
     $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
-    
+
     // Check for errors before doing anything else
     if($mysqli -> connect_error) {
-        die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+	die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
     }
 }
 else {
@@ -22,6 +21,7 @@ else {
     $_SESSION['access_attempted'] = true;
     exit;
 }
+
 
 function displayForm($mysqli) {
         echo    '<form action="shpping.php" method="post">
@@ -36,10 +36,10 @@ function displayForm($mysqli) {
     }
 function processUserInput($mysqli){
         #$uniqueID = uniqid();
-        #$currentHouseID = $_SESSION['houseID'];
-        #$name = $_SESSION['username'];
-        $itemBought = $_POST['item_name'];
-        $itemPrice = $_POST['item_price'];
+        $currentHouseID = $_SESSION['houseID'];
+        $name = $_SESSION['username'];
+        $itemBought = mysqli_real_escape_string($mysqli, $_POST['item']);
+        $itemPrice = mysqli_real_escape_string($mysqli, $_POST['price']);
         
         $sql = "SELECT MAX(shoppingID) FROM Shopping";
         $thisShoppingID = mysqli_query($mysqli, $sql);
