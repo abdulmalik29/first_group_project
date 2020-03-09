@@ -40,14 +40,17 @@ function processUserInput($mysqli){
         $itemBought = mysqli_real_escape_string($mysqli, $_POST['item']);
         $itemPrice = mysqli_real_escape_string($mysqli, $_POST['item']);
         
-        $sql = "SELECT MAX(shoppingID) FROM Shopping";
-        $thisShoppingID = mysqli_query($mysqli, $sql);
-        $thisShoppingID = $thisShoppingID + 1;
-
-            
-        $INSERT = "INSERT INTO 'Shopping' (shoppingID, buyerName, item, price, houseID) VALUES ($thisShoppingID, $name, $itemBought, $itemPrice, $currentHouseID)";
-        //$stmt = mysqli_prepare($mysqli, $INSERT);
-        //mysqli_stmt_bind_param($stmt, "sssdi", $thisShoppingID, $name, $itemBought, $itemPrice, $currentHouseID);
+        $sql1 = "SELECT MAX(shoppingID) FROM Shopping";
+        $INSERT = "INSERT INTO 'Shopping' (buyerName, item, price, houseID) VALUES ($name, $itemBought, $itemPrice, $currentHouseID)";
+        
+        if($mysqli->query($sql)) {       
+        echo "<script>
+                alert('Records added successfully'); 
+                window.history.go(-1);
+              </script>";
+        } else {
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
+        }
 }
     
 function displayItems(){
