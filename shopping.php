@@ -52,7 +52,7 @@ function processUserInput($mysqli){
 }
     
 function displayItems(){
-         $query = "SELECT buyerName, item, price FROM Shopping";
+        $query = "SELECT buyerName, item, price FROM Shopping";
         $response = @mysql_query($mysqli, $query);
         if ($response){
             echo '<table align="left" cellspacing="5" cellpadding="8">
@@ -97,7 +97,7 @@ function displayItems(){
 			<h1 align="center" width=100%>Shopping List</h1>
 			<tr>
 			    <?php
-			        displayItems();
+			        //displayItems();
 			    ?>
 			</tr>
 			<tr>
