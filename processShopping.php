@@ -29,9 +29,12 @@
     
     $number_of_rows = "SELECT COUNT(*) FROM Shopping";
     if ($number_of_rows == 0){
+        echo 'first line';
         $next_ID = 0;
     } else {
+        echo 'not first line';
         $next_ID = "SELECT MAX(shoppingID) FROM Shopping" + 1;
+        echo '$next_ID';
     }
     
     $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_ID', '$b_name', '$i_name', '$i_price', '$currentHouseID')";
