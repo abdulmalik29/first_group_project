@@ -22,49 +22,8 @@ else {
     $_SESSION['access_attempted'] = true;
     exit;
 }
-?>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
-	<title>Shopping</title>
-</head>
-<body>
-	<div class="leftcol">
-		<h1 align=center>HOMIES</h1>
-		<a href="alarm.php" id="menulinks">Alarm</a><br>
-	    <a href="shopping.php" id="menulinks">Finance and Shopping</a><br>
-		<a href="trash.php" id="menulinks">Trash</a><br>
-		<a href="complaints.php" id="menulinks">Complaints</a><br>
-		<a href="members.php" id="menulinks">Members</a><br>
-		<a href="logout.php" id='menulinks'>Logout</a><br>
-	</div>
-	<div class="rightcol">
-		<table>
-			<h1 align="center" width=100%>Shopping List</h1>
-			<tr>
-			</tr>
-			<tr>
-				<td>
-					<?php
-					    echo    '<form action="shpping.php" method="post">
-			        <label>Name</label>
-					<input type="text" name="buyer_name"><br>
-				    <label>Item</label>
-					<input type="text" name="item_name"><br>
-					<label>Price</label>
-					<input type="text" name="item_price"><br>
-					<input type="submit" value="Submit" name="submit_btn">
-				</form>';
-					    processUserInput($mysqli);
-					?>
-				</td>
-			</tr>
-	  </table>
-</body>
-</html>
-<?php
-    function displayForm($mysqli) {
+
+function displayForm($mysqli) {
         echo    '<form action="shpping.php" method="post">
 			        <label>Name</label>
 					<input type="text" name="buyer_name"><br>
@@ -75,7 +34,7 @@ else {
 					<input type="submit" value="Submit" name="submit_btn">
 				</form>';
     }
-    function processUserInput($mysqli){
+function processUserInput($mysqli){
         #$uniqueID = uniqid();
         #$currentHouseID = $_SESSION['houseID'];
         #$name = $_SESSION['username'];
@@ -85,9 +44,9 @@ else {
         $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($mysqli, $INSERT);
         mysqli_stmt_bind_param($stmt, "sssdi", $uniqueID, $name, $itemBought, $itemPrice, $currentHouseID);
-    }
+}
     
-    function displayItems(){
+function displayItems(){
          $query = "SELECT buyerName, item, price FROM Shopping";
         $response = @mysql_query($mysqli, $query);
         if ($response){
@@ -112,3 +71,35 @@ else {
     }
 
 ?>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<title>Shopping</title>
+</head>
+<body>
+	<div class="leftcol">
+		<h1 align=center>HOMIES</h1>
+		<a href="alarm.php" id="menulinks">Alarm</a><br>
+	    <a href="shopping.php" id="menulinks">Finance and Shopping</a><br>
+		<a href="trash.php" id="menulinks">Trash</a><br>
+		<a href="complaints.php" id="menulinks">Complaints</a><br>
+		<a href="members.php" id="menulinks">Members</a><br>
+		<a href="logout.php" id='menulinks'>Logout</a><br>
+	</div>
+	<div class="rightcol">
+		<table>
+			<h1 align="center" width=100%>Shopping List</h1>
+			<tr>
+			</tr>
+			<tr>
+				<td>
+				<?php
+				    displayForm($mysqli);
+				    processUserInput($mysqli);
+				?>
+				</td>
+			</tr>
+	  </table>
+</body>
+</html>
