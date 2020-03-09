@@ -24,7 +24,7 @@ else {
 
 
 function displayForm($mysqli) {
-        echo    '<form action="shpping.php" method="post">
+        echo    '<form action="shopping.php" method="post">
 			        <label>Name</label>
 					<input type="text" name="buyer_name"><br>
 				    <label>Item</label>
@@ -35,7 +35,6 @@ function displayForm($mysqli) {
 				</form>';
     }
 function processUserInput($mysqli){
-        #$uniqueID = uniqid();
         $currentHouseID = $_SESSION['houseID'];
         $name = $_SESSION['username'];
         $itemBought = mysqli_real_escape_string($mysqli, $_POST['item_name']);
