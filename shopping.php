@@ -47,7 +47,15 @@ else {
 			<tr>
 				<td>
 					<?php
-					    displayForm($mysqli);
+					    echo    '<form action="shpping.php" method="post">
+			        <label>Name</label>
+					<input type="text" name="buyer_name"><br>
+				    <label>Item</label>
+					<input type="text" name="item_name"><br>
+					<label>Price</label>
+					<input type="text" name="item_price"><br>
+					<input type="submit" value="Submit" name="submit_btn">
+				</form>';
 					    processUserInput($mysqli);
 					?>
 				</td>
