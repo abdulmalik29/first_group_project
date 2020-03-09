@@ -40,10 +40,15 @@ function processUserInput($mysqli){
         #$name = $_SESSION['username'];
         $itemBought = $_POST['item_name'];
         $itemPrice = $_POST['item_price'];
+        
+        $sql = "SELECT MAX(shoppingID) FROM Shopping";
+        $thisShoppingID = mysqli_query($sql, $mysqli);
+        $thisShoppingID = $thisShoppingID + 1;
+
             
-        $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($mysqli, $INSERT);
-        mysqli_stmt_bind_param($stmt, "sssdi", $uniqueID, $name, $itemBought, $itemPrice, $currentHouseID);
+        $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ($thisShoppingID, $name, $itemBought, $itemPrice, $currentHouseID)";
+        //$stmt = mysqli_prepare($mysqli, $INSERT);
+        //mysqli_stmt_bind_param($stmt, "sssdi", $thisShoppingID, $name, $itemBought, $itemPrice, $currentHouseID);
 }
     
 function displayItems(){
@@ -91,6 +96,9 @@ function displayItems(){
 		<table>
 			<h1 align="center" width=100%>Shopping List</h1>
 			<tr>
+			    <?php
+			        displayItems();
+			    ?>
 			</tr>
 			<tr>
 				<td>
