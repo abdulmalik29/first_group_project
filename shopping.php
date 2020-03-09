@@ -42,7 +42,7 @@ function processUserInput($mysqli){
         $itemPrice = $_POST['item_price'];
         
         $sql = "SELECT MAX(shoppingID) FROM Shopping";
-        $thisShoppingID = mysqli_query($sql, $mysqli);
+        $thisShoppingID = mysqli_query($mysqli, $sql);
         $thisShoppingID = $thisShoppingID + 1;
 
             
