@@ -28,7 +28,7 @@
     $sql1 = "SELECT MAX(shoppingID) FROM Shopping";
     
     $number_of_rows = "SELECT COUNT(*) FROM Shopping";
-    echo 'number of rows' . '$number_of_rows';
+    echo 'number of rows' . $number_of_rows;
     if ($number_of_rows == 0){
         echo 'first line';
         $next_ID = 0;
