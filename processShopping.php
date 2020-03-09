@@ -27,8 +27,8 @@
     
     $next_id = 0;
     while (true){
-        $result = mysql_query("SELECT * FROM members WHERE id=$next_id") or die (mysql_error());
-        $row = mysql_fetch_array($result);
+        $result = mysqli_query("SELECT * FROM members WHERE id=$next_id") or die (mysql_error());
+        $row = mysqli_fetch_array($result);
         if (empty($row)){
             break;
         }
