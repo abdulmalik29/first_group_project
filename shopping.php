@@ -10,7 +10,7 @@ if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
     //$mysqli = setupConnection();
     require_once('config.inc.php');
     $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
-
+    
     // Check for errors before doing anything else
     if($mysqli -> connect_error) {
         die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
@@ -57,30 +57,50 @@ else {
 </html>
 <?php
     function processUserInput($mysqli){
+        $uniqueID = uniqid();
         $currentHouseID = $_SESSION['houseID'];
-        #$Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
-        #mysqli_real_escape_string($_POST['shoppigID']), 
-        $name = $mysqli->real_escape_string($mysqli, $_POST['buyerName']);
-        $itemBought = $mysqli->real_escape_string($mysqli, $_POST['item']);
-        $itemPrice = $mysqli->real_escape_string($mysqli, $_POST['price']); 
-        #mysqli_real_escape_string($_POST['houseID'])
-        $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (1, $name, $itemBought, $itemPrice, $currentHouseID)";
-        if(mysqli_query($mysqli, $sql)){
-            echo "Records added successfully.";
-        } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
-        }
+        $name = $_SESSION['username'];
+        $itemBought = $_POST['item'];
+        $itemPrice = $_POST['price'];
+            
+        $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($mysqli, $INSERT);
+        mysqli_stmt_bind_param($stmt, "sssdi", $uniqueID, $name, $itemBought, $itemPrice, $currentHouseID);
     }
     function displayForm($mysqli) {
-        echo    '<form action="" method="post">
+        echo    '<form action="shpping.php" method="post">
 			        <label>Name</label>
 					<input type="text" name="buyerName"><br>
 				    <label>Item</label>
 					<input type="text" name="item"><br>
 					<label>Price</label>
 					<input type="text" name="price"><br>
-					<input type="submit" value="Submit">
+					<input type="submit" value="Submit" name="submitForm">
 				</form>';
+    }
+    
+    function displayItems(){
+         $query = "SELECT buyerName, item, price FROM Shopping";
+        $response = @mysql_query($mysqli, $query);
+        if ($response){
+            echo '<table align="left" cellspacing="5" cellpadding="8">
+            <tr>
+            <td align="left">Buyer name</td>
+            <td align="left">Item</td>
+            <td align="left">Price</td>
+            </tr>';
+            
+            while($row = mysqli_fetch_array($response)){
+                echo '<tr><td align="left">' .
+                $row['buyerName'] . '</td><td align="left">' .
+                $row['item'] . '</td><td align="left">' .
+                $row['price'] . '</td><td align="left"></tr>';
+            }
+            echo '</table>';
+        } else {
+            echo "Couldn't issue database query";
+            echo mysqli_error($mysqli);
+        }
     }
 
 ?>
