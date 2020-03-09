@@ -104,7 +104,6 @@ function displayItems(){
 				<td>
 				<?php
 				    displayForm($mysqli);
-				    processUserInput($mysqli);
 				?>
 				</td>
 			</tr>
