@@ -25,19 +25,17 @@
     $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name']);
     $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
     
-    $sql1 = "SELECT MAX(shoppingID) FROM Shopping";
-
-    $result = mysql_query($mysqli, $sql);
-    $number_of_rows = mysql_num_rows($result);
+    //$sql1 = "SELECT MAX(shoppingID) FROM Shopping";
+    $last_id = $mysqli->insert_id;
     
-    echo 'number of rows' . $number_of_rows;
+    echo 'number of rows' . $last_id;
     if ($number_of_rows == 0){
         echo 'first line';
-        $next_ID = 0;
+        $last_id = 0;
     } else {
         echo 'not first line';
-        $next_ID = "SELECT MAX(shoppingID) FROM Shopping" + 1;
-        echo '$next_ID';
+        $last_id = "SELECT MAX(shoppingID) FROM Shopping" + 1;
+        echo '$last_id';
     }
     
     $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_ID', '$b_name', '$i_name', '$i_price', '$currentHouseID')";
