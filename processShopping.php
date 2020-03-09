@@ -28,17 +28,14 @@
     $next_id = 0;
     while (true){
         $result = mysqli_query($mysqli, "SELECT * FROM members WHERE id=$next_id");
-        $row = mysqli_fetch_array("SELECT * FROM members WHERE id=$next_id");
-        if (empty($row)){
+        if (!$result){
             break;
+        }else{
+            $next_id = $next_id + 1;
         }
-        $next_id = $next_id + 1;
     }
     
-    $last_id = $mysqli->insert_id;
-    $last_id = (int) $last_id + 1;
-    
-    $sql = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$b_name', '$i_name', '$i_price', '$currentHouseID')";
+    $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_id', '$b_name', '$i_name', '$i_price', '$currentHouseID')";
 
     if($mysqli->query($sql)) {       
         echo "<script>
