@@ -57,11 +57,11 @@ else {
 </html>
 <?php
     function processUserInput($mysqli){
-        $uniqueID = uniqid();
-        $currentHouseID = $_SESSION['houseID'];
-        $name = $_SESSION['username'];
-        $itemBought = $_POST['item'];
-        $itemPrice = $_POST['price'];
+        #$uniqueID = uniqid();
+        #$currentHouseID = $_SESSION['houseID'];
+        #$name = $_SESSION['username'];
+        $itemBought = $_POST['item_name'];
+        $itemPrice = $_POST['item_price'];
             
         $INSERT = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($mysqli, $INSERT);
@@ -70,12 +70,12 @@ else {
     function displayForm($mysqli) {
         echo    '<form action="shpping.php" method="post">
 			        <label>Name</label>
-					<input type="text" name="buyerName"><br>
+					<input type="text" name="buyer_name"><br>
 				    <label>Item</label>
-					<input type="text" name="item"><br>
+					<input type="text" name="item_name"><br>
 					<label>Price</label>
-					<input type="text" name="price"><br>
-					<input type="submit" value="Submit" name="submitForm">
+					<input type="text" name="item_price"><br>
+					<input type="submit" value="Submit" name="submit_btn">
 				</form>';
     }
     
