@@ -28,15 +28,7 @@
     //$sql1 = "SELECT MAX(shoppingID) FROM Shopping";
     $last_id = $mysqli->insert_id;
     $last_id = (int) $last_id;
-    echo 'last id' . $last_id;
-    if ($last_id == 0){
-        echo 'first line';
-        $last_id = 0;
-    } else {
-        echo 'not first line';
-        $last_id = "SELECT MAX(shoppingID) FROM Shopping" + 1;
-        echo '$last_id';
-    }
+    $last_id = $last_id + 1;
     
     $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$last_id', '$b_name', '$i_name', '$i_price', '$currentHouseID')";
         
