@@ -24,10 +24,8 @@ else {
 
 
 function displayForm($mysqli) {
-        echo    '<form action="shopping.php" method="post">
-			        <label>Name</label>
-					<input type="text" name="buyer_name"><br>
-				    <label>Item</label>
+        echo    '<form action="processShopping.php" method="post">
+			        <label>Item</label>
 					<input type="text" name="item_name"><br>
 					<label>Price</label>
 					<input type="text" name="item_price"><br>
