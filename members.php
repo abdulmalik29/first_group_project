@@ -40,6 +40,12 @@ else {
 	</div>
 	<div class="rightcol">
 	    <h1>Members</h1>
+	    <form action="inputlandlord.php" method="post">
+			        <label>Landlord's Email</label>
+					<input type="text" name="owneremail"><br>
+					<input type="submit" value="Submit">
+		</form>
+
 	    <?php
 	        
             $CurrentHouseID = $_SESSION['houseID'];
