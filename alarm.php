@@ -107,13 +107,11 @@ function showAlarmForm($mysqli) {
 	echo '<form action="set_alarm.php" method="post">';
 	
 	if ($row['outside'] === "0") {
-	    echo '<button type="submit" class="alarm" id="no" name="go-outside">Leave house</button>';
-	    echo '<p class="alarm" id="yes" >You are inside</p>';
+	    echo '<button type="submit" class="alarm" id="yes" name="go-outside">Leave house</button>';
 	    
 	}
 	else {
-	    echo '<p class="alarm" id="no">You are outside</p>';
-	    echo '<button type="submit" class="alarm" id="yes" name="go-inside">Enter house</button>';
+	    echo '<button type="submit" class="alarm" id="no" name="go-inside">Enter house</button>';
 	}
 	echo '</form>';
     }
