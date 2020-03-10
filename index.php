@@ -75,7 +75,7 @@ body {
   <div class="column">
     <div class="card">
       <div class="container">
-        <h2>Alarm</h2>
+        <h2>In/Out</h2>
 				<p>The alarm function allows house members to let other members of the house to know whether or not they are present inside the house. This allows them to find out whether or not they have to set an alarm or not. </p>
       </div>
     </div>
