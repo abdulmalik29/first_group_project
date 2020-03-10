@@ -41,7 +41,9 @@ else {
 	<div class="rightcol">
 	    <h1>Members</h1>
 	    <?php
+	        
             $CurrentHouseID = $_SESSION['houseID'];
+            echo "House ID = " . $CurrentHouseID;
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
 
             echo "<table border='1'>

@@ -7,13 +7,12 @@ session_start();
 if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
     // Grab user data from the database using the user_id
     // Let them access the "logged in only" pages
-    //$mysqli = setupConnection();
     require_once('config.inc.php');
     $mysqli = new mysqli($database_host, $database_user, $database_pass, $group_dbnames[0]);
 
     // Check for errors before doing anything else
     if($mysqli -> connect_error) {
-        die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+	die('Connect Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
     }
 }
 else {
@@ -22,6 +21,41 @@ else {
     $_SESSION['access_attempted'] = true;
     exit;
 }
+
+
+function displayForm($mysqli) {
+        echo    '<form action="processShopping.php" method="post">
+			        <label>Item</label>
+					<input type="text" name="item_name" pattern="[A-Za-z]*" required><br>
+					<label>Price</label>
+					<input type="text" name="item_price" pattern="\d*" required><br>
+					<input type="submit" value="Submit" name="submit_btn">
+				</form>';
+    }
+function displayItems(){
+        $query = "SELECT buyerName, item, price FROM Shopping";
+        $response = @mysql_query($mysqli, $query);
+        if ($response){
+            echo '<table align="left" cellspacing="5" cellpadding="8">
+            <tr>
+            <td align="left">Buyer name</td>
+            <td align="left">Item</td>
+            <td align="left">Price</td>
+            </tr>';
+            
+            while($row = mysqli_fetch_array($response)){
+                echo '<tr><td align="left">' .
+                $row['buyerName'] . '</td><td align="left">' .
+                $row['item'] . '</td><td align="left">' .
+                $row['price'] . '</td><td align="left"></tr>';
+            }
+            echo '</table>';
+        } else {
+            echo "Couldn't issue database query";
+            echo mysqli_error($mysqli);
+        }
+    }
+
 ?>
 <html>
 <head>
@@ -43,44 +77,18 @@ else {
 		<table>
 			<h1 align="center" width=100%>Shopping List</h1>
 			<tr>
+			    <?php
+			        //displayItems();
+			    ?>
 			</tr>
 			<tr>
 				<td>
-					<?php
-					    displayForm($mysqli);
-					    processUserInput($mysqli);
-					?>
+				<?php
+				    displayForm($mysqli);
+				?>
 				</td>
 			</tr>
 	  </table>
+	  <p>CHANGED AGAIN</p>
 </body>
 </html>
-<?php
-    function processUserInput($mysqli){
-        $currentHouseID = $_SESSION['houseID'];
-        #$Date = mysqli_real_escape_string($mysqli, $_POST['dateReported']);
-        #mysqli_real_escape_string($_POST['shoppigID']), 
-        $name = $mysqli->real_escape_string($mysqli, $_POST['buyerName']);
-        $itemBought = $mysqli->real_escape_string($mysqli, $_POST['item']);
-        $itemPrice = $mysqli->real_escape_string($mysqli, $_POST['price']); 
-        #mysqli_real_escape_string($_POST['houseID'])
-        $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES (1, $name, $itemBought, $itemPrice, $currentHouseID)";
-        if(mysqli_query($mysqli, $sql)){
-            echo "Records added successfully.";
-        } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
-        }
-    }
-    function displayForm($mysqli) {
-        echo    '<form action="" method="post">
-			        <label>Name</label>
-					<input type="text" name="buyerName"><br>
-				    <label>Item</label>
-					<input type="text" name="item"><br>
-					<label>Price</label>
-					<input type="text" name="price"><br>
-					<input type="submit" value="Submit">
-				</form>';
-    }
-
-?>
