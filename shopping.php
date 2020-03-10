@@ -42,7 +42,7 @@ function displayItems(){
             <td align="left">Item</td>
             <td align="left">Price</td>
             </tr>';
-            
+
             while($row = mysqli_fetch_array($response)){
                 echo '<tr><td align="left">' .
                 $row['buyerName'] . '</td><td align="left">' .
@@ -71,7 +71,7 @@ function displayItems(){
 		<a href="trash.php" id="menulinks">Trash</a><br>
 		<a href="complaints.php" id="menulinks">Complaints</a><br>
 		<a href="members.php" id="menulinks">Members</a><br>
-		<a href="logout.php" id='menulinks'>Logout</a><br>
+		<a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
 		<table>

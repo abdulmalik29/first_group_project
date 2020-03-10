@@ -36,7 +36,7 @@ else {
 		<a href="trash.php" id="menulinks">Trash</a><br>
 		<a href="complaints.php" id="menulinks">Complaints</a><br>
 		<a href="members.php" id="menulinks">Members</a><br>
-        <a href="logout.php" id='menulinks'>Logout</a><br>
+    <a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
 		<table>
@@ -51,7 +51,7 @@ else {
 				</td>
 			</tr>
 	  </table>
-	  <?php 
+	  <?php
 	        $currentUsername = $_SESSION['username'];
 	        $sql = "SELECT complaint, dateReported, Location FROM Complaints where username = $currentUsername";
             $result = $mysqli->query($sql);
@@ -63,7 +63,7 @@ else {
                         <th>Complaint</th>
                         <th>Location</th>
                     </tr>';
-            
+
             if ($result->num_rows > 0) {
              // output data of each row
                 while($row = $result->fetch_assoc()) {
@@ -75,7 +75,7 @@ else {
             echo "</table>";
             echo "</div>";
        ?>
-	    
+
 
 	</div>
 </body>

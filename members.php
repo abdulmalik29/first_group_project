@@ -36,7 +36,7 @@ else {
 		<a href="trash.php" id="menulinks">Trash</a><br>
 		<a href="complaints.php" id="menulinks">Complaints</a><br>
 		<a href="members.php" id="menulinks">Members</a><br>
-        <a href="logout.php" id='menulinks'>Logout</a><br>
+    <a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
 	    <h1>Members</h1>
@@ -47,7 +47,7 @@ else {
 		</form>
 
 	    <?php
-	        
+
             $CurrentHouseID = $_SESSION['houseID'];
             echo "House ID = " . $CurrentHouseID;
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
@@ -69,9 +69,9 @@ else {
             }
             echo "</table>";
 
-            
+
             ?>
-		
+
 	</div>
 </body>
 </html>

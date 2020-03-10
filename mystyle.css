@@ -10,6 +10,15 @@ body{
 	background-color:#ffffff;
 }
 
+/* formatting the website footer */
+.footer {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   width: 80%;
+   background-color: #33B0CC;
+}
+
 /*next three is for formatting the menu*/
 .leftcol {
   border: 0px solid black;
@@ -39,6 +48,25 @@ body{
 #menulinks:hover{
     box-shadow: inset 0 0 7px 5px #ddd;
 	background-color: #addfeb;
+}
+
+/* to change the shape of the logout botton*/
+#logout{
+  border-radius: 15px 15px 15px 15px;
+  border: 1px solid white;
+  padding: 15px 25px;
+  background-color: #ff3333;
+  color: black;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+}
+
+#logout:hover{
+  box-shadow: inset 0 0 7px 5px #ddd;
+  background-color: #ff4d4d;
 }
 
 /*formatting for site contents*/
