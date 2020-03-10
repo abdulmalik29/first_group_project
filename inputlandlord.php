@@ -23,7 +23,7 @@
     $currentHouseID = $_SESSION['houseID'];
     $currentUsername = $_SESSION['username'];
     $owneremail = mysqli_real_escape_string($mysqli, $_POST['owneremail']);
-    $sql = "UPDATE Complaints SET ownerEmail = " . $owneremail . " WHERE houseID = " . $currentHouseID;
+    $sql = "UPDATE Complaints SET ownerEmail = '$owneremail' WHERE houseID = '$currentHouseID'";
     if($mysqli->query($sql)) {       
         echo "<script>
              alert('Email added successfully'); 
