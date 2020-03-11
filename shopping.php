@@ -28,7 +28,7 @@ function displayForm($mysqli) {
 			        <label>Item</label>
 					<input type="text" name="item_name" required><br>
 					<label>Price</label>
-					<input type="text" name="item_price" pattern="\d*" required><br>
+					<input type="text" name="item_price" pattern="\d*.\d*" required><br>
 					<label>For</label>
 					<input type="text" name="owner_name" required><br>
 					<input type="submit" value="Submit" name="submit_btn">
@@ -80,7 +80,7 @@ function displayItems(){
 			<h1 align="center" width=100%>Shopping List</h1>
 			<tr>
 			    <?php
-			        //displayItems();
+			        displayItems();
 			    ?>
 			</tr>
 			<tr>
