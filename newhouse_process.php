@@ -21,8 +21,12 @@ if($mysqli -> connect_error) {
     
     $password = password_hash($psw, PASSWORD_DEFAULT);
     
-    $sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
-    $result = $mysqli->query($sql1);
+    //$sql1 = "INSERT INTO House (housename, masterusername) VALUES ('$hname', '$uname')";
+    $stmt = $mysqli->prepare("INSERT INTO House (housename, masterusername) VALUES (?, ?)");
+    $stmt->bind_param('ss', $hname, $uname);
+    
+    //$result = $mysqli->query($sql1);
+    $result = $stmt->execute();
     if($result){
         $sql = "SELECT houseID, housename FROM House";
         $result = $mysqli->query($sql);
@@ -33,8 +37,12 @@ if($mysqli -> connect_error) {
                     }
                 }
             }
-        $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$names', '$hid', '0')";
-        if($mysqli->query($sql2)){
+        //$sql2 = "INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$names', '$hid', '0')";
+        $stmt = $mysqli->prepare("INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES (?, ?, ?, ?, ?, ?, '0')");
+        $stmt->bind_param('ssssss', $uname, $password, $email, $phone_number, $names, $hid);
+        
+        //if($mysqli->query($sql2)){
+        if($stmt->execute()){
             $_SESSION['username'] = $uname;
             $_SESSION['houseID'] = $hid;
             header("Location: alarm.php");
