@@ -3,11 +3,10 @@
 session_start();
 
 // If logged in, don't try to login again.
-// ----- Should be uncommented once logout page is implemented.
 
-//if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) {
-//    header("Location: alarm.php");
-//}
+if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
+    header("Location: alarm.php");
+}
 
 
 ?>
