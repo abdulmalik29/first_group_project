@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// This is a temporary page just so the sessions works.
+// Destroy the session which logs out the user.
 session_destroy();
 header("Location: index.php");
 ?>
