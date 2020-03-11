@@ -34,9 +34,9 @@ function displayForm($mysqli) {
 					<input type="submit" value="Submit" name="submit_btn">
 				</form>';
     }
-function displayItems(){
+function displayItems($mysqli){
         $query = "SELECT buyerName, item, price FROM Shopping";
-        $response = @mysql_query($mysqli, $query);
+        $response = $mysqli_query($mysqli, $query);
         if ($response){
             echo '<table align="left" cellspacing="5" cellpadding="8">
             <tr>
@@ -80,7 +80,7 @@ function displayItems(){
 			<h1 align="center" width=100%>Shopping List</h1>
 			<tr>
 			    <?php
-			        displayItems();
+			        displayItems($mysqli);
 			    ?>
 			</tr>
 			<tr>
