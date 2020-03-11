@@ -23,6 +23,7 @@
     $b_name = $_SESSION['username'];
     $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name']);
     $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
+    $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name']);
     
     $sql = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$b_name', '$i_name', '$i_price', '$currentHouseID')";
 
