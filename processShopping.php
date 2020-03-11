@@ -19,26 +19,12 @@
         exit;
     }
 
-    
     $currentHouseID = $_SESSION['houseID'];
     $b_name = $_SESSION['username'];
     $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name']);
     $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
     
-    $next_id = 0;
-    while (true){
-        $result = mysqli_query("SELECT * FROM members WHERE id=$next_id");
-        echo $result;
-        if (!$result){
-            echo 'break';
-            break;
-        }else{
-            echo 'else';
-            $next_id = $next_id + 1;
-        }
-    }
-    
-    $sql = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_id', '$b_name', '$i_name', '$i_price', '$currentHouseID')";
+    $sql = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$b_name', '$i_name', '$i_price', '$currentHouseID')";
 
     if($mysqli->query($sql)) {       
         echo "<script>
