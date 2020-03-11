@@ -22,7 +22,6 @@ if($mysqli -> connect_error) {
             // echo("username: " . $row["username"] . "<br>");
             if($row["username"] == $uname){
                 if(password_verify($psw, $row["password"])){
-                //if($row["password"] == $password){
                     $_SESSION['username'] = $uname;
                     $_SESSION['houseID'] = $row["houseID"];
                     // End here and redirect to alarm page
