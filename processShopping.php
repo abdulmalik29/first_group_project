@@ -26,7 +26,11 @@
     $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name']);
     
     $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$b_name', '$i_name', '$i_price', '$currentHouseID')";
-    $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";
+    
+    $newIDquery="SELECT MAX(shoppingID) FROM Shopping";
+    $newID = $mysqli->query($newIDquery);
+    
+    $sql2 = "INSERT INTO ShoppingSharedTo (shoppingID, username, houseID) VALUES ('$newID', '$o_name', '$currentHouseID')";
     
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
         echo "<script>
