@@ -37,17 +37,38 @@ function displayForm($mysqli) {
 function displayItems($mysqli){
         $currentHouseID = $_SESSION['houseID'];
         $b_name = $_SESSION['username'];
-        $items="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
-        $itemRecords = $mysqli->query($items);
         
-        echo '<table align="left" cellspacing="5" cellpadding="8">
+        $items1="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
+        $itemRecords1 = $mysqli->query($items1);
+        
+        $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID = (SELECT shoppingID FROM ShoppingSharedTo WHERE username = " . $b_name . ")";
+        $itemRecords2 = $mysqli->query($items2);
+        
+        echo 'You bought:<br><table align="left" cellspacing="5" cellpadding="8">
             <tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
             </tr>';
         
-        while($row = $itemRecords->fetch_assoc())
+        while($row = $itemRecords1->fetch_assoc())
+        {
+            echo '<tr><td align="left">' .
+                $row['buyerName'] . '</td><td align="left">' .
+                $row['item'] . '</td><td align="left">' .
+                $row['price'] . '</td><td align="left"></tr>';
+        }
+        echo '</table>';
+        
+        echo 'Bought for you:<br>
+            <table align="left" cellspacing="5" cellpadding="8">
+            <tr>
+            <td align="left">Buyer name</td>
+            <td align="left">Item</td>
+            <td align="left">Price</td>
+            </tr>';
+        
+        while($row = $itemRecords2->fetch_assoc())
         {
             echo '<tr><td align="left">' .
                 $row['buyerName'] . '</td><td align="left">' .
@@ -62,7 +83,7 @@ function displayItems($mysqli){
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
-	<title>Shopping</title>
+	<title>Finance</title>
 </head>
 <body>
 	<div class="leftcol">
@@ -76,7 +97,7 @@ function displayItems($mysqli){
 	</div>
 	<div class="rightcol">
 		<table>
-			<h1 align="center" width=100%>Shopping List</h1>
+			<h1 align="center" width=100%>Finance and Shopping</h1>
 			<tr>
 			    <?php
 			        displayItems($mysqli);
