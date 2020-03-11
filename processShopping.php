@@ -29,8 +29,9 @@
     
     $newIDquery="SELECT MAX(shoppingID) FROM Shopping";
     $newID = $mysqli->query($newIDquery);
+    $row = $newID->fetch_assoc();
     
-    $sql2 = "INSERT INTO ShoppingSharedTo (shoppingID, username, houseID) VALUES ('$newID', '$o_name', '$currentHouseID')";
+    $sql2 = "INSERT INTO ShoppingSharedTo (shoppingID, username, houseID) VALUES ('$row', '$o_name', '$currentHouseID')";
     
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
         echo "<script>
