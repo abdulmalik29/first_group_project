@@ -27,11 +27,10 @@
     
     $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$b_name', '$i_name', '$i_price', '$currentHouseID')";
     
-    $newIDquery="SELECT MAX(shoppingID) FROM Shopping";
-    $newID = $mysqli->query($newIDquery);
-    $row = $newID->fetch_assoc();
+    $row = $mysqli->query("SELECT MAX(shoppingID) FROM Shopping")->fetch_assoc();
+    $newID = $row['shoppingID'];
     
-    $sql2 = "INSERT INTO ShoppingSharedTo (shoppingID, username, houseID) VALUES ('$row', '$o_name', '$currentHouseID')";
+    $sql2 = "INSERT INTO ShoppingSharedTo (shoppingID, username, houseID) VALUES ('$newID', '$o_name', '$currentHouseID')";
     
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
         echo "<script>
