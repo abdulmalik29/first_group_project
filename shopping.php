@@ -35,27 +35,26 @@ function displayForm($mysqli) {
 				</form>';
     }
 function displayItems($mysqli){
-        $query = "SELECT buyerName, item, price FROM Shopping";
-        $response = $mysqli_query($mysqli, $query);
-        if ($response){
-            echo '<table align="left" cellspacing="5" cellpadding="8">
+        $currentHouseID = $_SESSION['houseID'];
+        $b_name = $_SESSION['username'];
+        $items="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
+        $itemRecords = $mysqli->query($items);
+        
+        echo '<table align="left" cellspacing="5" cellpadding="8">
             <tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
             </tr>';
-
-            while($row = mysqli_fetch_array($response)){
-                echo '<tr><td align="left">' .
+        
+        while($row = $itemRecords->fetch_assoc())
+        {
+            echo '<tr><td align="left">' .
                 $row['buyerName'] . '</td><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td><td align="left"></tr>';
-            }
-            echo '</table>';
-        } else {
-            echo "Couldn't issue database query";
-            echo mysqli_error($mysqli);
         }
+        echo '</table>';
     }
 
 ?>
