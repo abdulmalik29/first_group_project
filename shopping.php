@@ -26,9 +26,11 @@ else {
 function displayForm($mysqli) {
         echo    '<form action="processShopping.php" method="post">
 			        <label>Item</label>
-					<input type="text" name="item_name" pattern="[A-Za-z]*" required><br>
+					<input type="text" name="item_name" required><br>
 					<label>Price</label>
 					<input type="text" name="item_price" pattern="\d*" required><br>
+					<label>For</label>
+					<input type="text" name="owner_name" required><br>
 					<input type="submit" value="Submit" name="submit_btn">
 				</form>';
     }
