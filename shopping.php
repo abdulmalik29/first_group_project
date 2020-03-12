@@ -116,6 +116,5 @@ function displayItems($mysqli){
 				</td>
 			</tr>
 	  </table>
-	  <p>CHANGED AGAIN</p>
 </body>
 </html>
