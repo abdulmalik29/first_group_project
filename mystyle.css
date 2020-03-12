@@ -112,6 +112,8 @@ tr:nth-of-type(odd) {
 
 tr:hover {background-color:  #85d0e0;}
 
+#complaints_Table:hover {background-color:  #ffffff;}
+
 h1{
 	text-align: center;
 }
