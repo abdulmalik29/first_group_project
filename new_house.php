@@ -99,10 +99,10 @@ background:#3594D2;
 <body>
 
 	<img src="homies.png" alt="Homies logo"><br>
-	<h1>NEW HOUSE REGISTER</h1>
 	<form action="newhouse_process.php" method="post">
 		
   		<div class="container">
+        <h1>NEW HOUSE REGISTER</h1>
     		<label for="housename"><b></b></label>
     		<input type="text" placeholder="Enter House Name" name="housename" class="email" required>
    			<br>
