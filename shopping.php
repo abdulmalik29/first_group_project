@@ -25,6 +25,12 @@ else {
 
 function displayForm($mysqli) {
         echo    '<form action="processShopping.php" method="post">
+			        <label>Type</label>
+			        <select name="shopping_type">
+                        <option value="Bought">Bought</option>
+                        <option value="Request">Request</option>
+                    </select>
+					<input type="text" name="item_name" required><br>
 			        <label>Item</label>
 					<input type="text" name="item_name" required><br>
 					<label>Price</label>
