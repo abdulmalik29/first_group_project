@@ -83,9 +83,9 @@ h1{
   border-radius:4px;
   border: #2980b9 1px solid;
   
-  margin-top:20px;
-  margin-bottom:20px;
-  margin-left:10px;
+  //margin-top:20px;
+  //margin-bottom:20px;
+  //margin-left:10px;
   font-weight:800;
   font-size:0.8em;
 }
