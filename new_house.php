@@ -127,11 +127,11 @@ background:#3594D2;
             <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
     
         	<br><br>
-        	<button type="submit">Create</button>
+        	<button type="submit" class="btn2">Create</button>
     
     		<br>
     		<label>
-      			<input type="checkbox" checked="checked" name="remember" class="btn2"> Remember me
+      			<input type="checkbox" checked="checked" name="remember"> Remember me
     		</label>
   		</div>
 	</form>
