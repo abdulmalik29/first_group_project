@@ -23,7 +23,7 @@ h1{
   color:#525252;
 }
 
-.box{
+.container{
   background:white;
   width:300px;
   border-radius:6px;
