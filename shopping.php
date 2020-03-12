@@ -129,10 +129,12 @@ function displayItems($mysqli){
                         var type = document.getElementById("typeSelect").value;
                         if(type == "Request"){
                             <?php
+                                echo 'H1';
                                 displayRequestForm($mysqli);
                             ?>
                         }else{
                             <?php
+                                echo 'H2';
                                 displayBoughtForm($mysqli);
                             ?>
                         }
