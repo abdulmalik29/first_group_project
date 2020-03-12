@@ -161,7 +161,7 @@ div.form {
 
 
 #yes {
-  background-color: #f44336; 
+  background-color: #4CAF50; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -172,7 +172,7 @@ div.form {
 }
 
 #no {
-  background-color: #4CAF50; 4CAF50
+  background-color: #f44336; 
   border: none;
   color: white;
   padding: 15px 32px;
