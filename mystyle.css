@@ -170,7 +170,7 @@ div.form {
   display: inline-block;
   font-size: 16px;
   margin: 0 auto;
-  width: 32px; 
+  width: 144px; 
 }
 
 #no {
@@ -183,7 +183,7 @@ div.form {
   display: inline-block;
   font-size: 16px;
   margin: 0 auto;
-  width: 32px; 
+  width: 144px; 
 }
 .scrollit {
     overflow:scroll;
