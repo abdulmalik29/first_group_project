@@ -70,7 +70,7 @@ h1{
   font-size:0.8em;
 }
 
-.btn:hover{
+.button:hover{
   background:#2CC06B; 
 }
 
