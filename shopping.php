@@ -30,7 +30,6 @@ function displayForm($mysqli) {
                         <option value="Bought">Bought</option>
                         <option value="Request">Request</option>
                     </select>
-					<input type="text" name="item_name" required><br>
 			        <label>Item</label>
 					<input type="text" name="item_name" required><br>
 					<label>Price</label>
