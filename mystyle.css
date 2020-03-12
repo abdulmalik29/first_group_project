@@ -108,6 +108,10 @@ td{
 
 tr:hover {background-color:  #c2e7f0;}
 
+tr:nth-of-type(odd) {
+  background: #ebf7fa;
+}
+
 h1{
 	text-align: center;
 }
