@@ -32,7 +32,7 @@ h1{
   border: #2980b9 4px solid; 
 }
 
-.email{
+.eml{
   background:#ecf0f1;
   border: #ccc 1px solid;
   border-bottom: #ccc 2px solid;
