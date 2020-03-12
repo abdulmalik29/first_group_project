@@ -18,15 +18,15 @@
         $_SESSION['access_attempted'] = true;
         exit;
     }
-
+    
     $currentHouseID = $_SESSION['houseID'];
     $u_name = $_SESSION['username'];
-    $s_type = mysqli_real_escape_string($mysqli, $_POST['shopping_type']);
     $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name']);
-    $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
     $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name']);
+    $s_type = mysqli_real_escape_string($mysqli, $_POST['shopping_type']);
     
     if ($s_type == "Bought"){
+        $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
         $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$u_name', '$i_name', '$i_price', '$currentHouseID')";
         $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
     }else if($s_type == "Request"){
