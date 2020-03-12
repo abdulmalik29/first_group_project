@@ -131,7 +131,7 @@ background:#3594D2;
     
     		<br>
     		<label>
-      			<input type="checkbox" checked="checked" name="remember"> Remember me
+      			<input type="checkbox" checked="checked" name="remember" class="btn2"> Remember me
     		</label>
   		</div>
 	</form>
