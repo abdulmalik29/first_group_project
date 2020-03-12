@@ -119,9 +119,8 @@ function displayItems($mysqli){
 				<td>
 				<form action="processShopping.php" method="post">
 			        <label>Type</label>
-			        <select id="typeSelect" onchange="typeFunction()">
-			        <select name="shopping_type">
-                        <option value="Bought">Bought</option>
+			        <select id="typeSelect" name="shopping_type" onchange="typeFunction()">
+			            <option value="Bought">Bought</option>
                         <option value="Request">Request</option>
                     </select><br>
 			    </form>
