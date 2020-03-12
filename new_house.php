@@ -104,19 +104,19 @@ background:#3594D2;
 		
   		<div class="container">
     		<label for="housename"><b>House Name</b></label>
-    		<input type="text" placeholder="Enter House Name" name="housename" required>
+    		<input type="text" placeholder="Enter House Name" name="housename" class="email" required>
    			<br>
 
         <label for="name"><b>First Name and Surname</b></label>
-    		<input type="text" placeholder="Enter Names" name="fname" required>
+    		<input type="text" placeholder="Enter Names" name="fname" class="email" required>
             <br>
 
    			<label for="username"><b>Username</b></label>
-    		<input type="text" placeholder="Enter Username" name="username" required>
+    		<input type="text" placeholder="Enter Username" name="username" class="email" required>
             <br>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="psw" class="email" required>
             <br>
     
             <label for="eml"><b>Email</b></label>
@@ -124,7 +124,7 @@ background:#3594D2;
             <br>
     
             <label for="phone"><b>Phone number</b></label>
-            <input type="text" placeholder="Enter Phone number" name="pnumber" required>
+            <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
     
         	<br><br>
         	<button type="submit">Create</button>
