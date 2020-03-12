@@ -21,24 +21,31 @@ else {
     $_SESSION['access_attempted'] = true;
     exit;
 }
+function displayBoughtForm($mysqli){
+    echo
+    '<form action="processShopping.php" method="post">
+        <label>Item</label>
+	    <input type="text" name="item_name" required><br>
+		<label>Price</label>
+		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
+		<label>For</label>
+		<input type="text" name="owner_name" required><br>
+		<input type="submit" value="Submit" name="submit_btn">
+	</form>
+	';
+				
+}
+function displayRequestForm($mysqli){
+    echo
+    '<form action="processShopping.php" method="post">
+        <label>Item</label>
+	    <input type="text" name="item_name" required><br>
+		<label>From</label>
+		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
+	</form>
+	';
+}
 
-
-function displayForm($mysqli) {
-        echo    '<form action="processShopping.php" method="post">
-			        <label>Type</label>
-			        <select name="shopping_type">
-                        <option value="Bought">Bought</option>
-                        <option value="Request">Request</option>
-                    </select><br>
-			        <label>Item</label>
-					<input type="text" name="item_name" required><br>
-					<label>Price</label>
-					<input type="text" name="item_price" pattern="\d*.\d*" required><br>
-					<label>For</label>
-					<input type="text" name="owner_name" required><br>
-					<input type="submit" value="Submit" name="submit_btn">
-				</form>';
-    }
 function displayItems($mysqli){
         $currentHouseID = $_SESSION['houseID'];
         $b_name = $_SESSION['username'];
@@ -110,9 +117,28 @@ function displayItems($mysqli){
 			</tr>
 			<tr>
 				<td>
-				<?php
-				    displayForm($mysqli);
-				?>
+				<form action="processShopping.php" method="post">
+			        <label>Type</label>
+			        <select id="typeSelect" onchange="typeFunction()">
+			        <select name="shopping_type">
+                        <option value="Bought">Bought</option>
+                        <option value="Request">Request</option>
+                    </select><br>
+			    </form>
+				<script>
+                    function typeFunction() {
+                        var type = document.getElementById("typeSelect").value;
+                        if(type == "Request"){
+                            <?php
+                                displayRequestForm($mysqli);
+                            ?>
+                        }else{
+                            <?php
+                                displayBoughtForm($mysqli);
+                            ?>
+                        }
+                    }
+                </script>
 				</td>
 			</tr>
 	  </table>
