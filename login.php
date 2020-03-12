@@ -36,7 +36,7 @@ h1{
   color:#525252;
 }
 
-.box{
+.container{
   background:white;
   width:300px;
   border-radius:6px;
@@ -111,22 +111,23 @@ background:#3594D2;
 
 <body>
 	<img src="homies.png" alt="Homies logo"><br>
-	<h1>MEMBER LOGIN</h1>
+	
 	<form action="login_process.php" method="post">
 		
   		<div class="container">
+      <h1>MEMBER LOGIN</h1>
 		<?php			
 			if (isset($_SESSION['access_attempted'])) {
 				echo "<h2>You must log in to view that page.</h2>";
 				unset($_SESSION['access_attempted']);
 			}
 		?>
-    		<label for="uname"><b>Username</b></label>
-    		<input type="text" placeholder="Enter Username" name="uname" required>
+    		<label for="uname"><b></b></label>
+    		<input type="text" placeholder="Enter Username" name="uname" class="email" required>
    			<br>
 
-   			<label for="psw"><b>Password</b></label>
-    		<input type="password" placeholder="Enter Password" name="psw" required>
+   			<label for="psw"><b></b></label>
+    		<input type="password" placeholder="Enter Password" name="psw" class="email" required>
 
     		<br><br>
     		<button type="submit">Login</button>

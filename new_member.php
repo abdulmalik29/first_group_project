@@ -23,7 +23,7 @@ h1{
   color:#525252;
 }
 
-.box{
+.container{
   background:white;
   width:300px;
   border-radius:6px;
@@ -99,37 +99,37 @@ background:#3594D2;
 <body>
 
 	<img src="homies.png" alt="Homies logo"><br>
-	<h1>NEW MEMBER REGISTER</h1>
   
 	<form action="newmember_process.php" method="post">
 		
   		<div class="container">
-        <label for="houseid"><b>House ID</b></label>
-        <input type="text" placeholder="Enter house ID" name="houseid" required>
+        <h1>NEW MEMBER REGISTER</h1>
+        <label for="houseid"><b></b></label>
+        <input type="text" placeholder="Enter house ID" name="houseid" class="email" required>
         <br>
 
-    		<label for="housename"><b>House Name</b></label>
-    		<input type="text" placeholder="Enter House Name" name="housename" required>
+    		<label for="housename"><b></b></label>
+    		<input type="text" placeholder="Enter House Name" name="housename" class="email" required>
    			<br>
    			
-   			<label for="fullname"><b>Fullname</b></label>
-    		<input type="text" placeholder="Enter first and surname" name="fullname" required>
+   			<label for="fullname"><b></b></label>
+    		<input type="text" placeholder="Enter first and surname" name="fullname" class="email" required>
    			<br>
 
-   			<label for="username"><b>Username</b></label>
-    		<input type="text" placeholder="Enter Username" name="username" required>
+   			<label for="username"><b></b></label>
+    		<input type="text" placeholder="Enter Username" name="username" class="email" required>
         <br>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="psw"><b></b></label>
+        <input type="password" placeholder="Enter Password" name="psw" class="email" required>
         <br>
 
-        <label for="eml"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="eml" required>
+        <label for="eml"><b></b></label>
+        <input type="email" placeholder="Enter Email" name="eml" class="email" required>
         <br>
 
-        <label for="phone"><b>Phone number</b></label>
-        <input type="text" placeholder="Enter Phone number" name="pnumber" required>
+        <label for="phone"><b></b></label>
+        <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
 
     		<br><br>
     		<button type="submit">Create</button>
