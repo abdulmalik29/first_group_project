@@ -91,6 +91,14 @@ input{
   width = 33%;
 }
 
+th{
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #33B0CC;
+color: white;
+}
+
 td{
   width: 50%;
   border: 1px solid #dddddd;
