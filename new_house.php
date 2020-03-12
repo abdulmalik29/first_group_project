@@ -103,27 +103,27 @@ background:#3594D2;
 	<form action="newhouse_process.php" method="post">
 		
   		<div class="container">
-    		<label for="housename"><b>House Name</b></label>
+    		<label for="housename"><b></b></label>
     		<input type="text" placeholder="Enter House Name" name="housename" class="email" required>
    			<br>
 
-        <label for="name"><b>First Name and Surname</b></label>
+        <label for="name"><b></b></label>
     		<input type="text" placeholder="Enter Names" name="fname" class="email" required>
             <br>
 
-   			<label for="username"><b>Username</b></label>
+   			<label for="username"><b></b></label>
     		<input type="text" placeholder="Enter Username" name="username" class="email" required>
             <br>
 
-            <label for="psw"><b>Password</b></label>
+            <label for="psw"><b></b></label>
             <input type="password" placeholder="Enter Password" name="psw" class="email" required>
             <br>
     
-            <label for="eml"><b>Email</b></label>
+            <label for="eml"><b></b></label>
             <input type="email" placeholder="Enter Email" name="eml" class="email" required>
             <br>
     
-            <label for="phone"><b>Phone number</b></label>
+            <label for="phone"><b></b></label>
             <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
     
         	<br><br>
