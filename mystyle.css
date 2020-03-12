@@ -169,7 +169,8 @@ div.form {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  display: block;
+  margin: 0 auto;
+  width: 32px; 
 }
 
 #no {
@@ -181,7 +182,8 @@ div.form {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  display: block;
+  margin: 0 auto;
+  width: 32px; 
 }
 .scrollit {
     overflow:scroll;
