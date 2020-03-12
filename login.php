@@ -138,9 +138,6 @@ if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
   		</div>
 
   		
-  		<div class="container" style="background-color:#f1f1f1">
-    		<span class="password"><a href="#">Forgot password?</a></span>
-  		</div>
 	</form>
 </body>
 </html>
