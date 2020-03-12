@@ -83,9 +83,9 @@ h1{
   border-radius:4px;
   border: #2980b9 1px solid;
   
-  //margin-top:20px;
-  //margin-bottom:20px;
-  //margin-left:10px;
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:10px;
   font-weight:800;
   font-size:0.8em;
 }
@@ -127,7 +127,7 @@ background:#3594D2;
             <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
     
         	<br><br>
-        	<button type="submit"><div class="btn2">Create</div></button>
+        	<button type="submit"><div class="button">Create</div></button>
     
     		<br>
     		<label>
