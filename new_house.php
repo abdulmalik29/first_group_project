@@ -53,7 +53,7 @@ h1{
   font-size:1em;
 }
 
-.btn{
+.button{
   background:#2ecc71;
   width:125px;
   padding-top:5px;
