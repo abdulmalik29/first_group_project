@@ -55,7 +55,7 @@ else {
             echo "<table border='1'>
             <tr>
             <th>Name</th>
-            <th>E-Mail</th>
+            <th>E-mail</th>
             <th>Phone Number</th>
             </tr>";
 
