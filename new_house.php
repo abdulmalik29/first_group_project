@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>NEW HOUSE</title>
+	<style>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+	</style>
 </head>
 
 <body>
