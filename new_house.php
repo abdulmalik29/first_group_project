@@ -120,7 +120,7 @@ background:#3594D2;
             <br>
     
             <label for="eml"><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="eml" required>
+            <input type="email" placeholder="Enter Email" name="eml" class="email" required>
             <br>
     
             <label for="phone"><b>Phone number</b></label>
