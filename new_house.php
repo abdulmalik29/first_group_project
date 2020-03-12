@@ -5,7 +5,7 @@
 	<style>
 		body{
   font-family: 'Open Sans', sans-serif;
-  background:#3498db;
+  background:#33B0CC;
   margin: 0 auto 0 auto;  
   width:100%; 
   text-align:center;
