@@ -127,7 +127,7 @@ background:#3594D2;
             <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
     
         	<br><br>
-        	<button type="submit"><div id="btn2">Create</div></button>
+        	<button type="submit"><div class="btn2">Create</div></button>
     
     		<br>
     		<label>
