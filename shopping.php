@@ -125,27 +125,19 @@ function displayItems($mysqli){
 		<a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
-		<table>
 			<h1 align="center" width=100%>Finance and Shopping</h1>
-			<tr>
-			    <td>
 			    <?php
 			        displayItems($mysqli);
 			    ?>
-			    </td>
-			</tr>
-			<tr>
-				<td width="50%">
+			    <div class="alarm">
 			    <?php
                     displayBoughtForm($mysqli);
                 ?>
-				</td>
-				<td width="50%">
-				    <?php
+                </div>
+                <div class="alarm">
+				<?php
 				        displayRequestForm($mysqli);
-				    ?>
-				</td>
-			</tr>
-	  </table>
+				?>
+				</div>
 </body>
 </html>
