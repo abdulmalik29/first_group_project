@@ -88,7 +88,7 @@ function displayItems($mysqli){
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>';
         }
-        echo '</table>';
+        echo '</table><br>';
         
         echo 'Requested:<table align="left" cellspacing="5" cellpadding="8"><br>
             <table align="left" cellspacing="5" cellpadding="8">
@@ -144,6 +144,7 @@ function displayItems($mysqli){
                         }
                     }
                 </script>
+                <br>
 				<form action="processShopping.php" method="post">
 			        <label>Type</label>
 			        <select id="typeSelect" name="shopping_type" onchange="typeFunction()">
