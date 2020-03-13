@@ -21,9 +21,14 @@
     
     $currentHouseID = $_SESSION['houseID'];
     $u_name = $_SESSION['username'];
-    $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name']);
-    $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name']);
-    $s_type = mysqli_real_escape_string($mysqli, $_POST['shopping_type']);
+    if (isset($_POST['submit_btn_b'])) {
+        $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_b']);
+        $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_b']);
+        $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price_b']);
+    } else if (isset($_POST['submit_btn_r'])){
+        $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_r']);
+        $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_r']);
+    }
     
     if ($s_type == "Bought"){
         $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
