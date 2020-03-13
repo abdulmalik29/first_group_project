@@ -58,7 +58,7 @@ function displayItems($mysqli){
         $itemRecords3 = $mysqli->query($items3);
         
         echo 'You bought:<br>
-            <table align="left" cellspacing="5" cellpadding="8">
+            <table width="40%" align="left" cellspacing="5" cellpadding="8">
             <tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
@@ -75,7 +75,7 @@ function displayItems($mysqli){
         echo '</table>';
         
         echo 'Bought for you:<br>
-            <table align="left" cellspacing="5" cellpadding="8"><tr>
+            <table width="40%" align="left" cellspacing="5" cellpadding="8"><tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
