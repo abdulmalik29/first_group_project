@@ -80,7 +80,7 @@ function displayItems($mysqli){
         
         echo '
             <table width="50%" align="left" cellspacing="5" cellpadding="8">
-            <tr><td colspan="3" align="center">Bought for you</td></tr><tr>
+            <tr><th colspan="3" align="center">Bought for you</th></tr><tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
