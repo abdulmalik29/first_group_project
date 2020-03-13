@@ -39,7 +39,7 @@ else {
     <a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
-	    <h1>Members</h1>
+	    <h1>Your Homies</h1>
 	    <form action="inputlandlord.php" method="post">
 			        <label>Landlord's Email</label>
 					<input type="text" name="owneremail"><br>
