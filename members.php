@@ -46,7 +46,7 @@ else {
 					<input type="submit" value="Submit">
 		</form>
 
-    <div class="HouseID" style="line-height: 5;">
+    <div class="HouseID">
 	    <?php
             $CurrentHouseID = $_SESSION['houseID'];
             echo  "\nHouse ID = " . $CurrentHouseID;
