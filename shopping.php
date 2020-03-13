@@ -58,7 +58,7 @@ function displayItems($mysqli){
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<table width="50%" align="left" cellspacing="5" cellpadding="8">
-            <tr><td colspan="3">You Bought</td></tr><tr>
+            <tr><td colspan="3" align="center">You Bought</td></tr><tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -75,7 +75,7 @@ function displayItems($mysqli){
         
         echo '
             <table width="50%" align="left" cellspacing="5" cellpadding="8">
-            <tr><td colspan="3">Bought for you</td></tr><tr>
+            <tr><td colspan="3" align="center">Bought for you</td></tr><tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -90,15 +90,16 @@ function displayItems($mysqli){
         }
         echo '</table><br>';
         
-        echo 'Requested:<table align="left" cellspacing="5" cellpadding="8"><br>
+        echo '
             <table align="left" cellspacing="5" cellpadding="8">
+            <tr><td align="center">Requested</td></tr>
             <tr>
             <td align="left">Item</td>
             </tr>';
         
         while($row = $itemRecords3->fetch_assoc())
         {
-            echo '<tr><td align="left">' . $row['item'] . '</td>';
+            echo '<tr><td align="left">' . $row['item'] . '</td></tr>';
         }
         echo '</table>';
     }
