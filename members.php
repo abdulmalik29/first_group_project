@@ -26,7 +26,7 @@ else {
 <head>
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Members</title>
+	<title>Your Homies</title>
 </head>
 <body>
 	<div class="leftcol">
@@ -35,7 +35,7 @@ else {
 		<a href="shopping.php" id="menulinks">Finance and Shopping</a><br>
 		<a href="trash.php" id="menulinks">Trash</a><br>
 		<a href="complaints.php" id="menulinks">Complaints</a><br>
-		<a href="members.php" id="menulinks">Members</a><br>
+		<a href="members.php" id="menulinks">Your Homies</a><br>
     <a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
