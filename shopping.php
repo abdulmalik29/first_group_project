@@ -72,8 +72,9 @@ function displayItems($mysqli){
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>';
         }
+        echo '</table>';
         
-        echo '<tr>
+        echo '<table align="left" cellspacing="5" cellpadding="8"><tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -88,7 +89,7 @@ function displayItems($mysqli){
         }
         echo '</table>';
         
-        echo 'Requested:<br>
+        echo 'Requested:<table align="left" cellspacing="5" cellpadding="8"><br>
             <table align="left" cellspacing="5" cellpadding="8">
             <tr>
             <td align="left">Item</td>
