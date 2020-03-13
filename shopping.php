@@ -117,16 +117,6 @@ function displayItems($mysqli){
 			</tr>
 			<tr>
 				<td>
-				<form action="processShopping.php" method="post">
-			        <label>Type</label>
-			        <select id="typeSelect" name="shopping_type" onchange="typeFunction()">
-			            <option value="Bought">Bought</option>
-                        <option value="Request">Request</option>
-                    </select><br>
-			    </form>
-			    <?php
-                    displayBoughtForm($mysqli);
-                ?>
 				<script>
                     function typeFunction() {
                         <?php
@@ -146,6 +136,16 @@ function displayItems($mysqli){
                         }
                     }
                 </script>
+				<form action="processShopping.php" method="post">
+			        <label>Type</label>
+			        <select id="typeSelect" name="shopping_type" onchange="typeFunction()">
+			            <option value="Bought">Bought</option>
+                        <option value="Request">Request</option>
+                    </select><br>
+			    </form>
+			    <?php
+                    displayBoughtForm($mysqli);
+                ?>
 				</td>
 			</tr>
 	  </table>
