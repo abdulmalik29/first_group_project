@@ -133,9 +133,6 @@ background:#3594D2;
     		<button type="submit">Login</button>
 
     		<br>
-    		<label>
-      			<input type="checkbox" checked="checked" name="remember"> Remember me
-    		</label>
   		</div>
 
   		
