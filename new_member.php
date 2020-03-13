@@ -103,7 +103,7 @@ background:#3594D2;
 	<form action="newmember_process.php" method="post">
 		
   		<div class="container">
-        <h1>NEW MEMBER REGISTER</h1>
+        <h1>NEW MEMBER</h1>
         <label for="houseid"><b></b></label>
         <input type="text" placeholder="Enter house ID" name="houseid" class="email" required>
         <br>
