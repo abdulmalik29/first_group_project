@@ -125,10 +125,10 @@ function displayItems($mysqli){
 		<a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
-		<table border=2>
+		<table>
 			<h1 align="center" width=100%>Finance and Shopping</h1>
 			<tr>
-			    <td colspan="2">
+			    <td>
 			    <?php
 			        displayItems($mysqli);
 			    ?>
