@@ -56,7 +56,7 @@ body {
 <!-- ......................................................... -->
 <body>
 
-	<img src="homies.png" alt="Homies Logo" style="width:100%">
+	<img src="HomeisFooterSmall.png" alt="Homies Logo" style="width:100%">
 	<!-- <h1>HOMIES</h1> -->
 	<button class="button" onclick="window.location.href = 'login.php';">Login</button>
 	<button class="button" onclick="window.location.href = 'new_house.php';">New House</button>
