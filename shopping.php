@@ -93,9 +93,7 @@ function displayItems($mysqli){
         echo 'Requested:<br>
             <table align="left" cellspacing="5" cellpadding="8">
             <tr>
-            <td align="left">Buyer name</td>
             <td align="left">Item</td>
-            <td align="left">Price</td>
             </tr>';
         
         while($row = $itemRecords3->fetch_assoc())
