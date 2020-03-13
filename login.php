@@ -127,7 +127,7 @@ background:#3594D2;
    			<br>
 
    			<label for="psw"><b></b></label>
-    		<input type="password" placeholder="Enter Password" name="psw" class="password" required>
+    		<input type="password" placeholder="Enter Password" name="psw" class="email" required>
 
     		<br><br>
     		<button type="submit">Login</button>
