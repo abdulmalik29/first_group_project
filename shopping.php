@@ -40,6 +40,7 @@ function displayRequestForm($mysqli){
 	    <input type="text" name="item_name" required><br>
 		<label>From</label>
 		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
+		<input type="submit" value="Submit" name="submit_btn">
 	</form>
 	';
 }
@@ -132,31 +133,15 @@ function displayItems($mysqli){
 			    ?>
 			</tr>
 			<tr>
-				<td>
-				<script>
-                    function typeFunction() {
-                        var type = document.getElementById("typeSelect").value;
-                        if(type == "Request"){
-                            <?php
-                                displayRequestForm($mysqli);
-                            ?>
-                        }else{
-                            <?php
-                                displayBoughtForm($mysqli);
-                            ?>
-                        }
-                    }
-                </script>
-                <br>
-				<form action="processShopping.php" method="post">
-			        <label>Type</label>
-			        <select id="typeSelect" name="shopping_type" onchange="typeFunction()">
-			            <option value="Bought">Bought</option>
-                        <option value="Request">Request</option>
-                    </select><br>
+				<td width="50%">
 			    <?php
                     displayBoughtForm($mysqli);
                 ?>
+				</td>
+				<td width="50%">
+				    <?php
+				        displayRequestForm($mysqli);
+				    ?>
 				</td>
 			</tr>
 	  </table>
