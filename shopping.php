@@ -119,10 +119,8 @@ function displayItems($mysqli){
 				<td>
 				<script>
                     function typeFunction() {
-                        <?php
-                                echo 'Dpoint';
-                        ?>
                         var type = document.getElementById("typeSelect").value;
+                        document.getElementById("demo").innerHTML = "Check";
                         if(type == "Request"){
                             <?php
                                 echo 'H1';
@@ -143,6 +141,7 @@ function displayItems($mysqli){
                         <option value="Request">Request</option>
                     </select><br>
 			    </form>
+			    <p id="demo"></p>
 			    <?php
                     displayBoughtForm($mysqli);
                 ?>
