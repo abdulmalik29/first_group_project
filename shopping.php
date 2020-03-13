@@ -124,6 +124,9 @@ function displayItems($mysqli){
                         <option value="Request">Request</option>
                     </select><br>
 			    </form>
+			    <?php
+                    displayBoughtForm($mysqli);
+                ?>
 				<script>
                     function typeFunction() {
                         <?php
