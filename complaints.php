@@ -55,9 +55,9 @@ else {
 	        $currentUsername = $_SESSION['username'];
 	        $sql = "SELECT complaint, dateReported, Location FROM Complaints where username = $currentUsername";
             $result = $mysqli->query($sql);
-            echo '<td colspan="2">
+            echo '<td colspan="1">
                     <div class="scrollit">';
-            echo '<table border="0" cellspacing="2" cellpadding="2">
+            echo '<table border="0" cellspacing="1" cellpadding="1">
                     <tr>
                         <th>Date</th>
                         <th>Complaint</th>
