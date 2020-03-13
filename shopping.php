@@ -23,7 +23,8 @@ else {
 }
 function displayBoughtForm($mysqli){
     echo
-    '   <label>Item</label>
+    '<form action="processShopping.php" method="POST">
+    <label>Item</label>
 	    <input type="text" name="item_name" required><br>
 		<label>Price</label>
 		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
@@ -36,7 +37,8 @@ function displayBoughtForm($mysqli){
 }
 function displayRequestForm($mysqli){
     echo
-    '   <label>Item</label>
+    '<form action="processShopping.php" method="POST">   
+    <label>Item</label>
 	    <input type="text" name="item_name" required><br>
 		<label>From</label>
 		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
