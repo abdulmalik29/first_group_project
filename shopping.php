@@ -128,7 +128,7 @@ function displayItems($mysqli){
 		<table>
 			<h1 align="center" width=100%>Finance and Shopping</h1>
 			<tr>
-			    <td>
+			    <td colspan=2>
 			    <?php
 			        displayItems($mysqli);
 			    ?>
