@@ -50,6 +50,7 @@ else {
 	    <?php
             $CurrentHouseID = $_SESSION['houseID'];
             echo  "House ID = " . $CurrentHouseID;
+            echo  "\n";
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
             ?>
     </div>
