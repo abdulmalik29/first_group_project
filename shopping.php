@@ -23,8 +23,7 @@ else {
 }
 function displayBoughtForm($mysqli){
     echo
-    '<form action="processShopping.php" method="post">
-        <label>Item</label>
+    '   <label>Item</label>
 	    <input type="text" name="item_name" required><br>
 		<label>Price</label>
 		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
@@ -37,8 +36,7 @@ function displayBoughtForm($mysqli){
 }
 function displayRequestForm($mysqli){
     echo
-    '<form action="processShopping.php" method="post">
-        <label>Item</label>
+    '   <label>Item</label>
 	    <input type="text" name="item_name" required><br>
 		<label>From</label>
 		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
@@ -120,15 +118,12 @@ function displayItems($mysqli){
 				<script>
                     function typeFunction() {
                         var type = document.getElementById("typeSelect").value;
-                        document.getElementById("demo").innerHTML = "Check";
                         if(type == "Request"){
                             <?php
-                                echo 'H1';
                                 displayRequestForm($mysqli);
                             ?>
                         }else{
                             <?php
-                                echo 'H2';
                                 displayBoughtForm($mysqli);
                             ?>
                         }
@@ -140,8 +135,6 @@ function displayItems($mysqli){
 			            <option value="Bought">Bought</option>
                         <option value="Request">Request</option>
                     </select><br>
-			    </form>
-			    <p id="demo"></p>
 			    <?php
                     displayBoughtForm($mysqli);
                 ?>
