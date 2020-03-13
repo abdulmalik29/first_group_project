@@ -23,7 +23,7 @@
     $u_name = $_SESSION['username'];
     $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name']);
     $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name']);
-    $s_type = mysqli_real_escape_string($mysqli, $_POST['typeSelect']);
+    $s_type = mysqli_real_escape_string($mysqli, $_POST['shopping_type']);
     
     if ($s_type == "Bought"){
         $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
