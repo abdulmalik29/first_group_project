@@ -19,6 +19,8 @@ body{
    background-color: #33B0CC;
 }
 
+.HouseID{color: red;}
+
 /*next three is for formatting the menu*/
 .leftcol {
   border: 0px solid black;
