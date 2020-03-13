@@ -54,6 +54,9 @@ function displayItems($mysqli){
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID = (SELECT shoppingID FROM ShoppingSharedTo WHERE username = " . $b_name . ")";
         $itemRecords2 = $mysqli->query($items2);
         
+        $items3="SELECT item FROM Request WHERE houseID = " . $currentHouseID;
+        $itemRecords3 = $mysqli->query($items3);
+        
         echo 'You bought:<br><table align="left" cellspacing="5" cellpadding="8">
             <tr>
             <td align="left">Buyer name</td>
@@ -84,6 +87,20 @@ function displayItems($mysqli){
                 $row['buyerName'] . '</td><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>';
+        }
+        echo '</table>';
+        
+        echo 'Requested:<br>
+            <table align="left" cellspacing="5" cellpadding="8">
+            <tr>
+            <td align="left">Buyer name</td>
+            <td align="left">Item</td>
+            <td align="left">Price</td>
+            </tr>';
+        
+        while($row = $itemRecords3->fetch_assoc())
+        {
+            echo '<tr><td align="left">' . $row['item'] . '</td>';
         }
         echo '</table>';
     }
