@@ -39,20 +39,25 @@ else {
         <a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
-		<table id="complaints_Table">
-			<h1 align="center" width=100%>Complaints</h1>
-
-					<?php
-					    displayForm($mysqli);
-					?>
-	  </table>
+	    <h1 align="center" width=100%>Complaints</h1>
+		<!--<table id="complaints_Table">-->
+			<!--<tr>-->
+			<!--</tr>-->
+			<!--<tr>-->
+			<!--    <td>-->
+		    <?php
+			    displayForm($mysqli);
+		    ?>
+			<!--	</td>	-->
+			<!--</tr>	-->
+	  <!--</table>-->
 	  <?php
 	        $currentUsername = $_SESSION['username'];
 	        $sql = "SELECT complaint, dateReported, Location FROM Complaints where username = $currentUsername";
             $result = $mysqli->query($sql);
             echo '<td colspan="1">
                     <div class="scrollit">';
-            echo '<table border="1" cellspacing="1" cellpadding="5">
+            echo '<table border="0" cellspacing="1" cellpadding="5">
                     <tr>
                         <th>Date</th>
                         <th>Complaint</th>
