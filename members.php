@@ -31,7 +31,7 @@ else {
 <body>
 	<div class="leftcol">
 		<h1 align=center>HOMIES</h1>
-		<a href="alarm.php" id="menulinks">Alarm</a><br>
+		<a href="alarm.php" id="menulinks">In/Out</a><br>
 		<a href="shopping.php" id="menulinks">Finance and Shopping</a><br>
 		<a href="trash.php" id="menulinks">Trash</a><br>
 		<a href="complaints.php" id="menulinks">Complaints</a><br>
@@ -49,8 +49,7 @@ else {
     <div class="HouseID">
 	    <?php
             $CurrentHouseID = $_SESSION['houseID'];
-            echo  "House ID = " . $CurrentHouseID;
-            echo  "\n";
+            echo  "\nHouse ID = " . $CurrentHouseID;
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
             ?>
     </div>
