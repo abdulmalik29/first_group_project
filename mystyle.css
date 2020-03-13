@@ -19,7 +19,10 @@ body{
    background-color: #33B0CC;
 }
 
-.HouseID{color: red;}
+.HouseID{
+    color: black;
+    font-size: 150%;
+}
 
 /*next three is for formatting the menu*/
 .leftcol {
