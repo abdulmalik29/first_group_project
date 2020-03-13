@@ -57,9 +57,8 @@ function displayItems($mysqli){
         $items3="SELECT item FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
         
-        echo 'You bought:<br>
-            <table width="40%" align="left" cellspacing="5" cellpadding="8">
-            <tr>
+        echo '<table width="40%" align="left" cellspacing="5" cellpadding="8">
+            <tr>You Bought</tr><tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -74,8 +73,9 @@ function displayItems($mysqli){
         }
         echo '</table>';
         
-        echo 'Bought for you:<br>
-            <table width="40%" align="left" cellspacing="5" cellpadding="8"><tr>
+        echo '
+            <table width="40%" align="left" cellspacing="5" cellpadding="8">
+            <tr>Bought for you</tr><tr>
             <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
