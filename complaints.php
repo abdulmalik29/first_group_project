@@ -57,7 +57,7 @@ else {
             $result = $mysqli->query($sql);
             echo '<td colspan="1">
                     <div class="scrollit">';
-            echo '<table border="0" cellspacing="1" cellpadding="1">
+            echo '<table border="1" cellspacing="1" cellpadding="5">
                     <tr>
                         <th>Date</th>
                         <th>Complaint</th>
