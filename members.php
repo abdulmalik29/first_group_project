@@ -51,7 +51,10 @@ else {
             $CurrentHouseID = $_SESSION['houseID'];
             echo  "House ID = " . $CurrentHouseID;
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
-
+            ?>
+    </div>
+           
+        <?php    
             echo "<table border='1'>
             <tr>
             <th>Name</th>
@@ -69,9 +72,8 @@ else {
             }
             echo "</table>";
 
-
             ?>
-             </div>
+             
 	</div>
 </body>
 </html>
