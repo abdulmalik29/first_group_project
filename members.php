@@ -46,8 +46,8 @@ else {
 					<input type="submit" value="Submit">
 		</form>
 
+    <div class="House ID">
 	    <?php
-
             $CurrentHouseID = $_SESSION['houseID'];
             echo "House ID = " . $CurrentHouseID;
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
@@ -71,7 +71,7 @@ else {
 
 
             ?>
-
+            </div>
 	</div>
 </body>
 </html>
