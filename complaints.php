@@ -41,15 +41,10 @@ else {
 	<div class="rightcol">
 		<table id="complaints_Table">
 			<h1 align="center" width=100%>Complaints</h1>
-			<tr>
-			</tr>
-			<tr>
-				<td>
+
 					<?php
 					    displayForm($mysqli);
 					?>
-				</td>
-			</tr>
 	  </table>
 	  <?php
 	        $currentUsername = $_SESSION['username'];
