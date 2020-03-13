@@ -66,7 +66,7 @@ function displayItems($mysqli){
             echo '<tr><td align="left">' .
                 $row['buyerName'] . '</td><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
-                $row['price'] . '</td><td align="left"></tr>';
+                $row['price'] . '</td>';
         }
         echo '</table>';
         
@@ -83,7 +83,7 @@ function displayItems($mysqli){
             echo '<tr><td align="left">' .
                 $row['buyerName'] . '</td><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
-                $row['price'] . '</td><td align="left"></tr>';
+                $row['price'] . '</td>';
         }
         echo '</table>';
     }
