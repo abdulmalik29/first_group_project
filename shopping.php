@@ -126,6 +126,9 @@ function displayItems($mysqli){
 			    </form>
 				<script>
                     function typeFunction() {
+                        <?php
+                                echo 'Dpoint';
+                        ?>
                         var type = document.getElementById("typeSelect").value;
                         if(type == "Request"){
                             <?php
