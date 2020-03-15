@@ -42,7 +42,7 @@ else {
 	    <h1>Your Homies</h1>
 	    <?php
 	        $CurrentHouseID = $_SESSION['houseID'];
-	        $sql= "SELECT ownerEmail FROM House WHERE houseID = "  . $currentHouseID;
+	        $sql= "SELECT ownerEmail FROM House WHERE houseID = "  . $CurrentHouseID;
             $result = $mysqli->query($sql);
             if($result == NULL) {
     	         echo "<form action='inputlandlord.php' method='post'>
