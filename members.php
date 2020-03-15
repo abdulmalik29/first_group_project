@@ -40,11 +40,20 @@ else {
 	</div>
 	<div class="rightcol">
 	    <h1>Your Homies</h1>
-	    <form action="inputlandlord.php" method="post">
-			        <label>Landlord's Email</label>
-					<input type="text" name="owneremail"><br>
-					<input type="submit" value="Submit">
-		</form>
+	    <?php
+	        $CurrentHouseID = $_SESSION['houseID'];
+	        $sql= "SELECT ownerEmail FROM House WHERE houseID = "  . $currentHouseID;
+            $result = $mysqli->query($sql);
+            if($result == NULL) {
+    	         echo "<form action='inputlandlord.php' method='post'>
+    			           <label>Landlords Email</label>
+    				    	<input type='text' name='owneremail'><br>
+    				    	<input type='submit' value='Submit'>
+    		    </form>";
+            } else {
+                echo $result;
+            }
+		?>
 
     <div class="HouseID">
 	    <?php
