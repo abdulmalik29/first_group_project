@@ -22,16 +22,24 @@
     
     $currentHouseID = $_SESSION['houseID'];
     $currentUsername = $_SESSION['username'];
-    $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
-    $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
-    $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
-    $sql1 = "SELECT MAX(complaintID) FROM Complaints";
-    $sql = "INSERT INTO Complaints (username, complaint, Location, sorted, dateReported) VALUES ('$currentUsername', '$Issue', '$Location', '0', '$Date')";
-    if($mysqli->query($sql)) {       
+    $sql= "SELECT ownerEmail FROM House WHERE houseID = "  . $currentHouseID;
+    $result = $mysqli->query($sql);
+    if($result == NULL) {
+        $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
+        $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
+        $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
+        $sql = "INSERT INTO Complaints (username, complaint, Location, sorted, dateReported) VALUES ('$currentUsername', '$Issue', '$Location', '0', '$Date')";
+        if($mysqli->query($sql)) {       
+            echo "<script>
+                 alert('Records added successfully'); 
+                 window.history.go(-1);
+         </script>";
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
+        }
+    } else {
         echo "<script>
-             alert('Records added successfully'); 
-             window.history.go(-1);
-     </script>";
-    } else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
+                 alert('Landlord Email must be added to send complaints'); 
+                 window.history.go(-1);
+         </script>";
     }
