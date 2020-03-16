@@ -36,9 +36,18 @@ else {
 		</div>
 		<div class="rightcol">
 		    <h1>In/Out</h1>
+		    
+		    <div class="row">
+				<div class="column">
+					<div class="card">
+						<div class="container">
 		    <?php 
 		    getPeople($mysqli); 
 		    ?>
+		    			</div>
+				    </div>
+			    </div>
+			    
 		    <h3>Are you in?</h3>
 		    <?php
 		    showAlarmForm($mysqli);
