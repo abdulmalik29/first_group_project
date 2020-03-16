@@ -27,7 +27,7 @@ function displayBoughtForm($mysqli){
     <label>Item</label>
 	    <input type="text" name="item_name_b" required><br>
 		<label>Price</label>
-		<input type="number" name="item_price_b" required><br>
+		<input type="number" step="0.01" name="item_price_b" required><br>
 		<label>For</label>
 		<input type="text" name="owner_name_b" required><br>
 		<input type="submit" value="Bought" name="submit_btn_b">
