@@ -31,7 +31,8 @@
         }else{
             $query1="SELECT TOP 1 shoppingID FROM Shopping ORDER BY shoppingID DESC";
             $records1 = $mysqli->query($query1);
-            $next_index = (int) $records1['shoppingID']+1;
+            $next_index = (int) $records1['shoppingID'];
+            $next_index = $next_index + 1;
         }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_b']);
         $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_b']);
@@ -44,12 +45,13 @@
         //get next index and values from input
         $query0="SELECT COUNT(*) FROM Request";
         $records0 = $mysqli->query($query0);
-        if ($records0 == 0){
+        if ($records0 == '0'){
             $next_index = 0;
         }else{
             $query1="SELECT TOP 1 shoppingID FROM Shopping ORDER BY shoppingID DESC";
             $records1 = $mysqli->query($query1);
-            $next_index = $records1['shoppingID']+ 1;
+            $next_index = (int) $records1['shoppingID'];
+            $next_index = $next_index + 1;
         }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_r']);
         $r_name = mysqli_real_escape_string($mysqli, $_POST['requester']);
