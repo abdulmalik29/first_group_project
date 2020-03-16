@@ -51,7 +51,7 @@ else {
     				    	<input type='submit' value='Submit'>
     		    </form>";
             } else {
-                echo  $mysqli->query($sql);
+                echo  "Owner Email: " . $result;
             }
 		?>
 
