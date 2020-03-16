@@ -22,14 +22,14 @@
     $currentHouseID = $_SESSION['houseID'];
     $u_name = $_SESSION['username'];
     
+    $queryx="SELECT COUNT(*) FROM Shopping";
+    $recordsx = $mysqli->query($queryx);
+    echo $recordsx;
+    
     if (isset($_POST['submit_btn_b'])) {
         //get next index and values from input
-        echo 'Hi1';
         $query0="SELECT COUNT(*) FROM Shopping";
         $records0 = $mysqli->query($query0);
-        echo 'Hi2';
-        echo $records0['shoppingID'];
-        echo 'Hi3';
         if ($records0 == 0){
             $next_index = 0;
         }else{
