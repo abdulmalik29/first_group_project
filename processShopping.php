@@ -21,22 +21,18 @@
     
     $currentHouseID = $_SESSION['houseID'];
     $u_name = $_SESSION['username'];
+    
     if (isset($_POST['submit_btn_b'])) {
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_b']);
         $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_b']);
         $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price_b']);
+        $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$u_name', '$i_name', '$i_price', '$currentHouseID')";
+        $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
     } else if (isset($_POST['submit_btn_r'])){
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_r']);
         $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_r']);
-    }
-    
-    if ($s_type == "Bought"){
-        $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price']);
-        $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$u_name', '$i_name', '$i_price', '$currentHouseID')";
-        $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
-    }else if($s_type == "Request"){
         $sql1 = "INSERT INTO Request (requesterName, item, houseID) VALUES ('$u_name', '$i_name', '$currentHouseID')";
-        $sql2 = "INSERT INTO RequestSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";  
+        $sql2 = "INSERT INTO RequestSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";
     }
     
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
