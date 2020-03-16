@@ -61,7 +61,7 @@ function displayItems($mysqli){
         //$items2="SELECT Shopping.buyerName, Shopping.item, Shopping.price FROM Shopping INNER JOIN ShoppingSharedTo ON Shopping.shoppingID = ShoppingSharedTo.shoppingID WHERE houseID = " . $currentHouseID . " AND username = " . $b_name;
         //$itemRecords2 = $mysqli->query($items2);
         
-        $items3="SELECT item, requesterName FROM Request WHERE houseID = " . $currentHouseID;
+        $items3="SELECT requesterName, item  FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<table width="50%" align="left" cellspacing="5" cellpadding="8">
@@ -108,7 +108,7 @@ function displayItems($mysqli){
         while($row = $itemRecords3->fetch_assoc())
         {
             echo 
-            '<tr><td align="left">' . $row['item'] . '</td>' . $row['requesterName'] . '</td>' . 
+            '<tr><td align="left">' . $row['requesterName'] . '</td>' . $row['item'] . '</td>' . 
                 '<td align="left"></tr>';
         }
         echo '</table>';
