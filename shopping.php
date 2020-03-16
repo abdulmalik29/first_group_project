@@ -30,7 +30,7 @@ function displayBoughtForm($mysqli){
 		<input type="text" name="item_price_b" pattern="\d*.\d*" required><br>
 		<label>For</label>
 		<input type="text" name="owner_name_b" required><br>
-		<input type="submit" value="Submit" name="submit_btn_b">
+		<input type="submit" value="Bought" name="submit_btn_b">
 	</form>
 	';
 				
@@ -42,7 +42,7 @@ function displayRequestForm($mysqli){
 	    <input type="text" name="item_name_r" required><br>
 		<label>From</label>
 		<input type="number" name="item_price_r" required><br>
-		<input type="submit" value="Submit" name="submit_btn_r">
+		<input type="submit" value="Request" name="submit_btn_r">
 	</form>
 	';
 }
