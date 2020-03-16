@@ -91,12 +91,12 @@ function getPeople($mysqli) {
     $insideRecords = $mysqli->query($insideSql);
     $insideCount = 0;
     
-    echo '<div class="alarm">
+    echo '<div class="box1">
 	<h2>Who is in:</h2>';
     echo $outsideString;
-    </div>;
+    echo '</div>';    
     
-    echo '<div class="alarm>
+    echo '<div class="box1>
 	<h2>Who is out:</h2>';
     while($row = $insideRecords->fetch_assoc())
     {
@@ -107,7 +107,7 @@ function getPeople($mysqli) {
 	echo '<p>.</p>';
 	$insideCount = $insideCount + 1;
     }
-   </div>;
+    echo '</div>';
 }
 ?>
 
