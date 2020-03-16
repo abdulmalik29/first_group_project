@@ -44,13 +44,12 @@ else {
 		<div class="rightcol">
 		    <h1>In/Out</h1>
 		    
-		    <div class="box1">
+		    
 	
 		    <?php 
 		    getPeople($mysqli); 
 		    ?>
 
-			 </div>
 			    
 		    <h3>Are you in?</h3>
 		    <?php
@@ -73,7 +72,10 @@ function setupConnection() {
     }
     return $mysqli;
 }
+?>
 
+<div class="box1">
+<?php
 function getPeople($mysqli) {
     $currentHouseID = $_SESSION['houseID'];
 
@@ -109,7 +111,9 @@ function getPeople($mysqli) {
     }
     echo '</div>';
 }
-
+?>
+</div>
+<?php
 function showAlarmForm($mysqli) {
     $currentUsername = $_SESSION['username'];
 
