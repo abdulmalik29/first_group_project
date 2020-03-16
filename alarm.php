@@ -91,10 +91,13 @@ function getPeople($mysqli) {
     $insideRecords = $mysqli->query($insideSql);
     $insideCount = 0;
     
-    echo '<div class="alarm">
+    // echo '<div class="alarm">
+    echo "<table border='1'>
+    <tr>
+    // <th>Name</th>
 	<th>Who is in:</th>';
     echo $outsideString;
-    echo '</div>';
+    </div>";
     
     echo '<div class="alarm>
 	<h2>Who is out:</h2>';
