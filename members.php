@@ -42,16 +42,16 @@ else {
 	    <h1>Your Homies</h1>
 	    <?php
 	        $CurrentHouseID = $_SESSION['houseID'];
-	        $sql= "SELECT ownerEmail FROM House WHERE houseID = "  . $CurrentHouseID;
-            $result = $mysqli->query($sql);
-            if($result == NULL) {
+	        $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
+            $result1 = $mysqli->query($sql);
+            if($result1 == NULL) {
     	         echo "<form action='inputlandlord.php' method='post'>
     			           <label>Landlords Email</label>
     				    	<input type='text' name='owneremail'><br>
     				    	<input type='submit' value='Submit'>
     		    </form>";
             } else {
-                echo  "Owner Email: " . $result;
+                echo  "Owner Email: ";
             }
 		?>
 
