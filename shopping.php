@@ -65,7 +65,7 @@ function displayItems($mysqli){
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<table width="50%" align="left" cellspacing="5" cellpadding="8">
-            <tr><th colspan="3" align="center">You Bought</th></tr><tr>
+            <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
             </tr>';
@@ -97,16 +97,19 @@ function displayItems($mysqli){
         
         echo '
             <table align="left" cellspacing="5" cellpadding="8">
-            <tr><td align="center">Requested</td></tr>
             <tr>
-            <td align="left">Item</td>
+                <th colspan="2" align="center">Requested items</th>
+            </tr>
+            <tr>
+                <td align="left">Item</td>
+                <td align="left">Requester</td>
             </tr>';
         
         while($row = $itemRecords3->fetch_assoc())
         {
-            echo '<tr><td align="left">' . $row['item'] . '</td>' . $row['requesterName'] . 
-            '</td><td align="left">' .
-            '</tr>';
+            echo 
+            '<tr><td align="left">' . $row['item'] . '</td>' . $row['requesterName'] . '</td>' . 
+                '<td align="left"></tr>';
         }
         echo '</table>';
     }
