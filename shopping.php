@@ -25,12 +25,12 @@ function displayBoughtForm($mysqli){
     echo
     '<form action="processShopping.php" method="POST">
     <label>Item</label>
-	    <input type="text" name="item_name" required><br>
+	    <input type="text" name="item_name_b" required><br>
 		<label>Price</label>
-		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
+		<input type="text" name="item_price_b" pattern="\d*.\d*" required><br>
 		<label>For</label>
-		<input type="text" name="owner_name" required><br>
-		<input type="submit" value="Submit" name="submit_btn">
+		<input type="text" name="owner_name_b" required><br>
+		<input type="submit" value="Submit" name="submit_btn_b">
 	</form>
 	';
 				
@@ -39,10 +39,10 @@ function displayRequestForm($mysqli){
     echo
     '<form action="processShopping.php" method="POST">   
     <label>Item</label>
-	    <input type="text" name="item_name" required><br>
+	    <input type="text" name="item_name_r" required><br>
 		<label>From</label>
-		<input type="text" name="item_price" pattern="\d*.\d*" required><br>
-		<input type="submit" value="Submit" name="submit_btn">
+		<input type="number" name="item_price_r" required><br>
+		<input type="submit" value="Submit" name="submit_btn_r">
 	</form>
 	';
 }
@@ -138,7 +138,7 @@ function displayItems($mysqli){
                 </div>
                 <div class="alarm">
 				<?php
-				        displayRequestForm($mysqli);
+				    displayRequestForm($mysqli);
 				?>
 				</div>
 </body>
