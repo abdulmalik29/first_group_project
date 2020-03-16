@@ -95,7 +95,7 @@ function displayItems($mysqli){
                 '</td><td align="left">' . $row['price'] .
                 '</td></tr>';
         }
-        echo '</table></div>';
+        echo '</table></div><br>';
         
         echo '<div class="scrollable">
             <table align="left" cellspacing="5" cellpadding="8">
@@ -132,7 +132,6 @@ function displayItems($mysqli){
 			    <?php
 			        displayItems($mysqli);
 			    ?>
-			    <br><br>
 			    <div class="alarm" align="left">
 			    <?php
                     displayBoughtForm($mysqli);
