@@ -40,8 +40,8 @@
         $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price_b']);
         
         //put records into database
-        $sql1 = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_index', '$u_name', '$i_name', '$i_price', '$currentHouseID')";
-        $sql2 = "INSERT INTO ShoppingSharedTo (shoppingID, username, houseID) VALUES ('$next_index', '$o_name', '$currentHouseID')";   
+        $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$u_name', '$i_name', '$i_price', '$currentHouseID')";
+        $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
     } else if (isset($_POST['submit_btn_r'])){
         //get next index and values from input
         $query0="SELECT COUNT(*) FROM Request";
