@@ -95,8 +95,8 @@ function displayItems($mysqli){
         }
         echo '</table></div>';
         
-        echo '<div class="scrollable">
-            <table align="left" cellspacing="5" cellpadding="8">
+        echo '<div class="scrollable" style="float: left">
+            <table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">Requested items</th></tr>
             <tr><td align="left">Item</td><td align="left">Requester</td></tr>';
         
