@@ -64,12 +64,11 @@ function displayItems($mysqli){
         $items3="SELECT requesterName, item  FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
         
-        echo '<div class="scrollable" style="float: left">
-        <table align="left" width="100%" cellspacing="5" cellpadding="8">
+        echo '<table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
-            </tr>';
+            </tr></table><div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">';
         
         while($row = $itemRecords1->fetch_assoc())
         {
