@@ -54,10 +54,10 @@ function displayItems($mysqli){
         $items1="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
         $itemRecords1 = $mysqli->query($items1);
         
-        //$items2="SELECT buyerName, item, price FROM Shopping INNER JOIN ShoppingSharedTo ON Shopping.shoppingID = ShoppingSharedTo.shoppingID WHERE houseID = " . $currentHouseID . " AND username = " . $b_name;
-        //$itemRecords2 = $mysqli->query($items2);
-        $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID = (SELECT shoppingID FROM ShoppingSharedTo WHERE username = " . $b_name . ")";
+        $items2="SELECT buyerName, item, price FROM Shopping INNER JOIN ShoppingSharedTo ON Shopping.shoppingID = ShoppingSharedTo.shoppingID WHERE houseID = " . $currentHouseID . " AND username = " . $b_name;
         $itemRecords2 = $mysqli->query($items2);
+        //$items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID = (SELECT shoppingID FROM ShoppingSharedTo WHERE username = " . $b_name . ")";
+        //$itemRecords2 = $mysqli->query($items2);
         
         $items3="SELECT item FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
