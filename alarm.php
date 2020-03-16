@@ -24,12 +24,13 @@ else {
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Alarm</title>
 		
+	  <style>
 	  .box1 {
       border: 1px solid;
       padding: 10px;
       box-shadow: 5px 10px;
       }
-      
+      </style>
 	</head>
 	<body>
 		<div class="leftcol">
