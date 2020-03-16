@@ -166,7 +166,10 @@ div.form {
   box-shadow: 8px 4px 8px 1px rgba(0, 0, 0, 0.2);
   float: left; width: 50%;
 }
-		
+
+.rightcol .alarmButton{
+    width: 100%
+}		
 
 #yes {
   background-color: #f44336; 
