@@ -132,11 +132,13 @@ function displayItems($mysqli){
 			    <?php
 			        displayItems($mysqli);
 			    ?>
+			    <br><br>
 			    <div class="alarm" align="left">
 			    <?php
                     displayBoughtForm($mysqli);
                 ?>
                 </div>
+                
                 <div class="alarm" align="right">
 				<?php
 				    displayRequestForm($mysqli);
