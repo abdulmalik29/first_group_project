@@ -64,7 +64,7 @@ function displayItems($mysqli){
         $items3="SELECT requesterName, item  FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
         
-        echo '<table width="50%" align="left" cellspacing="5" cellpadding="8">
+        echo '<div class="scrollable"><table width="50%" align="left" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -76,9 +76,9 @@ function displayItems($mysqli){
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td></tr>';
         }
-        echo '</table>';
+        echo '</table></div>';
         
-        echo '
+        echo '<div class="scrollable">
             <table width="50%" align="left" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">Bought for you</th></tr><tr>
             <td align="left">Buyer</td>
@@ -94,9 +94,9 @@ function displayItems($mysqli){
                 '</td><td align="left">' . $row['price'] .
                 '</td></tr>';
         }
-        echo '</table>';
+        echo '</table></div>';
         
-        echo '
+        echo '<div class="scrollable">
             <table align="left" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">Requested items</th></tr>
             <tr><td align="left">Item</td><td align="left">Requester</td></tr>';
@@ -107,9 +107,8 @@ function displayItems($mysqli){
             '<tr><td align="left">' . $row['requesterName'] . '</td>' . $row['item'] . '</td>' . 
                 '<td align="left"></tr>';
         }
-        echo '</table>';
+        echo '</table></div>';
     }
-
 ?>
 <html>
 <head>
