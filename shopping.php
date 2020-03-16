@@ -55,7 +55,7 @@ function displayItems($mysqli){
         $itemRecords1 = $mysqli->query($items1);
         
         //this query is not working - it is for displaying the items someone bought for you
-        $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID = (SELECT shoppingID FROM ShoppingSharedTo WHERE username = " . $b_name . ")";
+        $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID = (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords2 = $mysqli->query($items2);
         //posible solution but not working either
         //$items2="SELECT Shopping.buyerName, Shopping.item, Shopping.price FROM Shopping INNER JOIN ShoppingSharedTo ON Shopping.shoppingID = ShoppingSharedTo.shoppingID WHERE houseID = " . $currentHouseID . " AND username = " . $b_name;
