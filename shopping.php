@@ -80,7 +80,7 @@ function displayItems($mysqli){
         echo '</table></div>';
         
         echo '<div class="scrollable" style="hover: right">
-            <table align="left" cellspacing="5" cellpadding="8">
+            <table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">Bought for you</th></tr><tr>
             <td align="left">Buyer</td>
             <td align="left">Item</td>
