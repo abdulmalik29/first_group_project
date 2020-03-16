@@ -28,7 +28,7 @@ else {
 	  .box1 {
       border: 1px solid;
       padding: 10px;
-      box-shadow: 5px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       }
       </style>
 	</head>
