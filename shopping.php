@@ -93,7 +93,7 @@ function displayItems($mysqli){
                 '</td><td align="left">' . $row['price'] .
                 '</td></tr>';
         }
-        echo '</table></div><br>';
+        echo '</table></div>';
         
         echo '<div class="scrollable">
             <table align="left" cellspacing="5" cellpadding="8">
