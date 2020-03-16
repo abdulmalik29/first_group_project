@@ -72,7 +72,6 @@ function displayItems($mysqli){
         while($row = $itemRecords1->fetch_assoc())
         {
             echo '<tr><td align="left">' .
-                $row['buyerName'] . '</td><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>';
         }
