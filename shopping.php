@@ -76,7 +76,7 @@ function displayItems($mysqli){
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>';
         }
-        echo '</table>';
+        echo '</table><br><br><br><br><br><br><br>';
         
         echo '
             <table width="50%" align="left" cellspacing="5" cellpadding="8">
@@ -93,7 +93,7 @@ function displayItems($mysqli){
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>';
         }
-        echo '</table><br>';
+        echo '</table><br><br><br><br><br><br><br>';
         
         echo '
             <table align="left" cellspacing="5" cellpadding="8">
@@ -108,7 +108,7 @@ function displayItems($mysqli){
             '</td><td align="left">' .
             '</tr>';
         }
-        echo '</table>';
+        echo '</table><br><br><br><br><br><br><br>';
     }
 
 ?>
