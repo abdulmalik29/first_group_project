@@ -64,7 +64,7 @@ function displayItems($mysqli){
         $items3="SELECT requesterName, item  FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
         
-        echo '<div class="scrollable" style="hover: left">
+        echo '<div class="scrollable" style="float: left">
         <table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
@@ -79,7 +79,7 @@ function displayItems($mysqli){
         }
         echo '</table></div>';
         
-        echo '<div class="scrollable" style="hover: right">
+        echo '<div class="scrollable" style="float: right">
             <table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">Bought for you</th></tr><tr>
             <td align="left">Buyer</td>
