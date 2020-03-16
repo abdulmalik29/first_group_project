@@ -54,12 +54,14 @@ function displayItems($mysqli){
         $items1="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
         $itemRecords1 = $mysqli->query($items1);
         
-        //$items2="SELECT Shopping.buyerName, Shopping.item, Shopping.price FROM Shopping INNER JOIN ShoppingSharedTo ON Shopping.shoppingID = ShoppingSharedTo.shoppingID WHERE houseID = " . $currentHouseID . " AND username = " . $b_name;
-        //$itemRecords2 = $mysqli->query($items2);
+        //this query is not working - it is for displaying the items someone bought for you
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID = (SELECT shoppingID FROM ShoppingSharedTo WHERE username = " . $b_name . ")";
         $itemRecords2 = $mysqli->query($items2);
+        //posible solution but not working either
+        //$items2="SELECT Shopping.buyerName, Shopping.item, Shopping.price FROM Shopping INNER JOIN ShoppingSharedTo ON Shopping.shoppingID = ShoppingSharedTo.shoppingID WHERE houseID = " . $currentHouseID . " AND username = " . $b_name;
+        //$itemRecords2 = $mysqli->query($items2);
         
-        $items3="SELECT item FROM Request WHERE houseID = " . $currentHouseID;
+        $items3="SELECT item, requesterName FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<table width="50%" align="left" cellspacing="5" cellpadding="8">
@@ -102,7 +104,9 @@ function displayItems($mysqli){
         
         while($row = $itemRecords3->fetch_assoc())
         {
-            echo '<tr><td align="left">' . $row['item'] . '</td></tr>';
+            echo '<tr><td align="left">' . $row['item'] . '</td>' . $row['requesterName'] . 
+            '</td><td align="left">' .
+            '</tr>';
         }
         echo '</table>';
     }
