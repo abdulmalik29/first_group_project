@@ -23,13 +23,7 @@ else {
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Alarm</title>
-		
-	  <style>
-	  .box1 {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      float: left; width: 50%;
-      }
-      </style>
+
 	</head>
 	<body>
 		<div class="leftcol">
