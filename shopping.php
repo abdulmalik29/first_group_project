@@ -74,7 +74,7 @@ function displayItems($mysqli){
         {
             echo '<tr><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
-                $row['price'] . '</td>';
+                $row['price'] . '</td></tr>';
         }
         echo '</table>';
         
