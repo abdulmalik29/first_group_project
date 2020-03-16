@@ -37,10 +37,15 @@ else {
 		</div>
 		<div class="rightcol">
 		    <h1>In/Out</h1>
+		    
 		    <?php 
 		    getPeople($mysqli); 
 		    ?>
+		    
+		    <div class="HouseID">
 		    <h3>Are you in?</h3>
+		    </div>
+		    
 		    <?php
 		    showAlarmForm($mysqli);
 		    closeConnection($mysqli);
