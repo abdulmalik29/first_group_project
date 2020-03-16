@@ -28,7 +28,8 @@ else {
 	  .box1 {
       border: 1px solid;
       padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      float: left; width: 50%;
       }
       </style>
 	</head>
@@ -44,12 +45,9 @@ else {
 		</div>
 		<div class="rightcol">
 		    <h1>In/Out</h1>
-		    
-		   
 		    <?php 
 		    getPeople($mysqli); 
 		    ?>
-
 		    <h3>Are you in?</h3>
 		    <?php
 		    showAlarmForm($mysqli);
