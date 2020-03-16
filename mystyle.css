@@ -160,7 +160,7 @@ div.form {
 
 }
 div.scrollable {
-  background-color: lightblue;
+  border: 2px solid black;
   height: 30%;
   overflow: auto;
 }
