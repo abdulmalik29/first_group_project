@@ -92,7 +92,7 @@ function getPeople($mysqli) {
     $insideCount = 0;
     
     echo '<div class="alarm">
-	<h2>Who is in:</h2>';
+	<th>Who is in:</th>';
     echo $outsideString;
     echo '</div>';
     
