@@ -23,6 +23,13 @@ else {
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Alarm</title>
+		
+	  .box1 {
+      border: 1px solid;
+      padding: 10px;
+      box-shadow: 5px 10px;
+      }
+      
 	</head>
 	<body>
 		<div class="leftcol">
@@ -37,16 +44,13 @@ else {
 		<div class="rightcol">
 		    <h1>In/Out</h1>
 		    
-		    <div class="row">
-				<div class="column">
-					<div class="card">
-						<div class="container">
+		    <div class="box1">
+	
 		    <?php 
 		    getPeople($mysqli); 
 		    ?>
-		    			</div>
-				    </div>
-			    </div>
+
+			 </div>
 			    
 		    <h3>Are you in?</h3>
 		    <?php
