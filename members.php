@@ -51,7 +51,7 @@ else {
     				    	<input type='submit' value='Submit'>
     		    </form>";
             } else {
-                echo  "Owner Email: " . $result1;
+                echo  "Owner Email: ";
             }
 		?>
 
