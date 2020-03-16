@@ -27,7 +27,7 @@
         $query0="SELECT COUNT(*) FROM Shopping";
         $records0 = $mysqli->query($query0);
         if ($records0 == 0){
-            $next_index_b = 0;
+            $next_index = 0;
         }else{
             $query1="SELECT TOP 1 shoppingID FROM Shopping ORDER BY shoppingID DESC";
             $records1 = $mysqli->query($query1);
@@ -38,8 +38,8 @@
         $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price_b']);
         
         //put records into database
-        $sql1 = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_index_b', '$u_name', '$i_name', '$i_price', '$currentHouseID')";
-        $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
+        $sql1 = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_index', '$u_name', '$i_name', '$i_price', '$currentHouseID')";
+        $sql2 = "INSERT INTO ShoppingSharedTo (shoppingID, username, houseID) VALUES ('$next_index', '$o_name', '$currentHouseID')";   
     } else if (isset($_POST['submit_btn_r'])){
         //get next index and values from input
         $query0="SELECT COUNT(*) FROM Request";
@@ -56,7 +56,7 @@
         
         //put records into database
         $sql1 = "INSERT INTO Request (requestID, requesterName, item, houseID) VALUES ('$next_index', '$u_name', '$i_name', '$currentHouseID')";
-        $sql2 = "INSERT INTO RequestSharedTo (username, houseID) VALUES ('$r_name', '$currentHouseID')";
+        $sql2 = "INSERT INTO RequestSharedTo (requestID, username, houseID) VALUES ('$next_index', '$r_name', '$currentHouseID')";
     }
     
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
