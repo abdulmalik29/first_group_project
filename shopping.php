@@ -64,11 +64,11 @@ function displayItems($mysqli){
         $items3="SELECT requesterName, item  FROM Request WHERE houseID = " . $currentHouseID;
         $itemRecords3 = $mysqli->query($items3);
         
-        echo '<table align="left" width="100%" cellspacing="5" cellpadding="8">
+        echo '<div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
-            </tr></table><div class="scrollable" style="float: left"><table align="left" width="50%" cellspacing="5" cellpadding="8">';
+            </tr>';
         
         while($row = $itemRecords1->fetch_assoc())
         {
@@ -78,12 +78,12 @@ function displayItems($mysqli){
         }
         echo '</table></div>';
         
-        echo '<table align="left" width="100%" cellspacing="5" cellpadding="8">
+        echo '<div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">Bought for you</th></tr><tr>
             <td align="left">Buyer</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
-            </tr></table><div class="scrollable" style="float: left"><table align="left" width="50%" cellspacing="5" cellpadding="8">';
+            </tr>';
         
         while($row = $itemRecords2->fetch_assoc())
         {
