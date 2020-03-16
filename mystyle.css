@@ -11,15 +11,6 @@ body{
 }
 
 
-/*.box {*/
-/*    border: 1px solid;*/
-/*	padding: 10px;*/
-/*	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
-/*	float: left; width: 50%;*/
-/*      }*/
-/* formatting the website footer */
-
-
 .footer {
    position: fixed;
    right: 0;
@@ -171,9 +162,8 @@ div.form {
 
 
 .rightcol .alarm {
-   border: 1px solid;
-   padding: 10px;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2);
   float: left; width: 50%;
 }
 		
