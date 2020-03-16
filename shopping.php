@@ -27,7 +27,7 @@ function displayBoughtForm($mysqli){
     <label>Item</label>
 	    <input type="text" name="item_name_b" required><br>
 		<label>Price</label>
-		<input type="text" name="item_price_b" pattern="\d*.\d*" required><br>
+		<input type="number" name="item_price_b" required><br>
 		<label>For</label>
 		<input type="text" name="owner_name_b" required><br>
 		<input type="submit" value="Bought" name="submit_btn_b">
@@ -41,7 +41,7 @@ function displayRequestForm($mysqli){
     <label>Item</label>
 	    <input type="text" name="item_name_r" required><br>
 		<label>From</label>
-		<input type="number" name="item_price_r" required><br>
+		<input type="text" name="requester" required><br>
 		<input type="submit" value="Request" name="submit_btn_r">
 	</form>
 	';
