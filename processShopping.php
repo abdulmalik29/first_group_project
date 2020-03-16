@@ -30,9 +30,9 @@
         $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
     } else if (isset($_POST['submit_btn_r'])){
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_r']);
-        $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_r']);
+        $r_name = mysqli_real_escape_string($mysqli, $_POST['requester']);
         $sql1 = "INSERT INTO Request (requesterName, item, houseID) VALUES ('$u_name', '$i_name', '$currentHouseID')";
-        $sql2 = "INSERT INTO RequestSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";
+        $sql2 = "INSERT INTO RequestSharedTo (username, houseID) VALUES ('$r_name', '$currentHouseID')";
     }
     
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
