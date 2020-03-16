@@ -23,15 +23,39 @@
     $u_name = $_SESSION['username'];
     
     if (isset($_POST['submit_btn_b'])) {
+        //get next index and values from input
+        $query0="SELECT COUNT(*) FROM Shopping";
+        $records0 = $mysqli->query($query0);
+        if ($records0 == 0){
+            $next_index_b = 0;
+        }else{
+            $query1="SELECT TOP 1 shoppingID FROM Shopping ORDER BY shoppingID DESC";
+            $records1 = $mysqli->query($query1);
+            $next_index = $records1['shoppingID']+ 1;
+        }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_b']);
         $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_b']);
         $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price_b']);
-        $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$u_name', '$i_name', '$i_price', '$currentHouseID')";
+        
+        //put records into database
+        $sql1 = "INSERT INTO Shopping (shoppingID, buyerName, item, price, houseID) VALUES ('$next_index_b', '$u_name', '$i_name', '$i_price', '$currentHouseID')";
         $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
     } else if (isset($_POST['submit_btn_r'])){
+        //get next index and values from input
+        $query0="SELECT COUNT(*) FROM Request";
+        $records0 = $mysqli->query($query0);
+        if ($records0 == 0){
+            $next_index = 0;
+        }else{
+            $query1="SELECT TOP 1 shoppingID FROM Shopping ORDER BY shoppingID DESC";
+            $records1 = $mysqli->query($query1);
+            $next_index = $records1['shoppingID']+ 1;
+        }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_r']);
         $r_name = mysqli_real_escape_string($mysqli, $_POST['requester']);
-        $sql1 = "INSERT INTO Request (requesterName, item, houseID) VALUES ('$u_name', '$i_name', '$currentHouseID')";
+        
+        //put records into database
+        $sql1 = "INSERT INTO Request (requestID, requesterName, item, houseID) VALUES ('$next_index', '$u_name', '$i_name', '$currentHouseID')";
         $sql2 = "INSERT INTO RequestSharedTo (username, houseID) VALUES ('$r_name', '$currentHouseID')";
     }
     
