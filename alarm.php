@@ -19,14 +19,7 @@ else {
 <!DOCTYPE html>
 <html>
 	<head>
-	    <style>
-	    #box {
-          border: 1px solid;
-          padding: 10px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          float: left; width: 50%;
-	    </style>
-	    
+
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Alarm</title>
@@ -85,12 +78,12 @@ function getPeople($mysqli) {
     $insideRecords = $mysqli->query($insideSql);
     $insideCount = 0;
     
-    echo '<div id="box">
+    echo '<div class="box">
 	<h2>Who is in:</h2>';
     echo $outsideString;
     echo '</div>';
     
-    echo '<div class="alarm">
+    echo '<div class="box">
 	<h2>Who is out:</h2>';
     while($row = $insideRecords->fetch_assoc())
     {
