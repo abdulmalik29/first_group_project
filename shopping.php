@@ -81,29 +81,25 @@ function displayItems($mysqli){
         echo '
             <table width="50%" align="left" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">Bought for you</th></tr><tr>
-            <td align="left">Buyer name</td>
+            <td align="left">Buyer</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
             </tr>';
         
         while($row = $itemRecords2->fetch_assoc())
         {
-            echo '<tr><td align="left">' .
-                $row['buyerName'] . '</td><td align="left">' .
-                $row['item'] . '</td><td align="left">' .
-                $row['price'] . '</td>';
+            echo 
+            '<tr><td align="left">' . $row['buyerName'] . 
+                '</td><td align="left">' . $row['item'] . 
+                '</td><td align="left">' . $row['price'] .
+                '</td></tr>';
         }
         echo '</table>';
         
         echo '
             <table align="left" cellspacing="5" cellpadding="8">
-            <tr>
-                <th colspan="2" align="center">Requested items</th>
-            </tr>
-            <tr>
-                <td align="left">Item</td>
-                <td align="left">Requester</td>
-            </tr>';
+            <tr><th colspan="2" align="center">Requested items</th></tr>
+            <tr><td align="left">Item</td><td align="left">Requester</td></tr>';
         
         while($row = $itemRecords3->fetch_assoc())
         {
