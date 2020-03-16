@@ -29,7 +29,7 @@
         if ($records0 == '0'){
             $next_index = 0;
         }else{
-            $query1="SELECT TOP 1 shoppingID FROM Shopping ORDER BY shoppingID DESC";
+            $query1="SELECT MAX(shoppingID) FROM Shopping";
             $records1 = $mysqli->query($query1);
             $next_index = (int) $records1['shoppingID'];
             $next_index = $next_index + 1;
@@ -48,7 +48,7 @@
         if ($records0 == '0'){
             $next_index = 0;
         }else{
-            $query1="SELECT TOP 1 requestID FROM Request ORDER BY requestID DESC";
+            $query1="SELECT MAX(requestID) FROM Request";
             $records1 = $mysqli->query($query1);
             $next_index = (int) $records1['requestID'];
             $next_index = $next_index + 1;
