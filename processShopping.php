@@ -31,7 +31,7 @@
         }else{
             $query1="SELECT MAX(shoppingID) FROM Shopping";
             $records1 = $mysqli->query($query1);
-            $next_index = $records1['shoppingID'];
+            $next_index = $records1;
             $next_index = $next_index + 1;
         }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_b']);
@@ -50,7 +50,7 @@
         }else{
             $query1="SELECT MAX(requestID) FROM Request";
             $records1 = $mysqli->query($query1);
-            $next_index = $records1['requestID'];
+            $next_index = $records1;
             $next_index = $next_index + 1;
         }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_r']);
