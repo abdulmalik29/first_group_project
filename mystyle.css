@@ -160,8 +160,8 @@ div.form {
 
 }
 div.scrollable {
-  border: 2px solid black;
-  height: 30%;
+  border: 0.5px solid black;
+  height: 150px;
   overflow: auto;
 }
 
