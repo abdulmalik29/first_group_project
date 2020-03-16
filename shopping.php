@@ -64,7 +64,6 @@ function displayItems($mysqli){
         
         echo '<table width="50%" align="left" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">You Bought</th></tr><tr>
-            <td align="left">Buyer name</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
             </tr>';
