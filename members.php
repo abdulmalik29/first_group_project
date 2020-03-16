@@ -44,7 +44,7 @@ else {
 	        $CurrentHouseID = $_SESSION['houseID'];
 	        $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
             $result1 = $mysqli->query($sql);
-            if($result1 == NULL) {
+            if(is_null($result1)) {
     	         echo "<form action='inputlandlord.php' method='post'>
     			           <label>Landlords Email</label>
     				    	<input type='text' name='owneremail'><br>
