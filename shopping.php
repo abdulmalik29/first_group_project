@@ -74,7 +74,7 @@ function displayItems($mysqli){
             echo '<tr width="100%"><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>
-                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336;" value="X" name="del"></form></td>
+                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; padding: 5px 5px;" value="X" name="del"></form></td>
                 </tr>';
         }
         echo '</table></div><br>';
@@ -94,7 +94,7 @@ function displayItems($mysqli){
                 '</td><td align="left">' . $row['item'] . 
                 '</td><td align="left">' . $row['price'] .
                 '</td>
-                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336;" value="X"  name="del"></form></td>
+                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; padding: 5px 5px;" value="X"  name="del"></form></td>
                 </tr>';
         }
         echo '</table></div><br>';
@@ -109,7 +109,7 @@ function displayItems($mysqli){
             echo 
             '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . 
             '</td>
-            <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336;" value="X"  name="del"></form></td>
+            <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; padding: 5px 5px;" value="X"  name="del"></form></td>
             </tr>';
         }
         echo '</table></div></div>';
