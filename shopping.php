@@ -132,6 +132,7 @@ function deleteRequestItem($mysqli, $id){
     
 }
 if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["shoppingID"])){
+    echo 'in';
     deleteShoppingItem($mysqli, $_POST["shoppingID"]);
 }
 if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["requestID"])){
