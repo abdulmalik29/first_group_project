@@ -136,5 +136,6 @@ function displayItems($mysqli){
 				    displayRequestForm($mysqli);
 				?>
 				</div>
+<p>CHANGED??</p>
 </body>
 </html>
