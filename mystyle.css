@@ -91,12 +91,6 @@ body{
   background-color: blue;
 }
 
-/*formatting for input fields*/
-input{
-  display: inline-block;
-  width = 33%;
-}
-
 th{
 text-align: center;
 padding-top: 12px;
@@ -124,8 +118,14 @@ h1{
 	text-align: center;
 }
 
+/*formatting for input fields*/
+input{
+  display: inline-block;
+  width: 33%;
+}
+
 input[type=text], select {
-  width: 60%;
+  width: 10%;
   padding: 12px 20px;
   margin: 18px 0;
   display: inline-block;
