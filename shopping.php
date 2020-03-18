@@ -131,13 +131,6 @@ function deleteRequestItem($mysqli, $id){
     }
     
 }
-if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["shoppingID"])){
-    echo 'in';
-    deleteShoppingItem($mysqli, $_POST["shoppingID"]);
-}
-if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["requestID"])){
-    deleteRequestItem($mysqli, $_POST["requestID"]);
-}
   
 ?>
 <html>
@@ -159,6 +152,14 @@ if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST
 	<div class="rightcol">
 		<h1 align="center" width=100%>Finance and Shopping</h1>
 	    <?php
+	    echo $_POST;
+	    if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["shoppingID"])){
+            echo 'in';
+            deleteShoppingItem($mysqli, $_POST["shoppingID"]);
+        }
+        if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["requestID"])){
+            deleteRequestItem($mysqli, $_POST["requestID"]);
+        }
 		    displayItems($mysqli);
 		?>
 		<div class="alarm" align="left">
