@@ -61,7 +61,7 @@ function displayItems($mysqli){
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<div style="float: left; border: 2px solid black; width: 50%">
-            <div class="scrollable"><table width="100%" align="left" border="2px black" cellspacing="5" cellpadding="8">
+            <div id="scrollable"><table width="100%" align="left" border="2px black" cellspacing="5" cellpadding="8">
             <tr width="100%"><th colspan="2" align="center" width="100%">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -75,7 +75,7 @@ function displayItems($mysqli){
         }
         echo '</table></div><br>';
         
-        echo '<div class="scrollable"><table width="100%" align="left" cellspacing="5" cellpadding="8">
+        echo '<div id="scrollable"><table width="100%" align="left" cellspacing="5" cellpadding="8">
             <tr width="100%"><th colspan="3" align="center" width="100%">Your Debts</th></tr><tr>
             <td align="left">Buyer</td>
             <td align="left">Item</td>
@@ -92,7 +92,7 @@ function displayItems($mysqli){
         }
         echo '</table></div><br>';
         
-        echo '<div class="scrollable">
+        echo '<div id="scrollable">
             <table align="left" cellspacing="5" cellpadding="8" width="100%">
             <tr width="100%"><th colspan="2" align="center">Requested Items</th></tr>
             <tr width="100%"><td align="left">Item</td><td align="left">Requester</td></tr>';
