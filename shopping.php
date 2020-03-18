@@ -101,7 +101,7 @@ function displayItems($mysqli){
             echo 
             '<tr><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . '</td></tr>';
         }
-        echo '</table></div><div></div>';
+        echo '</table></div><div class="scrollable" style="float: left"></div>';
     }
 ?>
 <html>
