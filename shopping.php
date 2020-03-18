@@ -73,7 +73,7 @@ function displayItems($mysqli){
         {
             echo '<tr width="100%"><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
-                $row['price'] . '</td><td align="left">
+                $row['price'] . '</td>
                 <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" value="Delete" name="del"></form></td>
                 </tr>';
         }
