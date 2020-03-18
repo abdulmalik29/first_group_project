@@ -61,7 +61,7 @@ function displayItems($mysqli){
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<div style="float: left; width: 50%">
-            <div style="height: 250px; width: 100%; overflow: auto;">
+            <div style="height: 175px; width: 100%; overflow: auto;">
             <table width="100%" align="left" cellspacing="5" cellpadding="8">
             <tr width="100%"><th colspan="2" align="center" width="100%">You Bought</th></tr><tr>
             <td align="left">Item</td>
@@ -76,7 +76,7 @@ function displayItems($mysqli){
         }
         echo '</table></div><br>';
         
-        echo '<div style="height: 250px; width: 100%; overflow: auto;"><table width="100%" align="left" cellspacing="5" cellpadding="8">
+        echo '<div style="height: 175px; width: 100%; overflow: auto;"><table width="100%" align="left" cellspacing="5" cellpadding="8">
             <tr width="100%"><th colspan="3" align="center" width="100%">Your Debts</th></tr><tr>
             <td align="left">Buyer</td>
             <td align="left">Item</td>
@@ -93,7 +93,7 @@ function displayItems($mysqli){
         }
         echo '</table></div><br>';
         
-        echo '<div style="height: 250px; width: 100%; overflow: auto;">
+        echo '<div style="height: 175px; width: 100%; overflow: auto;">
             <table align="left" cellspacing="5" cellpadding="8" width="100%">
             <tr width="100%"><th colspan="2" align="center">Requested Items</th></tr>
             <tr width="100%"><td align="left">Item</td><td align="left">Requester</td></tr>';
