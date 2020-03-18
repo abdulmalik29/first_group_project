@@ -57,7 +57,7 @@ function displayItems($mysqli){
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords2 = $mysqli->query($items2);
         
-        $items3="SELECT requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
+        $items3="SELECT requestID, requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<div style="float: left; width: 50%">
@@ -106,7 +106,7 @@ function displayItems($mysqli){
             echo 
             '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . 
             '</td>
-            <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del_r"></form></td>
+            <td align="left"><form action="deleteRecord.php?requestID=(echo $row->requestID)" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del_r"></form></td>
             </tr>';
         }
         echo '</table></div></div>';
@@ -122,8 +122,8 @@ function deleteShoppingItem($mysqli, $id){
     }
 }
 function deleteRequestItem($mysqli, $id){
-    $sql1 = "DELETE FROM Request WHERE requestID = '" . $id ."'";
-    $sql2 = "DELETE FROM RequestSharedTo WHERE requestID = '" . $id ."'";
+    $sql1 = "DELETE FROM Request WHERE requestID = " . $id;
+    $sql2 = "DELETE FROM RequestSharedTo WHERE requestID = " . $id;
     $result1 = $mysqli->query($sql1);
     $result2 = $mysqli->query($sql2);
     if(!$result1 || !$result2){
