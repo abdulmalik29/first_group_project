@@ -25,11 +25,11 @@ function displayBoughtForm($mysqli){
     echo
     '<form action="processShopping.php" method="POST">
     <label>Item</label>
-	    <input type="text" name="item_name_b" required width="40%"><br>
+	    <input type="text" name="item_name_b" required width="200px"><br>
 		<label>Price</label>
-		<input type="number" step="0.01" name="item_price_b" required width="40%"><br>
+		<input type="number" step="0.01" name="item_price_b" required width="200px"><br>
 		<label>For</label>
-		<input type="text" name="owner_name_b" required width="40%"><br>
+		<input type="text" name="owner_name_b" required width="200px"><br>
 		<input type="submit" value="Bought" name="submit_btn_b">
 	</form>
 	';
