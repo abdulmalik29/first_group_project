@@ -152,13 +152,11 @@ function deleteRequestItem($mysqli, $id){
 	<div class="rightcol">
 		<h1 align="center" width=100%>Finance and Shopping</h1>
 	    <?php
-	    echo $_POST["operation"] . " yy " . $_POST["shoppingID"] . " xx " .$_REQUEST["operation"];
-	    if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["shoppingID"])){
-            echo 'in';
-            deleteShoppingItem($mysqli, $_POST["shoppingID"]);
+	    if(isset($_REQUEST["operation"]) && $_REQUEST["operation"] == 'delete' && isset($_REQUEST["shoppingID"])){
+            deleteShoppingItem($mysqli, $_REQUEST["shoppingID"]);
         }
-        if(isset($_POST["operation"]) && $_POST["operation"] == 'delete' && isset($_POST["requestID"])){
-            deleteRequestItem($mysqli, $_POST["requestID"]);
+        if(isset($_REQUEST["operation"]) && $_REQUEST["operation"] == 'delete' && isset($_REQUEST["requestID"])){
+            deleteRequestItem($mysqli, $_REQUEST["requestID"]);
         }
 		    displayItems($mysqli);
 		?>
