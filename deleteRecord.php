@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once 'shopping.php';
 
     if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
         // Grab user data from the database using the user_id
