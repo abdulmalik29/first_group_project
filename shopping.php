@@ -51,7 +51,7 @@ function displayItems($mysqli){
         $currentHouseID = $_SESSION['houseID'];
         $b_name = $_SESSION['username'];
         
-        $items1="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
+        $items1="SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
         $itemRecords1 = $mysqli->query($items1);
         
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
@@ -74,7 +74,7 @@ function displayItems($mysqli){
             echo '<tr width="100%"><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>
-                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
+                <td align="left"><form action="deleteRecord.php?shoppingID=(echo $row->shoppingID)" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
                 </tr>';
         }
         echo '</table></div><br>';
