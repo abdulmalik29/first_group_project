@@ -57,7 +57,7 @@ function displayItems($mysqli){
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords2 = $mysqli->query($items2);
         
-        $items3="SELECT requestID, requesterName FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
+        $items3="SELECT requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
