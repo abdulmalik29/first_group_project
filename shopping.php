@@ -74,7 +74,7 @@ function displayItems($mysqli){
             echo '<tr width="100%"><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>
-                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del"></form></td>
+                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
                 </tr>';
         }
         echo '</table></div><br>';
@@ -84,7 +84,6 @@ function displayItems($mysqli){
             <td align="left">Buyer</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
-            <td align="left">Del</td>
             </tr>';
         
         while($row = $itemRecords2->fetch_assoc())
@@ -93,9 +92,7 @@ function displayItems($mysqli){
             '<tr width="100%"><td align="left">' . $row['buyerName'] . 
                 '</td><td align="left">' . $row['item'] . 
                 '</td><td align="left">' . $row['price'] .
-                '</td>
-                <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del"></form></td>
-                </tr>';
+                '</td></tr>';
         }
         echo '</table></div><br>';
         
@@ -109,7 +106,7 @@ function displayItems($mysqli){
             echo 
             '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . 
             '</td>
-            <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del"></form></td>
+            <td align="left"><form action="deleteRecord.php" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del_r"></form></td>
             </tr>';
         }
         echo '</table></div></div>';
