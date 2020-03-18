@@ -60,8 +60,8 @@ function displayItems($mysqli){
         $items3="SELECT requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords3 = $mysqli->query($items3);
         
-        echo '<div style="float: left; border: 2px solid black; width: 50%">
-            <div id="scrollable"><table width="100%" align="left" border="2px black" cellspacing="5" cellpadding="8">
+        echo '<div style="float: left; width: 50%">
+            <div id="scrollable"><table width="100%" align="left" cellspacing="5" cellpadding="8">
             <tr width="100%"><th colspan="2" align="center" width="100%">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
