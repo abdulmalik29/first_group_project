@@ -74,7 +74,7 @@ function displayItems($mysqli){
             echo '<tr width="100%"><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td>
-                <td align="left"><form action="deleteRecord.php?shoppingID=(echo $row->shoppingID)" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
+                <td align="left"><form action="deleteRecord.php?shoppingID=(echo ' . $row['shoppingID']. ')" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
                 </tr>';
         }
         echo '</table></div><br>';
@@ -106,7 +106,7 @@ function displayItems($mysqli){
             echo 
             '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . 
             '</td>
-            <td align="left"><form action="deleteRecord.php?requestID=(echo $row->requestID)" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del_r"></form></td>
+            <td align="left"><form action="deleteRecord.php?requestID=(echo ' . $row['requestID'] . ')" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del_r"></form></td>
             </tr>';
         }
         echo '</table></div></div>';
