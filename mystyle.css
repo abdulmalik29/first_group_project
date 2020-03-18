@@ -159,9 +159,9 @@ div.form {
   padding: 20px;
 
 }
-div.scrollable {
+#scrollable {
   height: 200px;
-  width: 300px;
+  width: 100%;
   overflow: auto;
 }
 
