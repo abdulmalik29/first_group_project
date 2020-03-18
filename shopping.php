@@ -61,7 +61,7 @@ function displayItems($mysqli){
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<div style="float: left; border: 2px solid black; width: 55%">
-            <div class="scrollable" ><table align="left" width="100%" cellspacing="5" cellpadding="8">
+            <div class="scrollable" width="100%"><table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
