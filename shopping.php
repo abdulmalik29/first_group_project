@@ -112,24 +112,24 @@ function displayItems($mysqli){
         echo '</table></div></div>';
     }
     
-    function deleteShoppingItem($mysqli, $id){
-        $sql1 = "DELETE FROM 'Shopping' WHERE shoppingID = '" . $id ."'";
-        $sql2 = "DELETE FROM 'ShoppingSharedTo' WHERE shoppingID = '" . $id ."'";
-        $result1 = $mysqli->query($sql1);
-        $result2 = $mysqli->query($sql2);
-        if(!$result1 || !$result2){
-            echo 'Nope';
-        }
+function deleteShoppingItem($mysqli, $id){
+    $sql1 = "DELETE FROM 'Shopping' WHERE shoppingID = '" . $id ."'";
+    $sql2 = "DELETE FROM 'ShoppingSharedTo' WHERE shoppingID = '" . $id ."'";
+    $result1 = $mysqli->query($sql1);
+    $result2 = $mysqli->query($sql2);
+    if(!$result1 || !$result2){
+        throw new Exception("Cannot delete Shopping");
     }
-    function deleteRequestItem($mysqli, $id){
-        $sql1 = "DELETE FROM 'Request' WHERE requestID = '" . $id ."'";
-        $sql2 = "DELETE FROM 'RequestSharedTo' WHERE requestID = '" . $id ."'";
-        $result1 = $mysqli->query($sql1);
-        $result2 = $mysqli->query($sql2);
-        if(!$result1 || !$result2){
-            echo 'Nope';
-        }
+}
+function deleteRequestItem($mysqli, $id){
+    $sql1 = "DELETE FROM 'Request' WHERE requestID = '" . $id ."'";
+    $sql2 = "DELETE FROM 'RequestSharedTo' WHERE requestID = '" . $id ."'";
+    $result1 = $mysqli->query($sql1);
+    $result2 = $mysqli->query($sql2);
+    if(!$result1 || !$result2){
+        throw new Exception("Cannot delete Request");
     }
+}
   
 ?>
 <html>
