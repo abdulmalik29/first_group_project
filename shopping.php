@@ -61,7 +61,7 @@ function displayItems($mysqli){
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<div width=55% style="float: left; border: 2px solid black">
-            <div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
+            <div class="scrollable" ><table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -73,9 +73,9 @@ function displayItems($mysqli){
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td></tr>';
         }
-        echo '</table></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>';
+        echo '</table></div><br>';
         
-        echo '<div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
+        echo '<div class="scrollable"><table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">Your Debts</th></tr><tr>
             <td align="left">Buyer</td>
             <td align="left">Item</td>
@@ -92,7 +92,7 @@ function displayItems($mysqli){
         }
         echo '</table></div><br>';
         
-        echo '<div class="scrollable" style="float: left">
+        echo '<div class="scrollable">
             <table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">Requested Items</th></tr>
             <tr><td align="left">Item</td><td align="left">Requester</td></tr>';
