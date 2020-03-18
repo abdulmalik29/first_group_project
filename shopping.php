@@ -60,7 +60,7 @@ function displayItems($mysqli){
         $items3="SELECT requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords3 = $mysqli->query($items3);
         
-        echo '<div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
+        echo '<div style="float: left"><div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -72,7 +72,7 @@ function displayItems($mysqli){
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td></tr>';
         }
-        echo '</table></div>';
+        echo '</table></div><br>';
         
         echo '<div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
             <tr><th colspan="3" align="center">Your Debts</th></tr><tr>
@@ -89,7 +89,7 @@ function displayItems($mysqli){
                 '</td><td align="left">' . $row['price'] .
                 '</td></tr>';
         }
-        echo '</table></div>';
+        echo '</table></div><br>';
         
         echo '<div class="scrollable" style="float: left">
             <table align="left" width="100%" cellspacing="5" cellpadding="8">
@@ -101,7 +101,7 @@ function displayItems($mysqli){
             echo 
             '<tr><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . '</td></tr>';
         }
-        echo '</table></div><div class="scrollable" style="float: left"></div>';
+        echo '</table></div></div>';
     }
 ?>
 <html>
