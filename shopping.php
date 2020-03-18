@@ -101,7 +101,7 @@ function displayItems($mysqli){
             echo 
             '<tr><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . '</td></tr>';
         }
-        echo '</table></div>';
+        echo '</table></div><div></div>';
     }
 ?>
 <html>
@@ -121,21 +121,19 @@ function displayItems($mysqli){
 		<a href="logout.php" id='logout'>Logout</a><br>
 	</div>
 	<div class="rightcol">
-			<h1 align="center" width=100%>Finance and Shopping</h1>
-			    <?php
-			        displayItems($mysqli);
-			    ?>
-			    <div class="alarm" align="left">
-			    <?php
-                    displayBoughtForm($mysqli);
-                ?>
-                </div>
-                
-                <div class="alarm" align="right">
-				<?php
-				    displayRequestForm($mysqli);
-				?>
-				</div>
-<p>CHANGED??</p>
+		<h1 align="center" width=100%>Finance and Shopping</h1>
+	    <?php
+		    displayItems($mysqli);
+		?>
+		<div class="alarm" align="left">
+		<?php
+            displayBoughtForm($mysqli);
+        ?>
+        </div>
+        <div class="alarm" align="right">
+		<?php
+		    displayRequestForm($mysqli);
+		?>
+	</div>
 </body>
 </html>
