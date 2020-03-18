@@ -117,16 +117,13 @@ function deleteShoppingItem($mysqli, $id){
     $sql2 = "DELETE FROM ShoppingSharedTo WHERE shoppingID = " . $id;
     $result1 = $mysqli->query($sql1);
     $result2 = $mysqli->query($sql2);
-    if(!$result1){
-        throw new Exception("1Cannot delete Shopping");
-    }
-    if(!$result2){
-        throw new Exception("2Cannot delete Shopping");
+    if(!$result1 || !$result2){
+        throw new Exception("Cannot delete Request");
     }
 }
 function deleteRequestItem($mysqli, $id){
-    $sql1 = "DELETE FROM 'Request' WHERE requestID = '" . $id ."'";
-    $sql2 = "DELETE FROM 'RequestSharedTo' WHERE requestID = '" . $id ."'";
+    $sql1 = "DELETE FROM Request WHERE requestID = '" . $id ."'";
+    $sql2 = "DELETE FROM RequestSharedTo WHERE requestID = '" . $id ."'";
     $result1 = $mysqli->query($sql1);
     $result2 = $mysqli->query($sql2);
     if(!$result1 || !$result2){
