@@ -63,16 +63,17 @@ function displayItems($mysqli){
         echo '<div style="float: left; width: 50%">
             <div style="height: 175px; width: 100%; overflow: auto;">
             <table width="100%" align="left" cellspacing="5" cellpadding="8">
-            <tr width="100%"><th colspan="2" align="center" width="100%">You Bought</th></tr><tr>
+            <tr width="100%"><th colspan="3" align="center" width="100%">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
+            <td align="left">Del</td>
             </tr>';
         
         while($row = $itemRecords1->fetch_assoc())
         {
             echo '<tr width="100%"><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
-                $row['price'] . '</td></tr>';
+                $row['price'] . '</td><td align="left"><button onclick="deleteRecord()">X</button></td></tr>';
         }
         echo '</table></div><br>';
         
