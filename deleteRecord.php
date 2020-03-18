@@ -23,7 +23,7 @@
     $currentHouseID = $_SESSION['houseID'];
     $u_name = $_SESSION['username'];
     
-    $id = 6;
+    $id = 4;
     
     if (isset($_POST['del_b'])) {
         deleteShoppingItem($mysqli, $id);
