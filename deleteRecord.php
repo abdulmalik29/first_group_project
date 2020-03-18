@@ -27,11 +27,11 @@
     
     if (isset($_POST['del_b'])) {
         deleteShoppingItem($mysqli, $id);
-        header("Location: /shopping.php");
+        header("Location: /var/www/localhost/htdocs/c06214pf/first_group_project/shopping.php");
         die;
     } else if (isset($_POST['del_r'])) {
         deleteRequestItem($mysqli, $id);
-        header("Location: /shopping.php");
+        header("Location: /var/www/localhost/htdocs/c06214pf/first_group_project/shopping.php");
         die;
     }
 ?>
