@@ -27,7 +27,11 @@
     
     if (isset($_POST['del_b'])) {
         deleteShoppingItem($mysqli, $id);
+        header("Location: /shopping.php");
+        die;
     } else if (isset($_POST['del_r'])) {
         deleteRequestItem($mysqli, $id);
+        header("Location: /shopping.php");
+        die;
     }
 ?>
