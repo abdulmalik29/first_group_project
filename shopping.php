@@ -60,23 +60,23 @@ function displayItems($mysqli){
         $items3="SELECT requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords3 = $mysqli->query($items3);
         
-        echo '<div style="float: left; border: 2px solid black; width: 70%">
+        echo '<div style="float: left; border: 2px solid black; width: 50%">
             <div class="scrollable"><table align="left" cellspacing="5" cellpadding="8">
-            <tr><th colspan="2" align="center">You Bought</th></tr><tr>
+            <tr width="100%"><th colspan="2" align="center">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
             </tr>';
         
         while($row = $itemRecords1->fetch_assoc())
         {
-            echo '<tr><td align="left">' .
+            echo '<tr width="100%"><td align="left">' .
                 $row['item'] . '</td><td align="left">' .
                 $row['price'] . '</td></tr>';
         }
         echo '</table></div><br>';
         
         echo '<div class="scrollable"><table align="left" cellspacing="5" cellpadding="8">
-            <tr><th colspan="3" align="center">Your Debts</th></tr><tr>
+            <tr width="100%"><th colspan="3" align="center">Your Debts</th></tr><tr>
             <td align="left">Buyer</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
@@ -85,7 +85,7 @@ function displayItems($mysqli){
         while($row = $itemRecords2->fetch_assoc())
         {
             echo 
-            '<tr><td align="left">' . $row['buyerName'] . 
+            '<tr width="100%"><td align="left">' . $row['buyerName'] . 
                 '</td><td align="left">' . $row['item'] . 
                 '</td><td align="left">' . $row['price'] .
                 '</td></tr>';
@@ -94,13 +94,13 @@ function displayItems($mysqli){
         
         echo '<div class="scrollable">
             <table align="left" cellspacing="5" cellpadding="8">
-            <tr><th colspan="2" align="center">Requested Items</th></tr>
-            <tr><td align="left">Item</td><td align="left">Requester</td></tr>';
+            <tr width="100%"><th colspan="2" align="center">Requested Items</th></tr>
+            <tr width="100%"><td align="left">Item</td><td align="left">Requester</td></tr>';
         
         while($row = $itemRecords3->fetch_assoc())
         {
             echo 
-            '<tr><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . '</td></tr>';
+            '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . '</td></tr>';
         }
         echo '</table></div></div>';
     }
