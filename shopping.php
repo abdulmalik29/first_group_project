@@ -39,7 +39,7 @@ function displayRequestForm($mysqli){
     echo
     '<form action="processShopping.php" method="POST">   
     <label>Item</label>
-	    <input type="text" name="item_name_r" required><br>
+	    <input type="text" name="item_name_r" required width="200px"><br>
 		<label>From</label>
 		<input type="text" name="requester" required><br>
 		<input type="submit" value="Request" name="submit_btn_r">
