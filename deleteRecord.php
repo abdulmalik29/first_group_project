@@ -21,5 +21,12 @@
     
     $currentHouseID = $_SESSION['houseID'];
     $u_name = $_SESSION['username'];
-  
+    
+    $id = 5;
+    
+    if (isset($_POST['del_b'])) {
+        deleteShoppingItem($mysqli, $id);
+    } else if (isset($_POST['del_r'])) {
+        deleteRequestItem($mysqli, $id);
+    }
 ?>
