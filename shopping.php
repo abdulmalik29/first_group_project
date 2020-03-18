@@ -66,7 +66,7 @@ function displayItems($mysqli){
             <tr width="100%"><th colspan="3" align="center" width="100%">You Bought</th></tr><tr>
             <td align="left">Item</td>
             <td align="left">Price</td>
-            <td align="left">Del</td>
+            <td align="left">Delete</td>
             </tr>';
         
         while($row = $itemRecords1->fetch_assoc())
@@ -78,10 +78,11 @@ function displayItems($mysqli){
         echo '</table></div><br>';
         
         echo '<div style="height: 175px; width: 100%; overflow: auto;"><table width="100%" align="left" cellspacing="5" cellpadding="8">
-            <tr width="100%"><th colspan="3" align="center" width="100%">Your Debts</th></tr><tr>
+            <tr width="100%"><th colspan="4" align="center" width="100%">Your Debts</th></tr><tr>
             <td align="left">Buyer</td>
             <td align="left">Item</td>
             <td align="left">Price</td>
+            <td align="left">Delete</td>
             </tr>';
         
         while($row = $itemRecords2->fetch_assoc())
@@ -90,19 +91,20 @@ function displayItems($mysqli){
             '<tr width="100%"><td align="left">' . $row['buyerName'] . 
                 '</td><td align="left">' . $row['item'] . 
                 '</td><td align="left">' . $row['price'] .
-                '</td></tr>';
+                '</td><td align="left"><button onclick="deleteRecord()">X</button></td></tr>';
         }
         echo '</table></div><br>';
         
         echo '<div style="height: 175px; width: 100%; overflow: auto;">
             <table align="left" cellspacing="5" cellpadding="8" width="100%">
-            <tr width="100%"><th colspan="2" align="center">Requested Items</th></tr>
-            <tr width="100%"><td align="left">Item</td><td align="left">Requester</td></tr>';
+            <tr width="100%"><th colspan="3" align="center">Requested Items</th></tr>
+            <tr width="100%"><td align="left">Item</td><td align="left">Requester</td><td align="left">Delete</td></tr>';
         
         while($row = $itemRecords3->fetch_assoc())
         {
             echo 
-            '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . '</td></tr>';
+            '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . 
+            '</td><td align="left"><button onclick="deleteRecord()">X</button></td></tr>';
         }
         echo '</table></div></div>';
     }
