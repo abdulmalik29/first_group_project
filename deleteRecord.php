@@ -23,13 +23,13 @@
     $currentHouseID = $_SESSION['houseID'];
     $u_name = $_SESSION['username'];
     
-    $id = 4;
-    
     if (isset($_POST['del_b'])) {
+        $id = $_GET['shoppingID'];
         deleteShoppingItem($mysqli, $id);
         header("Location: /shopping.php");
         die;
     } else if (isset($_POST['del_r'])) {
+        $id = $_GET['requestID'];
         deleteRequestItem($mysqli, $id);
         header("Location: /shopping.php");
         die;
