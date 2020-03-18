@@ -54,14 +54,10 @@ function displayItems($mysqli){
         $items1="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
         $itemRecords1 = $mysqli->query($items1);
         
-        //this query is not working - it is for displaying the items someone bought for you
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords2 = $mysqli->query($items2);
-        //posible solution but not working either
-        //$items2="SELECT Shopping.buyerName, Shopping.item, Shopping.price FROM Shopping INNER JOIN ShoppingSharedTo ON Shopping.shoppingID = ShoppingSharedTo.shoppingID WHERE houseID = " . $currentHouseID . " AND username = " . $b_name;
-        //$itemRecords2 = $mysqli->query($items2);
         
-        $items3="SELECT requesterName, item  FROM Request WHERE houseID = " . $currentHouseID;
+        $items3="SELECT requesterName, id FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords3 = $mysqli->query($items3);
         
         echo '<div class="scrollable" style="float: left"><table align="left" width="100%" cellspacing="5" cellpadding="8">
