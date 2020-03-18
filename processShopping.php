@@ -43,24 +43,12 @@
         $sql1 = "INSERT INTO Shopping (buyerName, item, price, houseID) VALUES ('$u_name', '$i_name', '$i_price', '$currentHouseID')";
         $sql2 = "INSERT INTO ShoppingSharedTo (username, houseID) VALUES ('$o_name', '$currentHouseID')";   
     } else if (isset($_POST['submit_btn_r'])){
-        //get next index and values from input
-        $query0="SELECT COUNT(*) FROM Request";
-        $records0 = $mysqli->query($query0);
-        if ($records0 == '0'){
-            $next_index = 0;
-        }else{
-            $query1="SELECT MAX(requestID) FROM Request";
-            $records1 = $mysqli->query($query1);
-            $row1 = $records1->fetch_assoc();
-            $next_index = $row1['requestID'];
-            $next_index++;
-        }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_r']);
         $r_name = mysqli_real_escape_string($mysqli, $_POST['requester']);
         
         //put records into database
-        $sql1 = "INSERT INTO Request (requestID, requesterName, item, houseID) VALUES ('$next_index', '$u_name', '$i_name', '$currentHouseID')";
-        $sql2 = "INSERT INTO RequestSharedTo (requestID, username, houseID) VALUES ('$next_index', '$r_name', '$currentHouseID')";
+        $sql1 = "INSERT INTO Request (requesterName, item, houseID) VALUES ('$u_name', '$i_name', '$currentHouseID')";
+        $sql2 = "INSERT INTO RequestSharedTo (username, houseID) VALUES ('$r_name', '$currentHouseID')";
     }
     
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
