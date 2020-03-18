@@ -103,7 +103,7 @@ function displayItems($mysqli){
         while($row = $itemRecords3->fetch_assoc())
         {
             echo 
-            '<tr><td align="left">' . $row['requesterName'] . '</td><td align="left">' . $row['item'] . '</td></tr>';
+            '<tr><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . '</td></tr>';
         }
         echo '</table></div>';
     }
