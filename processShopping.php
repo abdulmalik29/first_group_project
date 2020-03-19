@@ -43,7 +43,7 @@
     if($mysqli->query($sql1) && $mysqli->query($sql2)) {       
         echo "<script>
              alert('Records added successfully'); 
-             window.history.go(-1);
+             window.location.replace("shopping.php");
      </script>";
     } else{
         echo "ERROR: Could not able to execute $sql1 or $sql2 " . mysqli_error($mysqli);
