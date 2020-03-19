@@ -24,17 +24,6 @@
     
     if (isset($_POST['submit_btn_b'])) {
         //get next index and values from input
-        $query0="SELECT COUNT(*) FROM Shopping";
-        $records0 = $mysqli->query($query0);
-        if ($records0 == '0'){
-            $next_index = 0;
-        }else{
-            $query1="SELECT MAX(shoppingID) FROM Shopping";
-            $records1 = $mysqli->query($query1);
-            $row1 = $records1->fetch_assoc();
-            $next_index = $row1['shoppingID'];
-            $next_index++;
-        }
         $i_name =  mysqli_real_escape_string($mysqli, $_POST['item_name_b']);
         $o_name = mysqli_real_escape_string($mysqli, $_POST['owner_name_b']);
         $i_price = mysqli_real_escape_string($mysqli, $_POST['item_price_b']);
