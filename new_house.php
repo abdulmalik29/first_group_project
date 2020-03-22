@@ -62,6 +62,8 @@ h1{
   border-radius:4px;
   border: #27ae60 1px solid;
   
+  display:block;
+  margin: 0 auto;
   margin-top:5px;
   margin-bottom:5px;
   float:left;
