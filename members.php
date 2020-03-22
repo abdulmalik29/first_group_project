@@ -28,7 +28,7 @@ else {
   font-size:1.5em;
 }
         h2{
-    font-size: 0.5em;
+    font-size: 1em;
         }
 	</style>
 <head>
