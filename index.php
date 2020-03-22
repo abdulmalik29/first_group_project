@@ -94,7 +94,7 @@ body {
 		<div class="row">
 			<div class="column">
 				<div class="card">
-					<img src= "money.jpg" alt="money pic" style = width="160" height="160">
+					<!--<img src= "money.jpg" alt="money pic" style = width="160" height="160">-->
 					<div class="container">
 						<h2>Finances</h2>
 						<p>The shopping list also takes care of who owes who what. If one friend has made a specific request then you can keep track of your finances </p>
