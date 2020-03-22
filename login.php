@@ -66,7 +66,7 @@ h1{
   font-size:1em;
 }
 
-.button{
+.submit{
   background:#3498db;
   width:125px;
   padding-top:10px;
@@ -95,7 +95,7 @@ h1{
 	<form action="login_process.php" method="post">
 		
   		<div class="container">
-      <h1>MEMBER</h1>
+      <h1>MEMBER LOGIN</h1>
 		<?php			
 			if (isset($_SESSION['access_attempted'])) {
 				echo "<h2>You must log in to view that page.</h2>";
@@ -110,7 +110,7 @@ h1{
     		<input type="password" placeholder="Enter Password" name="psw" class="email" required>
 
     		<br><br>
-    		<button type="submit">Login</button>
+    		<button type="submit" class = "submit">Login</button>
 
     		<br>
   		</div>
