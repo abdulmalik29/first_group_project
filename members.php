@@ -54,7 +54,7 @@ else {
     		    </form>";
             } else {
                 $row = $result1->fetch_assoc();
-                echo  "Owner Email: " . $row[0]; //want to add "Owner Email : " . $result1; but there's an error
+                echo  "Owner Email: " . $row["ownerEmail"]; //want to add "Owner Email : " . $result1; but there's an error
             }
                 
 		?>
