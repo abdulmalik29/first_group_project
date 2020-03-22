@@ -56,8 +56,8 @@ h1{
 .button{
   background:#2ecc71;
   width:125px;
-  //padding-top:5px;
-  //padding-bottom:5px;
+  padding-top:5px;
+  padding-bottom:5px;
   color:white;
   border-radius:4px;
   border: #27ae60 1px solid;
