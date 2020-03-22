@@ -42,8 +42,7 @@ else {
 	    <h1>Your Homies</h1>
 	    <?php
 	        $CurrentHouseID = $_SESSION['houseID'];
-	        $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
-            $result1 = $mysqli->query($sql);
+	        
             if(is_null($result1)) {
     	         echo "<form action='inputlandlord.php' method='post'>
     			           <label>Landlords Email</label>
@@ -51,6 +50,8 @@ else {
     				    	<input type='submit' value='Submit'>
     		    </form>";
             } else {
+                $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
+                $result1 = $mysqli->query($sql);
                 echo  "Owner Email: "; //want to add "Owner Email : " . $result1; but there's an error
             }
 		?>
