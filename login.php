@@ -35,6 +35,7 @@ if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
   font-size: 16px;
   cursor: pointer;
 	float: left;
+  margin: 0 auto 0 auto;
 }
 
 p{
