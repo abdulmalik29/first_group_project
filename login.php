@@ -95,7 +95,7 @@ h1{
 	<form action="login_process.php" method="post">
 		
   		<div class="container">
-      <h1>MEMBER LOGIN</h1>
+      <h1>MEMBER</h1>
 		<?php			
 			if (isset($_SESSION['access_attempted'])) {
 				echo "<h2>You must log in to view that page.</h2>";
