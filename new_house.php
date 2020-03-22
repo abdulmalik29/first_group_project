@@ -59,8 +59,8 @@ h1{
   padding-top:5px;
   padding-bottom:5px;
   color:white;
-  border-radius:4px;
-  border: #27ae60 1px solid;
+  //border-radius:4px;
+  //border: #27ae60 1px solid;
   
   //margin-top:20px;
   //margin-bottom:20px;
