@@ -76,7 +76,7 @@ body {
     <div class="card">
       <div class="container">
         <h2>In/Out</h2>
-				<p>The alarm function allows house members to let other members of the house to know whether or not they are present inside the house. This allows them to find out whether or not they have to set an alarm or not. </p>
+				<p>The in/out function allows house members to let other members of the house to know whether or not they are present inside the house. This allows them to find out whether or not they have to set an alarm or not when leaving. </p>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ body {
 	    <div class="card">
 	      <div class="container">
 	        <h2>Shopping List</h2>
-					<p>This funtion allows you as the user to let everyone know when something is out in your house. If you are runing out of butter but you are busy for the next couple of hours or know someone else is heading to the shop then you can just add it into the shopping list for the next person who is at the shop to log in and check. </p>
+					<p>This function allows you as the user to let everyone know when a product in your house has run out. If you are running out of butter but you are busy for the next couple of hours or know someone else is heading to the shop then you can just add it into the shopping list for the next person who is at the shop to log in and check. </p>
 	      </div>
 	    </div>
 	  </div>
@@ -111,15 +111,5 @@ body {
 						</div>
 					</div>
 				</div>
-
-				<div class="row">
-					<div class="column">
-						<div class="card">
-							<div class="container">
-								<h2>Chat</h2>
-								<p>The chat is very straightforward, it is a central chat for the house that will allow users to talk about anything. It can serve as a location to only discuss house related things or as a mainy group chat for memes and the like! </p>
-							</div>
-						</div>
-					</div>
 </body>
 </html>
