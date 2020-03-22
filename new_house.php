@@ -81,7 +81,7 @@ h1{
 
 	<img src="homies.png" alt="Homies logo"><br>
 	<form action="newhouse_process.php" method="post">
-		<!--
+		
   		<div class="container">
         <h1>NEW HOUSE</h1>
     		<label for="housename"><b></b></label>
@@ -111,7 +111,7 @@ h1{
         	<button type="submit"><div class="button">Create</div></button>
     
   		</div>
-      -->
+      
 	</form>
 
 </body>
