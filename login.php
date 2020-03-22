@@ -77,7 +77,7 @@ h1{
   margin-top:5px;
   margin-bottom:5px;
   float:left;
-  margin-left:20px;
+  margin-left:30px;
   font-weight:800;
   font-size:0.8em;
 }
