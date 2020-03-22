@@ -106,7 +106,7 @@ h1{
    			<br>
 
    			<label for="psw"></label>
-    		<input type="password" placeholder="Enter Password" name="psw" class="email" required>
+    		<input type="password" placeholder="Enter Password" name="psw" class="password" required>
 
     		<br><br>
     		<button type="submit" class = "submit">Login</button>
