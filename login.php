@@ -102,11 +102,11 @@ h1{
 				unset($_SESSION['access_attempted']);
 			}
 		?>
-    		<label for="uname"><b></b></label>
+    		<label for="uname"></label>
     		<input type="text" placeholder="Enter Username" name="uname" class="email" required>
    			<br>
 
-   			<label for="psw"><b></b></label>
+   			<label for="psw"></label>
     		<input type="password" placeholder="Enter Password" name="psw" class="email" required>
 
     		<br><br>
