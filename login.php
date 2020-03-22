@@ -24,6 +24,19 @@ if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
   margin: 20px 0px 20px 0px;   
 }
 
+.nav{
+	background-color: #33B0CC;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+	float: left;
+}
+
 p{
   font-size:12px;
   text-decoration: none;
@@ -90,6 +103,9 @@ h1{
 </head>
 
 <body>
+  <button class="nav" onclick="window.location.href = 'login.php';">Login</button>
+	<button class="nav" onclick="window.location.href = 'new_house.php';">New House</button>
+	<button class="nav" onclick="window.location.href = 'new_member.php';">New Member</button>
 	<img src="homies.png" alt="Homies logo"><br>
 	
 	<form action="login_process.php" method="post">
