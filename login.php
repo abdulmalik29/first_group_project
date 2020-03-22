@@ -50,7 +50,7 @@ h1{
   border: #ccc 1px solid;
   border-bottom: #ccc 2px solid;
   padding: 8px;
-  width:300px;
+  width:250px;
   color:#AAAAAA;
   margin-top:10px;
   font-size:1em;
@@ -123,7 +123,7 @@ background:#3594D2;
 			}
 		?>
     		<label for="uname"><b></b></label>
-    		<input type="text" placeholder="Enter Username" name="uname" class="email" required>
+    		<input type="text" placeholder="Enter Username" name="uname" class="password" required>
    			<br>
 
    			<label for="psw"><b></b></label>
