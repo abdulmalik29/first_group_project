@@ -109,7 +109,7 @@ h1{
   <button class="nav" onclick="window.location.href = 'login.php';">Login</button>
 	<button class="nav" onclick="window.location.href = 'new_house.php';">New House</button>
 	<button class="nav" onclick="window.location.href = 'new_member.php';">New Member</button><br><br><br><br><br>
-	<img src="homies.png" alt="Homies logo">
+	<img src="HomiesFooter.png" alt="Homies logo">
 	
 	<form action="login_process.php" method="post">
 		
