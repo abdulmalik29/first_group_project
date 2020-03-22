@@ -34,7 +34,7 @@ h1{
 
 .email{
   background:#ecf0f1;
-  border: #ccc 3px solid;
+  border: #ccc 1px solid;
   border-bottom: #ccc 2px solid;
   padding: 8px;
   width:250px;
