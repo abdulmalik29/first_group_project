@@ -75,7 +75,7 @@ h1{
   border: #27ae60 1px solid;
   
   margin-top:5px;
-  margin-bottom:5px;
+  margin-bottom:15px;
   float:left;
   margin-left:85px;
   font-weight:800;
