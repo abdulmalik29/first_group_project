@@ -11,7 +11,19 @@
   text-align:center;
   margin: 20px 0px 20px 0px;   
 }
-
+.nav{
+	background-color: #33B0CC;
+  border: white;
+  color: white;
+  margin: 0 auto 0 auto;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  //display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+	float: left;
+}
 p{
   font-size:12px;
   text-decoration: none;
