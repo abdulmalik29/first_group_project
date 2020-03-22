@@ -61,6 +61,7 @@ h1{
   background:#ecf0f1;
   border: #ccc 1px solid;
   padding: 8px;
+  margin-top:10px;
   width:250px;
   font-size:1em;
 }
