@@ -62,8 +62,8 @@ h1{
   border-radius:4px;
   border: #27ae60 1px solid;
   
-  margin-top:20px;
-  margin-bottom:20px;
+  //margin-top:20px;
+  //margin-bottom:20px;
   float:left;
   margin-left:16px;
   font-weight:800;
