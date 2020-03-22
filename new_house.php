@@ -65,7 +65,7 @@ h1{
   margin-top:5px;
   margin-bottom:5px;
   float:left;
-  margin-left:16px;
+  margin-left:36px;
   font-weight:800;
   font-size:0.8em;
 }
