@@ -53,8 +53,8 @@ else {
             } else {
                 $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
                 $result1 = $mysqli->query($sql);
-                echo  "Owner Email: "; //want to add "Owner Email : " . $result1; but there's an error
-            }
+                echo  "Owner Email: " . $result1; 
+                }
 		?>
 
     <div class="HouseID">
