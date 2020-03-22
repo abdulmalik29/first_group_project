@@ -123,7 +123,7 @@ background:#3594D2;
 			}
 		?>
     		<label for="uname"><b></b></label>
-    		<input type="text" placeholder="Enter Username" name="uname" class="password" required>
+    		<input type="text" placeholder="Enter Username" name="uname" class="email" required>
    			<br>
 
    			<label for="psw"><b></b></label>
