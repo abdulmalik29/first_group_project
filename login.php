@@ -26,13 +26,13 @@ if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
 
 .nav{
 	background-color: #33B0CC;
-  border: none;
+  border: white;
   color: white;
   margin: 0 auto 0 auto;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  //display: inline-block;
   font-size: 16px;
   cursor: pointer;
 	float: left;
