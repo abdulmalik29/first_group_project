@@ -132,7 +132,7 @@ background:#3594D2;
         <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
 
     		<br><br>
-    		<button type="submit">Create</button>
+    		<button type="submit" class = "button">Create</button>
 
     		<br>
   		</div>
