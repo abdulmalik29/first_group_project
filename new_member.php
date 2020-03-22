@@ -53,7 +53,7 @@ h1{
   font-size:1em;
 }
 
-.button{
+.create{
   background:#2ecc71;
   width:125px;
   padding-top:5px;
@@ -74,25 +74,6 @@ h1{
   background:#2CC06B; 
 }
 
-#btn2{
-  float:left;
-  background:#3498db;
-  width:125px;  padding-top:5px;
-  padding-bottom:5px;
-  color:white;
-  border-radius:4px;
-  border: #2980b9 1px solid;
-  
-  margin-top:20px;
-  margin-bottom:20px;
-  margin-left:10px;
-  font-weight:800;
-  font-size:0.8em;
-}
-
-#btn2:hover{ 
-background:#3594D2; 
-}
 	</style>
 </head>
 
@@ -132,7 +113,7 @@ background:#3594D2;
         <input type="text" placeholder="Enter Phone number" name="pnumber" class="email" required>
 
     		<br><br>
-    		<button type="submit" class = "button">Create</button>
+    		<button type="submit" class = "create">Create</button>
 
     		<br>
   		</div>
