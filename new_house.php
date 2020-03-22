@@ -34,7 +34,7 @@ h1{
 
 .email{
   background:#ecf0f1;
-  border: #ccc 1px solid;
+  border: #ccc 30px solid;
   border-bottom: #ccc 2px solid;
   padding: 8px;
   width:250px;
@@ -62,8 +62,6 @@ h1{
   border-radius:4px;
   border: #27ae60 1px solid;
   
-  display:block;
-  margin: 0 auto;
   margin-top:5px;
   margin-bottom:5px;
   float:left;
