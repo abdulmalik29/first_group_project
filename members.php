@@ -23,6 +23,12 @@ else {
 }
 ?>
 <html>
+    <style>
+		h1{
+  font-size:1.5em;
+  color:#525252;
+}
+	</style>
 <head>
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,7 +60,7 @@ else {
     		    </form>";
             } else {
                 $row = $result1->fetch_assoc();
-                echo  "Owner Email: " . $row["ownerEmail"]; //want to add "Owner Email : " . $result1; but there's an error
+                echo  "<h1>Owner Email: " . $row["ownerEmail"] . "</h1>"; //want to add "Owner Email : " . $result1; but there's an error
             }
                 
 		?>
@@ -62,7 +68,7 @@ else {
     <div class="HouseID">
 	    <?php
             $CurrentHouseID = $_SESSION['houseID'];
-            echo  "\nHouse ID = " . $CurrentHouseID;
+            echo  "<h1>\nHouse ID = " . $CurrentHouseID . "</h1>";
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
             ?>
     </div>
