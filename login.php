@@ -105,7 +105,7 @@ h1{
 </head>
 
 <body>
-  <img src="HomiesFooter.png" alt="Homies logo">
+  <img src="HomiesFooter.png" alt="Homies logo"><br><br>
   <button class="nav" onclick="window.location.href = 'index.php';">Home</button>
   <button class="nav" onclick="window.location.href = 'login.php';">Login</button>
 	<button class="nav" onclick="window.location.href = 'new_house.php';">New House</button>
