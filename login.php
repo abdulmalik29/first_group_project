@@ -12,7 +12,6 @@ if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
 ?>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LOGIN</title>
 	<style>
@@ -45,7 +44,7 @@ h1{
   border: #2980b9 4px solid; 
 }
 
-.email{
+.username{
   background:#ecf0f1;
   border: #ccc 1px solid;
   border-bottom: #ccc 2px solid;
@@ -103,7 +102,7 @@ h1{
 			}
 		?>
     		<label for="uname"></label>
-    		<input type="text" placeholder="Enter Username" name="uname" class="email" required>
+    		<input type="text" placeholder="Enter Username" name="uname" class="username" required>
    			<br>
 
    			<label for="psw"></label>
