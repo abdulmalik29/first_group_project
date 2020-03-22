@@ -63,7 +63,7 @@ h1{
   border: #27ae60 1px solid;
   
   margin-top:5px;
-  margin-bottom:20px;
+  margin-bottom:5px;
   float:left;
   margin-left:16px;
   font-weight:800;
