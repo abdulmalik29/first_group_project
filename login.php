@@ -69,7 +69,7 @@ h1{
   background:#3498db;
   width:125px;
   padding-top:10px;
-  padding-bottom:10px;
+  padding-bottom:px;
   color:white;
   border-radius:4px;
   border: #27ae60 1px solid;
