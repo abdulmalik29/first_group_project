@@ -105,6 +105,7 @@ h1{
 </head>
 
 <body>
+  <button class="nav" onclick="window.location.href = 'index.php';">Home</button>
   <button class="nav" onclick="window.location.href = 'login.php';">Login</button>
 	<button class="nav" onclick="window.location.href = 'new_house.php';">New House</button>
 	<button class="nav" onclick="window.location.href = 'new_member.php';">New Member</button><br><br><br><br><br>
