@@ -58,7 +58,7 @@ function displayItems($mysqli){
 
         //$itemRecords1 = $mysqli->query($items1);
         $itemRecords1 = $stmt1->execute();
-                echo $itemRecords1;
+        $itemRecords1 = $mysqli->store_result();
 
         
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
