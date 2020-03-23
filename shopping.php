@@ -68,16 +68,21 @@ function displayItems($mysqli){
             <td align="left">Price</td>
             <td align="left">Del</td>
             </tr>';
-        
-        while($row = $itemRecords1->fetch_assoc())
-        {
-            echo '<tr width="100%"><td align="left">' .
-                $row['item'] . '</td><td align="left">' .
-                $row['price'] . '</td>
-                <td align="left"><form action="shopping.php?operation=delete&shoppingID=' . $row['shoppingID']. '" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
-                </tr>';
+            
+        if (is_null($itemRecords1)) {
+            echo '</table></div><br>';
         }
-        echo '</table></div><br>';
+        else {
+            while($row = $itemRecords1->fetch_assoc())
+            {
+                echo '<tr width="100%"><td align="left">' .
+                    $row['item'] . '</td><td align="left">' .
+                    $row['price'] . '</td>
+                    <td align="left"><form action="shopping.php?operation=delete&shoppingID=' . $row['shoppingID']. '" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
+                    </tr>';
+            }
+            echo '</table></div><br>';
+        }
         
         echo '<div style="height: 175px; width: 100%; overflow: auto;"><table width="100%" align="left" cellspacing="5" cellpadding="8">
             <tr width="100%"><th colspan="4" align="center" width="100%">Your Debts</th></tr><tr>
@@ -86,30 +91,40 @@ function displayItems($mysqli){
             <td align="left">Price</td>
             </tr>';
         
-        while($row = $itemRecords2->fetch_assoc())
-        {
-            echo 
-            '<tr width="100%"><td align="left">' . $row['buyerName'] . 
-                '</td><td align="left">' . $row['item'] . 
-                '</td><td align="left">' . $row['price'] .
-                '</td></tr>';
+        if (is_null($itemRecords2)) {
+            echo '</table></div><br>';
         }
-        echo '</table></div><br>';
-        
+        else {
+            while($row = $itemRecords2->fetch_assoc())
+            {
+                echo 
+                '<tr width="100%"><td align="left">' . $row['buyerName'] . 
+                    '</td><td align="left">' . $row['item'] . 
+                    '</td><td align="left">' . $row['price'] .
+                    '</td></tr>';
+            }
+            echo '</table></div><br>';
+            }
         echo '<div style="height: 175px; width: 100%; overflow: auto;">
             <table align="left" cellspacing="5" cellpadding="8" width="100%">
             <tr width="100%"><th colspan="3" align="center">Requested Items</th></tr>
             <tr width="100%"><td align="left">Item</td><td align="left">Requester</td><td align="left">Del</td></tr>';
         
-        while($row = $itemRecords3->fetch_assoc())
-        {
-            echo 
-            '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . 
-            '</td>
-            <td align="left"><form action="shopping.php?operation=delete&requestID=' . $row['requestID'] . '" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del_r"></form></td>
-            </tr>';
+        
+        if (is_null($itemRecords3)) {
+            echo '</table></div><br>';
         }
-        echo '</table></div></div>';
+        else {
+            while($row = $itemRecords3->fetch_assoc())
+            {
+                echo 
+                '<tr width="100%"><td align="left">' . $row['item'] . '</td><td align="left">' . $row['requesterName'] . 
+                '</td>
+                <td align="left"><form action="shopping.php?operation=delete&requestID=' . $row['requestID'] . '" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X"  name="del_r"></form></td>
+                </tr>';
+            }
+            echo '</table></div></div>';
+        }
     }
     
 function deleteShoppingItem($mysqli, $id){
