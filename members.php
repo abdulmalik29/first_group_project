@@ -23,14 +23,6 @@ else {
 }
 ?>
 <html>
-    <style>
-		h1{
-  font-size:1.5em;
-}
-        h2{
-    font-size: 1em;
-        }
-	</style>
 <head>
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
