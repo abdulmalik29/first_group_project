@@ -53,8 +53,9 @@ function displayItems($mysqli){
         
         //$items1="SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
         $stmt1 = $mysqli->prepare("SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = ? AND buyerName = ?");
-        echo $stmt1;
         $stmt1->bind_param("ss", $currentHouseID, $b_name);
+                echo $stmt1;
+
         //$itemRecords1 = $mysqli->query($items1);
         $itemRecords1 = $stmt1->execute();
         
