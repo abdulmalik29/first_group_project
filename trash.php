@@ -43,9 +43,9 @@ else {
 
         <p>
             <h1 align="center">Recycling Bins You Should Use</h1>
-
-            <figure>
+            <p>Please note this advice is only for Manchester. Consult your local authority if you are not in Manchester.</p>
             <h2 align="center">Brown bin or container</h2>
+            <figure>
                 <img  src="https://www.manchester.gov.uk/images/brown_bin_image.jpg" style="width:500px;height:250px;">
                 <figcaption align ="center">© 2020 Manchester City Council</figcaption>
             </figure>
@@ -55,6 +55,7 @@ else {
                 <figcaption align ="center">© 2020 Manchester City Council</figcaption>
             </figure>
 
+            <h2 align="center">Blue bin or container</h2>
             <figure>
                 <img  src="https://www.manchester.gov.uk/images/blue_bin_image.jpg" style="width:500px;height:250px;">
                 <figcaption align ="center">© 2020 Manchester City Council</figcaption>
@@ -65,6 +66,7 @@ else {
                 <figcaption align ="center">© 2020 Manchester City Council</figcaption>
             </figure>
 
+            <h2 align="center">Green bin or container</h2>
             <figure>
                 <img  src="https://www.manchester.gov.uk/images/green_bin_image.jpg" style="width:500px;height:250px;">
                 <figcaption align ="center">© 2020 Manchester City Council</figcaption>
