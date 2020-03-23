@@ -29,6 +29,15 @@ else {
 	<title>Complaints</title>
 </head>
 <style>
+    .container{
+      background:white;
+      width:300px;
+      border-radius:6px;
+      margin: 0 auto 0 auto;
+      padding:0px 0px 70px 0px;
+      border: #2980b9 4px solid; 
+    }
+
     .dateform{
       background:#ecf0f1;
       border: #ccc 1px solid;
@@ -135,7 +144,7 @@ else {
 </html>
 <?php
     function displayForm($mysqli) {
-        echo    '<div class="formcomplaints">
+        echo    '<div class="container">
                     <form action="inputcomplaints.php" method="post">
 			            <label>Date</label>
 					    <input type="date" name="date" class="dateform"><br>
