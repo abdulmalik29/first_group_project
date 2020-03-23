@@ -24,7 +24,9 @@
     $currentUsername = $_SESSION['username'];
     $owneremail = mysqli_real_escape_string($mysqli, $_POST['owneremail']);
     $sql = "UPDATE House SET ownerEmail = '$owneremail' WHERE houseID = '$currentHouseID'";
-    if($mysqli->query($sql)) {       
+    $stmt = $mysqli->prepare("UPDATE House SET ownerEmail = ? WHERE houseID = ?");
+    $stmt->bind_param('ss', $owneremail, $currentHouseID);
+    if($stmt->execute()) {       
         echo "<script>
              alert('Email added successfully'); 
              window.history.go(-1);
