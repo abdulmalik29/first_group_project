@@ -28,6 +28,61 @@ else {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Complaints</title>
 </head>
+<style>
+    .dateform{
+      background:#ecf0f1;
+      border: #ccc 1px solid;
+      border-bottom: #ccc 2px solid;
+      padding: 8px;
+      width:250px;
+      color:#AAAAAA;
+      margin-top:10px;
+      font-size:1em;
+      border-radius:4px;
+    }
+
+    .locform{
+      border-radius:4px;
+      background:#ecf0f1;
+      border: #ccc 1px solid;
+      padding: 8px;
+      margin-top:10px;
+      width:250px;
+      font-size:1em;
+    }
+    
+    .comform{
+      border-radius:4px;
+      background:#ecf0f1;
+      border: #ccc 1px solid;
+      padding: 8px;
+      margin-top:10px;
+      width:250px;
+      font-size:1em;
+    }
+    
+    .submit{
+      background:#3498db;
+      width:125px;
+      padding-top:10px;
+      padding-bottom:10px;
+      color:white;
+      border-radius:4px;
+      border: #27ae60 1px solid;
+      
+      margin-top:5px;
+      margin-bottom:15px;
+      float:left;
+      margin-left:85px;
+      font-weight:800;
+      font-size:0.8em;
+    }
+    
+    .button:hover{
+      background:#2CC06B; 
+    }
+
+</style>
 <body>
 	<div class="leftcol">
 		<h1 align=center>HOMIES</h1>
@@ -85,12 +140,12 @@ else {
         echo    '<div class="formcomplaints">
                     <form action="inputcomplaints.php" method="post">
 			            <label>Date</label>
-					    <input type="date" name="date"><br>
+					    <input type="date" name="date" class="dateform"><br>
 				        <label>Location</label>
-				    	<input type="text" name="location"><br>
+				    	<input type="text" name="location" class="locform"><br>
 				    	<label>Complaint</label>
-				    	<input type="text" name="complaint"><br>
-				    	<input type="submit" value="Submit">
+				    	<input type="text" name="complaint" class="comform"><br>
+				    	<input type="submit" value="Submit" class="submit">
 				    </form>
 				</div>';
     }
