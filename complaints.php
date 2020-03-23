@@ -85,6 +85,10 @@ else {
     .button:hover{
       background:#2CC06B; 
     }
+    
+    th {
+        width: 33%;
+    }
 
 </style>
 <body>
