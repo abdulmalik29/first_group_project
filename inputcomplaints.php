@@ -24,7 +24,13 @@
     $currentUsername = $_SESSION['username'];
     $sql= "SELECT ownerEmail FROM House WHERE houseID = "  . $currentHouseID;
     $result = $mysqli->query($sql);
-    if($result !== NULL) {
+    $row = $result->fetch_assoc();
+    if(is_null($row["ownerEmail"])) {
+        echo "<script>
+                 alert('Landlord Email must be added to send complaints'); 
+                 window.history.go(-1);
+         </script>";
+    } else {
         $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
         $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
         $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
@@ -37,9 +43,5 @@
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
         }
-    } else {
-        echo "<script>
-                 alert('Landlord Email must be added to send complaints'); 
-                 window.history.go(-1);
-         </script>";
+        
     }
