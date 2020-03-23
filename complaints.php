@@ -82,15 +82,17 @@ else {
 </html>
 <?php
     function displayForm($mysqli) {
-        echo    '<form action="inputcomplaints.php" method="post">
-			        <label>Date</label>
-					<input type="date" name="date"><br>
-				    <label>Location</label>
-					<input type="text" name="location"><br>
-					<label>Complaint</label>
-					<input type="text" name="complaint"><br>
-					<input type="submit" value="Submit">
-				</form>';
+        echo    '<div class="formcomplaints">
+                    <form action="inputcomplaints.php" method="post">
+			            <label>Date</label>
+					    <input type="date" name="date"><br>
+				        <label>Location</label>
+				    	<input type="text" name="location"><br>
+				    	<label>Complaint</label>
+				    	<input type="text" name="complaint"><br>
+				    	<input type="submit" value="Submit">
+				    </form>
+				</div>';
     }
     function processUserInput($mysqli){
         $currentHouseID = $_SESSION['houseID'];
