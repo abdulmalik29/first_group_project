@@ -34,7 +34,7 @@
         $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
         $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
         $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
-        $sql = "INSERT INTO Complaints (username, complaint, Location, sorted, dateReported) VALUES ('$currentUsername', '$Issue', '$Location', '0', '$Date')";
+        $sql = "INSERT INTO Complaints (username, complaint, Location, sorted, dateReported, houseID) VALUES ('$currentUsername', '$Issue', '$Location', '0', '$Date', '$currentHouseID)";
         if($mysqli->query($sql)) {       
             echo "<script>
                  alert('Records added successfully'); 
