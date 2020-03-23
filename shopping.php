@@ -54,10 +54,11 @@ function displayItems($mysqli){
         //$items1="SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
         $stmt1 = $mysqli->prepare("SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = ? AND buyerName = ?");
         $stmt1->bind_param("ss", $currentHouseID, $b_name);
-                echo $stmt1;
 
         //$itemRecords1 = $mysqli->query($items1);
         $itemRecords1 = $stmt1->execute();
+                echo $itemRecords1;
+
         
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
         $stmt2 = $mysqli->prepare("SELECT buyerName, item, price FROM Shopping WHERE houseID = ? AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = ?)");
