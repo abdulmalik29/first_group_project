@@ -24,7 +24,7 @@
     $currentUsername = $_SESSION['username'];
     $sql= "SELECT ownerEmail FROM House WHERE houseID = "  . $currentHouseID;
     $result = $mysqli->query($sql);
-    if($result == NULL) {
+    if($result !== NULL) {
         $Date = mysqli_real_escape_string($mysqli, $_POST['date']);
         $Location = mysqli_real_escape_string($mysqli, $_POST['location']);
         $Issue = mysqli_real_escape_string($mysqli, $_POST['complaint']);
