@@ -23,6 +23,7 @@ body{
     color: black;
     font-size: 130%;
     line-height: 3;
+    text-align: left;
 }
 
 /*next three is for formatting the menu*/
