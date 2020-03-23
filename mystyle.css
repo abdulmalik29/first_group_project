@@ -26,7 +26,6 @@ body{
     text-align: left;
     line-height: 200%;
     display: flex;
-    overflow: hidden;
     background-color: var(--bg-color);
     font-family: 'Maitree', serif;
 }
