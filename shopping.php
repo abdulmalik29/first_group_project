@@ -51,11 +51,17 @@ function displayItems($mysqli){
         $currentHouseID = $_SESSION['houseID'];
         $b_name = $_SESSION['username'];
         
-        $items1="SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
-        $itemRecords1 = $mysqli->query($items1);
+        //$items1="SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
+        $stmt1 = $mysqli->prepare("SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = ? AND buyerName = ?");
+        $stmt1->bind_params("ss", $currentHouseID, $b_name);
+        //$itemRecords1 = $mysqli->query($items1);
+        $itemRecords1 = $stmt1->execute();
         
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
-        $itemRecords2 = $mysqli->query($items2);
+        $stmt2 = $mysqli->prepare("SELECT buyerName, item, price FROM Shopping WHERE houseID = ? AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = ?)");
+        $stmt2->bind_params("ss", $currentHouseID, $b_name);
+        $itemRecords2 = $stmt2->execute();
+        // $itemRecords2 = $mysqli->query($items2);
         
         $items3="SELECT requestID, requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
         $itemRecords3 = $mysqli->query($items3);
