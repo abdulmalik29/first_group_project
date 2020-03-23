@@ -47,7 +47,7 @@ function displayRequestForm($mysqli){
 	';
 }
 
-function displayItems(){
+function displayItems($mysqli){
         $currentHouseID = $_SESSION['houseID'];
         $b_name = $_SESSION['username'];
         
@@ -179,7 +179,7 @@ function deleteRequestItem($mysqli, $id){
         if(isset($_REQUEST["operation"]) && $_REQUEST["operation"] == 'delete' && isset($_REQUEST["requestID"])){
             deleteRequestItem($mysqli, $_REQUEST["requestID"]);
         }
-		    displayItems();
+		    displayItems($mysqli);
 		?>
 		<div class="alarm" align="left">
 		<?php
