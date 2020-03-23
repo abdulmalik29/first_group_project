@@ -64,7 +64,7 @@ else {
                         <th>Location</th>
                     </tr>';
 
-            if (!is_null($result)) {
+            if ($result) {
              // output data of each row
                 while($row = $result->fetch_assoc()) {
                     echo "<tr><td>" . $row["dateReported"]. "</td><td> " . $row["complaint"]. "</td><td>". $row["Location"]. "</td></tr>";
