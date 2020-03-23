@@ -53,16 +53,16 @@ else {
 	        
             $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
             $result1 = $mysqli->query($sql);
+            $row = $result1->fetch_assoc();
 
-            if(is_null($result1)) {
+            if(is_null($row["ownerEmail"])) {
     	         echo "<form action='inputlandlord.php' method='post'>
     			           <label>Landlords Email</label>
     				    	<input type='text' name='owneremail'><br>
     				    	<input type='submit' value='Submit'>
     		    </form>";
             } else {
-                $row = $result1->fetch_assoc();
-                echo  "<h2>Owner Email: " . $row["ownerEmail"] . "</h2>"; //want to add "Owner Email : " . $result1; but there's an error
+                echo  "<h2>Owner Email: " . $row["ownerEmail"] . "</h2>";
             }
                 
 		?>
