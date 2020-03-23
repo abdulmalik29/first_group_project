@@ -66,15 +66,16 @@ function displayItems($mysqli){
         $stmt1->bind_param("ss", $currentHouseID, $b_name);
 
         //$itemRecords1 = $mysqli->query($items1);
-        $stmt1->execute();
-        $itemRecords1 = $stmt1->store_result();
+        $itemRecords1 = $stmt1->execute();
+        $itemArray1 = $itemRecords1->fetch_all();
+        //$itemRecords1 = $stmt1->store_result();
 
-        if (is_null($itemRecords1)) {
+        if (is_null($itemArray1)) {
             echo '</table></div><br>';
         }
         else {
             echo $itemRecords1;
-            while($row = $itemRecords1->fetch_assoc())
+            foreach($itemArray1 as $row)
             {
                 echo '<tr width="100%"><td align="left">' .
                     $row['item'] . '</td><td align="left">' .
