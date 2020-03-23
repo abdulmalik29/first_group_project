@@ -26,7 +26,7 @@ body{
     text-align: left;
     line-height: 150%;
     background-color: var(--bg-color);
-    font-family: 'Maitree', serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*next three is for formatting the menu*/
