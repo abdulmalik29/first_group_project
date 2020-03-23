@@ -37,22 +37,20 @@ else {
     }
 
     .dateform{
+      border-radius:4px;
       background:#ecf0f1;
       border: #ccc 1px solid;
-      border-bottom: #ccc 2px solid;
       padding: 8px;
-      width:250px;
-      color:#AAAAAA;
       margin-top:10px;
+      width:250px;
       font-size:1em;
-      border-radius:4px;
     }
 
     .locform{
       border-radius:4px;
       background:#ecf0f1;
       border: #ccc 1px solid;
-      padding: 15px;
+      padding: 8px;
       margin-top:10px;
       width:250px;
       font-size:1em;
