@@ -74,8 +74,8 @@ else {
       color:white;
       border-radius:4px;
       border: #27ae60 1px solid;
-      margin-top:5px;
-      margin-bottom:15px;
+      margin-top:0px;
+      margin-bottom:0px;
       margin-left:85px;
       font-weight:800;
       font-size:0.8em;
