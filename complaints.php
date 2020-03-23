@@ -102,6 +102,7 @@ else {
 	</div>
 	<div class="rightcol">
 	    <h1 align="center" width=100%>Complaints</h1>
+	    <div class="container">
 		<!--<table id="complaints_Table">-->
 			<!--<tr>-->
 			<!--</tr>-->
@@ -138,14 +139,13 @@ else {
             echo "</div>";
        ?>
 
-
+    </div>  
 	</div>
 </body>
 </html>
 <?php
     function displayForm($mysqli) {
-        echo    '<div class="container">
-                    <form action="inputcomplaints.php" method="post">
+        echo    '<form action="inputcomplaints.php" method="post">
 			            <label>Date</label>
 					    <input type="date" name="date" class="dateform"><br>
 				        <label>Location</label>
@@ -153,8 +153,7 @@ else {
 				    	<label>Complaint</label>
 				    	<input type="text" name="complaint" class="comform"><br>
 				    	<input type="submit" value="Submit" class="submit">
-				    </form>
-				</div>';
+				    </form>';
     }
     function processUserInput($mysqli){
         $currentHouseID = $_SESSION['houseID'];
