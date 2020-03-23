@@ -57,7 +57,7 @@ function displayItems($mysqli){
         $stmt1->bind_param("ss", $currentHouseID, $b_name);
 
         //$itemRecords1 = $mysqli->query($items1);
-        $itemRecords1 = $stmt1->execute();
+        $stmt1->execute();
         $itemRecords1 = $stmt1->store_result();
         echo gettype($itemRecords1);
 
