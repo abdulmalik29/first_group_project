@@ -70,7 +70,7 @@ else {
     
     .submit{
       background:#3498db;
-      width:125px;
+      width:50px;
       padding-top:15px;
       padding-bottom:10px;
       color:white;
