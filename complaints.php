@@ -34,7 +34,6 @@ else {
       border-radius:6px;
       margin: 0 auto 0 auto;
       padding:0px 0px 70px 0px;
-      border: #2980b9 4px solid; 
     }
 
     .dateform{
@@ -53,7 +52,7 @@ else {
       border-radius:4px;
       background:#ecf0f1;
       border: #ccc 1px solid;
-      padding: 8px;
+      padding: 15px;
       margin-top:10px;
       width:250px;
       font-size:1em;
