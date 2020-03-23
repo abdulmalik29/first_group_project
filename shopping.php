@@ -99,8 +99,6 @@ function displayItems($mysqli){
             }
             echo '</table></div><br>';
         }
-            
-            
         
         
         echo '<div style="height: 175px; width: 100%; overflow: auto;"><table width="100%" align="left" cellspacing="5" cellpadding="8">
