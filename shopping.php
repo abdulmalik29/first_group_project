@@ -65,10 +65,16 @@ function displayItems($mysqli){
         $stmt2 = $mysqli->prepare("SELECT buyerName, item, price FROM Shopping WHERE houseID = ? AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = ?)");
         $stmt2->bind_param("ss", $currentHouseID, $b_name);
         $itemRecords2 = $stmt2->execute();
+        $itemRecords2 = $stmt2->store_result();
         // $itemRecords2 = $mysqli->query($items2);
         
         $items3="SELECT requestID, requesterName, item FROM Request WHERE houseID = " . $currentHouseID . " AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = '" . $b_name . "')";
-        $itemRecords3 = $mysqli->query($items3);
+        $stmt3 = $mysqli->prepare("SELECT requestID, requesterName, item FROM Request WHERE houseID = ? AND requestID IN (SELECT requestID FROM RequestSharedTo WHERE username = ?)");
+        $stmt3->bind_param("ss", $currentHouseID, $b_name);
+        $itemRecords3 = $stmt3->execute();
+        $itemRecords3 = $stmt3->store_result();
+
+        //$itemRecords3 = $mysqli->query($items3);
         
         echo '<div style="float: left; width: 50%">
             <div style="height: 175px; width: 100%; overflow: auto;">
