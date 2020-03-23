@@ -31,10 +31,9 @@ else {
 <style>
     .container{
       background:white;
-      width:300px;
       border-radius:6px;
       margin: 0 auto 0 auto;
-      padding:200px 0px 70px 0px;
+      padding:0px 0px 70px 0px;
       border: #2980b9 4px solid; 
     }
 
