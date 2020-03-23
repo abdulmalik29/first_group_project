@@ -51,6 +51,15 @@ function displayRequestForm($mysqli){
 function displayItems($mysqli){
         $currentHouseID = $_SESSION['houseID'];
         $b_name = $_SESSION['username'];
+        echo '<div style="float: left; width: 50%">
+            <div style="height: 175px; width: 100%; overflow: auto;">
+            <table width="100%" align="left" cellspacing="5" cellpadding="8">
+            <tr width="100%"><th colspan="3" align="center" width="100%">You Bought</th></tr><tr>
+            <td align="left">Item</td>
+            <td align="left">Price</td>
+            <td align="left">Del</td>
+            </tr>';
+            
         
         //$items1="SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND buyerName = " . $b_name;
         $stmt1 = $mysqli->prepare("SELECT shoppingID, buyerName, item, price FROM Shopping WHERE houseID = ? AND buyerName = ?");
@@ -59,8 +68,22 @@ function displayItems($mysqli){
         //$itemRecords1 = $mysqli->query($items1);
         $stmt1->execute();
         $itemRecords1 = $stmt1->store_result();
-        echo gettype($itemRecords1);
 
+        if (is_null($itemRecords1)) {
+            echo '</table></div><br>';
+        }
+        else {
+            echo $itemRecords1;
+            while($row = $itemRecords1->fetch_assoc())
+            {
+                echo '<tr width="100%"><td align="left">' .
+                    $row['item'] . '</td><td align="left">' .
+                    $row['price'] . '</td>
+                    <td align="left"><form action="shopping.php?operation=delete&shoppingID=' . $row['shoppingID']. '" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
+                    </tr>';
+            }
+            echo '</table></div><br>';
+        }
         
         $items2="SELECT buyerName, item, price FROM Shopping WHERE houseID = " . $currentHouseID . " AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = '" . $b_name . "')";
         $stmt2 = $mysqli->prepare("SELECT buyerName, item, price FROM Shopping WHERE houseID = ? AND shoppingID IN (SELECT shoppingID FROM ShoppingSharedTo WHERE username = ?)");
@@ -77,30 +100,8 @@ function displayItems($mysqli){
 
         //$itemRecords3 = $mysqli->query($items3);
         
-        echo '<div style="float: left; width: 50%">
-            <div style="height: 175px; width: 100%; overflow: auto;">
-            <table width="100%" align="left" cellspacing="5" cellpadding="8">
-            <tr width="100%"><th colspan="3" align="center" width="100%">You Bought</th></tr><tr>
-            <td align="left">Item</td>
-            <td align="left">Price</td>
-            <td align="left">Del</td>
-            </tr>';
-            
-        if (is_null($itemRecords1)) {
-            echo '</table></div><br>';
-        }
-        else {
-            echo $itemRecords1;
-            while($row = $itemRecords1->fetch_assoc())
-            {
-                echo '<tr width="100%"><td align="left">' .
-                    $row['item'] . '</td><td align="left">' .
-                    $row['price'] . '</td>
-                    <td align="left"><form action="shopping.php?operation=delete&shoppingID=' . $row['shoppingID']. '" method="POST"><input type="submit" style="background-color: #f44336; font-size: 10px;" value="X" name="del_b"></form></td>
-                    </tr>';
-            }
-            echo '</table></div><br>';
-        }
+        
+        
         
         echo '<div style="height: 175px; width: 100%; overflow: auto;"><table width="100%" align="left" cellspacing="5" cellpadding="8">
             <tr width="100%"><th colspan="4" align="center" width="100%">Your Debts</th></tr><tr>
