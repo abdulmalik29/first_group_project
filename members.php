@@ -54,28 +54,28 @@ else {
             $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
             $result1 = $mysqli->query($sql);
             $row = $result1->fetch_assoc();
-
-            if(is_null($row["ownerEmail"])) {
-    	         echo "<form action='inputlandlord.php' method='post'>
-    			           <label>Landlords Email</label>
-    				    	<input type='text' name='owneremail'><br>
-    				    	<input type='submit' value='Submit'>
-    		    </form>";
-            } else {
-                echo  "<h2>Owner Email: " . $row["ownerEmail"] . "</h2>";
-            }
-                
+            <div class="HouseID">
+                if(is_null($row["ownerEmail"])) {
+                    echo  "<h2>\nHouse ID = " . $CurrentHouseID . "</h2>";
+                    $namequery = $mysqli->query("SELECT housename FROM House WHERE houseID = '$CurrentHouseID'");
+                    $namerow = $namequery->fetch_assoc();
+                    echo  "<h2>\nHouse Name = " . $namerow["housename"] . "</h2>";
+        	         echo "<form action='inputlandlord.php' method='post'>
+        			           <label>Landlords Email</label>
+        				    	<input type='text' name='owneremail'><br>
+        				    	<input type='submit' value='Submit'>
+        		    </form>";
+                } else {
+                    echo  "<h2>\nHouse ID = " . $CurrentHouseID . "</h2>";
+                    $namequery = $mysqli->query("SELECT housename FROM House WHERE houseID = '$CurrentHouseID'");
+                    $namerow = $namequery->fetch_assoc();
+                    echo  "<h2>\nHouse Name = " . $namerow["housename"] . "</h2>";
+                    echo  "<h2>Owner Email: " . $row["ownerEmail"] . "</h2>";
+                }
+            </div>
 		?>
 
-    <div class="HouseID">
-	    <?php
-            $CurrentHouseID = $_SESSION['houseID'];
-            echo  "<h2>\nHouse ID = " . $CurrentHouseID . "</h2>";
-            $namequery = $mysqli->query("SELECT housename FROM House WHERE houseID = '$CurrentHouseID'");
-            $namerow = $namequery->fetch_assoc();
-            echo  "<h2>\nHouse Name = " . $namerow["housename"] . "</h2>";
-            ?>
-    </div>
+    
            
         <?php    
             $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
