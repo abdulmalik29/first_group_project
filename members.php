@@ -71,11 +71,14 @@ else {
 	    <?php
             $CurrentHouseID = $_SESSION['houseID'];
             echo  "<h2>\nHouse ID = " . $CurrentHouseID . "</h2>";
-            $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
+            $namequery = $mysqli->query("SELECT housename FROM House WHERE houseID = '$CurrentHouseID'");
+            $namerow = $namequery->fetch_assoc();
+            echo  "<h2>\nHouse Name = " . $namerow["housename"] . "</h2>";
             ?>
     </div>
            
         <?php    
+            $result = mysqli_query($mysqli, "SELECT * FROM User WHERE houseID = \"" . $CurrentHouseID . "\"");
             echo "<table border='1'>
             <tr>
             <th>Name</th>
