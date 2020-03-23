@@ -25,6 +25,15 @@ body{
     line-height: 3;
     text-align: left;
     line-height: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    color: #000;
+    background-color: var(--bg-color);
+    font-family: 'Maitree', serif;
 }
 
 /*next three is for formatting the menu*/
