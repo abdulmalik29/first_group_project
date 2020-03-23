@@ -3,6 +3,7 @@
 
 // Always start this first
 session_start();
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 if ( isset( $_SESSION['username'] ) && isset( $_SESSION['houseID'] ) ) {
     // Grab user data from the database using the user_id
