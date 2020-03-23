@@ -29,6 +29,8 @@ else {
 	<title>Complaints</title>
 </head>
 <style>
+    button::-moz-focus-inner,
+    input::-moz-focus-inner { border: 0; padding: 0; }
     .container{
       background:white;
       border-radius:6px;
