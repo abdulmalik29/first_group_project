@@ -27,9 +27,6 @@ body{
     line-height: 200%;
     display: flex;
     overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    color: #000;
     background-color: var(--bg-color);
     font-family: 'Maitree', serif;
 }
