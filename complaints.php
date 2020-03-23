@@ -85,13 +85,6 @@ else {
     .button:hover{
       background:#2CC06B; 
     }
-    
-    table {
-        table-layout:fixed;
-    }
-    th {
-        width:33%;
-    }
 
 </style>
 <body>
