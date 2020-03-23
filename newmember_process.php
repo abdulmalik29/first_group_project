@@ -28,8 +28,11 @@ if($mysqli -> connect_error) {
         while($row = $result->fetch_assoc()) {
             if($row["houseID"] == $hid){
                 if($row["housename"] == $hname){
-                    $sql2 = "INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$fullname', '$hid', '0')";
-                    if($mysqli->query($sql2)){
+                    //$sql2 = "INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES ('$uname', '$password', '$email', '$phone_number', '$fullname', '$hid', '0')";
+                    $stmt = $mysqli->prepare("INSERT INTO User (username, password, email, phonenumber, name, houseID, outside) VALUES (?, ?, ?, ?, ?, ?, '0')");
+                    $stmt->bind_param('ssssss', $uname, $password, $email, $phone_number, $fullname, $hid);
+
+                    if($stmt->execute()){
                         $_SESSION['username'] = $uname;
                         $_SESSION['houseID'] = $row["houseID"];
                         header("Location: alarm.php");
