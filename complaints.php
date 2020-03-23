@@ -86,8 +86,11 @@ else {
       background:#2CC06B; 
     }
     
+    table {
+        table-layout:fixed;
+    }
     th {
-        width: 33%;
+        width:33%;
     }
 
 </style>
