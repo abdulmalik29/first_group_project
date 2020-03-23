@@ -89,6 +89,7 @@ function displayItems($mysqli){
             echo '</table></div><br>';
         }
         else {
+            echo $itemRecords1;
             while($row = $itemRecords1->fetch_assoc())
             {
                 echo '<tr width="100%"><td align="left">' .
