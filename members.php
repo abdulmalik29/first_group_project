@@ -48,13 +48,14 @@ else {
 	</div>
 	<div class="rightcol">
 	    <h1>Your Homies</h1>
-	    <?php
-	        $CurrentHouseID = $_SESSION['houseID'];
-	        
-            $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
-            $result1 = $mysqli->query($sql);
-            $row = $result1->fetch_assoc();
-            <div class="HouseID">
+	    <div class="HouseID">
+    	    <?php
+    	        $CurrentHouseID = $_SESSION['houseID'];
+    	        
+                $sql= "SELECT ownerEmail FROM House WHERE houseID = \""  . $CurrentHouseID . "\"";
+                $result1 = $mysqli->query($sql);
+                $row = $result1->fetch_assoc();
+                
                 if(is_null($row["ownerEmail"])) {
                     echo  "<h2>\nHouse ID = " . $CurrentHouseID . "</h2>";
                     $namequery = $mysqli->query("SELECT housename FROM House WHERE houseID = '$CurrentHouseID'");
@@ -72,9 +73,8 @@ else {
                     echo  "<h2>\nHouse Name = " . $namerow["housename"] . "</h2>";
                     echo  "<h2>Owner Email: " . $row["ownerEmail"] . "</h2>";
                 }
-            </div>
-		?>
-
+    		?>
+        </div>
     
            
         <?php    
